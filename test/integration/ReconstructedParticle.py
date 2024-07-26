@@ -50,6 +50,15 @@ if not Path(ROOT_FILE).exists():
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
     ).check_returncode()
+else:
+    subprocess.run(
+        [
+            "podio-dump", 
+            ROOT_FILE
+        ],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    ).check_returncode()
 
 print("Loading ROOT libraries")
 
@@ -66,15 +75,24 @@ df = ROOT.RDataFrame("events", ROOT_FILE)
 
 ROOT.gInterpreter.ProcessLine("using namespace k4::ral;")
 
-
 df = (df
     .Define("charge",
             "ReconstructedParticle::get_charge(ReconstructedParticles)")
     .Define("energy",
             "ReconstructedParticle::get_energy(ReconstructedParticles)")
+    .Define("PDG",
+            "ReconstructedParticle::get_PDG(ReconstructedParticles)")
+    .Define("momentum",
+            "ReconstructedParticle::get_momentum(ReconstructedParticles)")
+    .Define("refencePoint",
+            "ReconstructedParticle::get_referencePoint(ReconstructedParticles)")
+    .Define("mass",
+            "ReconstructedParticle::get_mass(ReconstructedParticles)")
+    .Define("goodnessOfPID",
+            "ReconstructedParticle::get_goodnessOfPID(ReconstructedParticles)")
 )
 
-print("Output new dataframe")
+print("Output test result in a new dataframe")
 
 df.Snapshot("events", FINAL_ROOT_FILE, ["charge", "energy"]) 
 
