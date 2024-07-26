@@ -1,5 +1,3 @@
 #include "ral/Loader.h"
 
-bool loadRal(){
-  return true;
-}
+bool loadRal() { return true; }
