@@ -34,13 +34,13 @@ jobs:
         docker exec CI_container /bin/bash -c 'cd Package; \
            source ${{ matrix.STACK }}; \
            cd build; \
-           make ral install
+           make ral install'
     - name: Compile tests
       run: |
         docker exec CI_container /bin/bash -c 'cd Package; \
            source ${{ matrix.STACK }}; \
            cd build; \
-           make unittest
+           make unittest'
     - name: Run unittest
       run: |
         docker exec CI_container /bin/bash -c 'cd Package; \
