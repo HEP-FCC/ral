@@ -20,8 +20,8 @@ jobs:
         docker run -it --name CI_container \
                    -v ${GITHUB_WORKSPACE}:/Package \
                    -v /cvmfs:/cvmfs:shared \
-                   -d ghcr.io/key4hep/key4hep-images/${{ matrix.OS }}:latest \
                    -p 80:80 \
+                   -d ghcr.io/key4hep/key4hep-images/${{ matrix.OS }}:latest \
                    /bin/bash
     - name: CMake Configure
       run: |
