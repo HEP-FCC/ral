@@ -1,4 +1,4 @@
-name: build-and-test
+name: build-doc
 
 on: 
   push: 
@@ -33,28 +33,9 @@ jobs:
            source ${{ matrix.STACK }}; \
            cd build; \
            cmake -DCMAKE_INSTALL_PREFIX=../install ..'
-    - name: Compile and Install
+    - name: Generate doxygen documentation
       run: |
         docker exec CI_container /bin/bash -c 'cd Package; \
            source ${{ matrix.STACK }}; \
            cd build; \
-           make ral install'
-    - name: Compile tests
-      run: |
-        docker exec CI_container /bin/bash -c 'cd Package; \
-           source ${{ matrix.STACK }}; \
-           cd build; \
-           make unittest'
-    - name: Run unittest
-      run: |
-        docker exec CI_container /bin/bash -c 'cd Package; \
-           source ${{ matrix.STACK }}; \
-           cd build; \
-           ctest -R unittest --output-on-failure'
-    - name: Run integration tests
-      run: |
-        docker exec CI_container /bin/bash -c 'cd Package; \
-           source ${{ matrix.STACK }}; \
-           k4_local_repo; \
-           cd build; \
-           ctest -R integration --output-on-failure'
+           cmake --build . --target doc'
