@@ -15,7 +15,7 @@ jobs:
     container:
       image: ghcr.io/key4hep/key4hep-images/${{ matrix.OS }}:latest
       volumes:
-        - ${GITHUB_WORKSPACE}:/Package
+        - $GITHUB_WORKSPACE:/Package
         - /cvmfs:/cvmfs:shared 
       ports:
         - 80
