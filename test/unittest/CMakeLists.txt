@@ -2,7 +2,7 @@
 find_package(Catch2 3 REQUIRED)
 
 # Defining the test executable
-set(UNITTEST_NAME unnitest)
+set(UNITTEST_NAME unittest)
 add_executable("${UNITTEST_NAME}" ReconstructedParticle.cpp)
 target_link_libraries("${UNITTEST_NAME}" PRIVATE Catch2::Catch2WithMain
                                                  "${PROJECT_NAME}")

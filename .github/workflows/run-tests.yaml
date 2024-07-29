@@ -1,0 +1,56 @@
+name: build-and-test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy: 
+      fail-fast: false
+      matrix:
+        stack: 
+          STACK: ['/cvmfs/sw.hsf.org/key4hep/setup.sh',
+                  '/cvmfs/sw-nightlies.hsf.org/key4hep/setup.sh']
+          OS: ['alma9',
+               'ubuntu22']
+    steps:
+    - uses: actions/checkout@v4
+    - uses: cvmfs-contrib/github-action-cvmfs@v4
+    - name: Start container
+      run: |
+        docker run -it --name CI_container \
+                   -v ${GITHUB_WORKSPACE}:/Package \
+                   -v /cvmfs:/cvmfs:shared \
+                   -d ghcr.io/key4hep/key4hep-images/${{ matrix.OS }}:latest \
+                   /bin/bash
+    - name: CMake Configure
+      run: |
+        docker exec CI_container /bin/bash -c 'cd Package; \
+           mkdir -p build install; \
+           source ${{ matrix.STACK }}; \
+           cd build; \
+           cmake -DCMAKE_INSTALL_PREFIX=../install ..'
+    - name: Compile and Install
+      run: |
+        docker exec CI_container /bin/bash -c 'cd Package; \
+           source ${{ matrix.STACK }}; \
+           cd build; \
+           make ral install
+    - name: Compile tests
+      run: |
+        docker exec CI_container /bin/bash -c 'cd Package; \
+           source ${{ matrix.STACK }}; \
+           cd build; \
+           make unittest
+    - name: Run unittest
+      run: |
+        docker exec CI_container /bin/bash -c 'cd Package; \
+           source ${{ matrix.STACK }}; \
+           cd build; \
+           ctest -R unittest'
+    - name: Run integration tests
+      run: |
+        docker exec CI_container /bin/bash -c 'cd Package; \
+           source ${{ matrix.STACK }}; \
+           cd build; \
+           ctest -R integration'
