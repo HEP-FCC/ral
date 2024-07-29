@@ -53,4 +53,4 @@ jobs:
         docker exec CI_container /bin/bash -c 'cd Package; \
            source ${{ matrix.STACK }}; \
            cd build; \
-           ctest -R integration'
+           ctest -R integration --output-on-failure'
