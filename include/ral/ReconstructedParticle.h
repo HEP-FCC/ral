@@ -18,8 +18,8 @@ namespace ReconstructedParticle {
 /**
  * Get PDG member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the PDG member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the PDG member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -30,8 +30,8 @@ get_PDG(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get energy member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the energy member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the energy member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -42,8 +42,8 @@ get_energy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get momentum member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the momentum member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the momentum member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -54,8 +54,8 @@ get_momentum(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get referencePoint member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the referencePoint member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the referencePoint member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -66,8 +66,8 @@ ROOT::VecOps::RVec<ROOT::Math::XYZVector> get_referencePoint(
 /**
  * Get charge member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the charge member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the charge member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -78,8 +78,8 @@ get_charge(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get mass member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the mass member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the mass member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -90,8 +90,8 @@ get_mass(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get goodnessOfPID member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the goodnessOfPID member in the class ReconstructedParticle
- * from edm4hep
+ * Analyzer that can be use to obtain the goodnessOfPID member in the class
+ * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
