@@ -90,6 +90,8 @@ df = (df
             "ReconstructedParticle::get_mass(ReconstructedParticles)")
     .Define("goodnessOfPID",
             "ReconstructedParticle::get_goodnessOfPID(ReconstructedParticles)")
+    .Define("void",
+            "ReconstructedParticle::print_PDG(5)(ReconstructedParticles)")
 )
 
 print("Output test result in a new dataframe")

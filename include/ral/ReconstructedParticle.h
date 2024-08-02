@@ -99,6 +99,14 @@ get_mass(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 ROOT::VecOps::RVec<float> get_goodnessOfPID(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
+struct print_PDG {
+  int m_n_events;
+  int m_n_printed;
+  print_PDG(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
 } // namespace ReconstructedParticle
 } // namespace k4::ral
 

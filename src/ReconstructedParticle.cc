@@ -1,4 +1,6 @@
 #include "ral/ReconstructedParticle.h"
+#include <cstdlib>
+#include <iostream>
 
 namespace k4::ral {
 
@@ -75,5 +77,23 @@ ROOT::VecOps::RVec<float> get_goodnessOfPID(
   }
   return result;
 }
+
+print_PDG::print_PDG(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
+int print_PDG::operator()(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
+  if (m_n_events == m_n_printed) {
+    std::cout << "Finish printing PDG" << std::endl;
+    std::exit(0);
+  }
+  auto pdgs = get_PDG(particles);
+  std::cout << "Printing PDG from event " << m_n_printed << std::endl;
+  for (const int &pdg : pdgs) {
+    std::cout << pdg << " ";
+  }
+  std::cout << std::endl;
+  m_n_printed += 1;
+  return 0;
+}
+
 } // namespace ReconstructedParticle
 } // namespace k4::ral
