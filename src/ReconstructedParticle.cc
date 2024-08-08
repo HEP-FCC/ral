@@ -97,7 +97,8 @@ int print_PDG::operator()(
   return 0;
 }
 
-print_energy::print_energy(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
+print_energy::print_energy(int n_events)
+    : m_n_events{n_events}, m_n_printed{0} {}
 
 int print_energy::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
@@ -114,7 +115,8 @@ int print_energy::operator()(
   return 0;
 }
 
-print_momentum::print_momentum(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
+print_momentum::print_momentum(int n_events)
+    : m_n_events{n_events}, m_n_printed{0} {}
 
 int print_momentum::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
@@ -131,7 +133,8 @@ int print_momentum::operator()(
   return 0;
 }
 
-print_referencePoint::print_referencePoint(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
+print_referencePoint::print_referencePoint(int n_events)
+    : m_n_events{n_events}, m_n_printed{0} {}
 
 int print_referencePoint::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
@@ -139,7 +142,8 @@ int print_referencePoint::operator()(
     throw std::runtime_error("End printing");
   }
   auto points = get_referencePoint(particles);
-  std::cout << "Printing referencePoint from event " << m_n_printed << std::endl;
+  std::cout << "Printing referencePoint from event " << m_n_printed
+            << std::endl;
   for (const ROOT::Math::XYZVector &referencePoint : points) {
     std::cout << referencePoint << " ";
   }
@@ -148,7 +152,8 @@ int print_referencePoint::operator()(
   return 0;
 }
 
-print_charge::print_charge(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
+print_charge::print_charge(int n_events)
+    : m_n_events{n_events}, m_n_printed{0} {}
 
 int print_charge::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
@@ -182,7 +187,8 @@ int print_mass::operator()(
   return 0;
 }
 
-print_goodnessOfPID::print_goodnessOfPID(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
+print_goodnessOfPID::print_goodnessOfPID(int n_events)
+    : m_n_events{n_events}, m_n_printed{0} {}
 
 int print_goodnessOfPID::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
