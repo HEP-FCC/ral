@@ -107,6 +107,54 @@ struct print_PDG {
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
 
+struct print_energy {
+  int m_n_events;
+  int m_n_printed;
+  print_energy(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
+struct print_momentum {
+  int m_n_events;
+  int m_n_printed;
+  print_momentum(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
+struct print_referencePoint {
+  int m_n_events;
+  int m_n_printed;
+  print_referencePoint(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
+struct print_mass {
+  int m_n_events;
+  int m_n_printed;
+  print_mass(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
+struct print_charge {
+  int m_n_events;
+  int m_n_printed;
+  print_charge(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
+struct print_goodnessOfPID {
+  int m_n_events;
+  int m_n_printed;
+  print_goodnessOfPID(int n_events);
+  int operator()(
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+};
+
 } // namespace ReconstructedParticle
 } // namespace k4::ral
 
