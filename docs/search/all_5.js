@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['particleid_2ecc_0',['ParticleID.cc',['../ParticleID_8cc.html',1,'']]],
-  ['particleid_2eh_1',['ParticleID.h',['../ParticleID_8h.html',1,'']]],
-  ['print_5fcharge_2',['print_charge',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__charge.html',1,'k4::ral::ReconstructedParticle::print_charge'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__charge.html#a918b25ce1e6640fb488921e2d6e4a6e8',1,'k4::ral::ReconstructedParticle::print_charge::print_charge()']]],
-  ['print_5fenergy_3',['print_energy',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__energy.html',1,'k4::ral::ReconstructedParticle::print_energy'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__energy.html#ac87f289cdafb941b71ceaabb0a901237',1,'k4::ral::ReconstructedParticle::print_energy::print_energy()']]],
-  ['print_5fgoodnessofpid_4',['print_goodnessOfPID',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__goodnessOfPID.html',1,'k4::ral::ReconstructedParticle::print_goodnessOfPID'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__goodnessOfPID.html#ada1b46b905d18d8b7820f00db80096ce',1,'k4::ral::ReconstructedParticle::print_goodnessOfPID::print_goodnessOfPID()']]],
-  ['print_5fmass_5',['print_mass',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__mass.html',1,'k4::ral::ReconstructedParticle::print_mass'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__mass.html#a4d615934a9a460b254dadd81d9977081',1,'k4::ral::ReconstructedParticle::print_mass::print_mass()']]],
-  ['print_5fmomentum_6',['print_momentum',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__momentum.html',1,'k4::ral::ReconstructedParticle::print_momentum'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__momentum.html#a37f36395144a617a4b7ba91b49eab292',1,'k4::ral::ReconstructedParticle::print_momentum::print_momentum()']]],
-  ['print_5fpdg_7',['print_PDG',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__PDG.html',1,'k4::ral::ReconstructedParticle::print_PDG'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__PDG.html#ab9893f02c260622dc94a50039b578e1b',1,'k4::ral::ReconstructedParticle::print_PDG::print_PDG()']]],
-  ['print_5freferencepoint_8',['print_referencePoint',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__referencePoint.html',1,'k4::ral::ReconstructedParticle::print_referencePoint'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__referencePoint.html#a6f90ffd644bdfafdfe26cb8a40ffa328',1,'k4::ral::ReconstructedParticle::print_referencePoint::print_referencePoint()']]]
+  ['less_0',['LESS',['../namespacek4_1_1ral_1_1LogicalOperators.html#a2b0439fe6dd51aea6c48003928a4f260a1798e8c3621ca53d9e3a80d257306000',1,'k4::ral::LogicalOperators']]],
+  ['lesseq_1',['LESSEQ',['../namespacek4_1_1ral_1_1LogicalOperators.html#a2b0439fe6dd51aea6c48003928a4f260aa73f7ffb435a7a054bbe725ac449b1e4',1,'k4::ral::LogicalOperators']]],
+  ['linkdef_2eh_2',['LinkDef.h',['../LinkDef_8h.html',1,'']]],
+  ['loader_2ecc_3',['Loader.cc',['../Loader_8cc.html',1,'']]],
+  ['loader_2eh_4',['Loader.h',['../Loader_8h.html',1,'']]],
+  ['loadral_5',['loadRal',['../Loader_8cc.html#abeba339a34581583ffa16f9a950978f5',1,'loadRal():&#160;Loader.cc'],['../Loader_8h.html#abeba339a34581583ffa16f9a950978f5',1,'loadRal():&#160;Loader.cc']]],
+  ['logicaloperators_2ecc_6',['LogicalOperators.cc',['../LogicalOperators_8cc.html',1,'']]],
+  ['logicaloperators_2eh_7',['LogicalOperators.h',['../LogicalOperators_8h.html',1,'']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['linkdef_2eh_0',['LinkDef.h',['../LinkDef_8h.html',1,'']]],
-  ['loader_2ecc_1',['Loader.cc',['../Loader_8cc.html',1,'']]],
-  ['loader_2eh_2',['Loader.h',['../Loader_8h.html',1,'']]],
-  ['loadral_3',['loadRal',['../Loader_8cc.html#abeba339a34581583ffa16f9a950978f5',1,'loadRal():&#160;Loader.cc'],['../Loader_8h.html#abeba339a34581583ffa16f9a950978f5',1,'loadRal():&#160;Loader.cc']]]
+  ['filter_0',['filter',['../namespacek4_1_1ral_1_1LogicalOperators.html#a6d307e2cf0e17b865e10899e555a7001',1,'k4::ral::LogicalOperators']]],
+  ['filter_3c_20edm4hep_3a_3areconstructedparticledata_20_3e_1',['filter&lt; edm4hep::ReconstructedParticleData &gt;',['../namespacek4_1_1ral_1_1LogicalOperators.html#a262a218d84d0875e07eb76196218c8c5',1,'k4::ral::LogicalOperators']]]
 ];

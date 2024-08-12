@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__PDG.html#ae163a26d2ef14bbcf4f670affcb93247',1,'k4::ral::ReconstructedParticle::print_PDG::operator()()'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__energy.html#ad0a559a170014937d8493d586a0a0282',1,'k4::ral::ReconstructedParticle::print_energy::operator()()'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__momentum.html#a71dee26f93dac91f8c2f03907ad3e26a',1,'k4::ral::ReconstructedParticle::print_momentum::operator()()'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__referencePoint.html#aea0ce884697412b242da3354745c5d33',1,'k4::ral::ReconstructedParticle::print_referencePoint::operator()()'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__mass.html#aee93a56ccbcc342970ff6a992d916bf6',1,'k4::ral::ReconstructedParticle::print_mass::operator()()'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__charge.html#a3dc59f249ef57d52bf795baa1e659170',1,'k4::ral::ReconstructedParticle::print_charge::operator()()'],['../structk4_1_1ral_1_1ReconstructedParticle_1_1print__goodnessOfPID.html#abcb092aa3086d2828b039dc05c400824',1,'k4::ral::ReconstructedParticle::print_goodnessOfPID::operator()()']]]
+  ['k4_0',['k4',['../namespacek4.html',1,'']]],
+  ['k4_3a_3aral_1',['ral',['../namespacek4_1_1ral.html',1,'k4']]],
+  ['k4_3a_3aral_3a_3alogicaloperators_2',['LogicalOperators',['../namespacek4_1_1ral_1_1LogicalOperators.html',1,'k4::ral']]],
+  ['k4_3a_3aral_3a_3aparticleid_3',['ParticleID',['../namespacek4_1_1ral_1_1ParticleID.html',1,'k4::ral']]],
+  ['k4_3a_3aral_3a_3areconstructedparticle_4',['ReconstructedParticle',['../namespacek4_1_1ral_1_1ReconstructedParticle.html',1,'k4::ral']]]
 ];
