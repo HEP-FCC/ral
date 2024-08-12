@@ -8,13 +8,10 @@
 #pragma link C++ nestedtypedefs;
 
 // Dictionaries for output objects
-#pragma link C++ class ROOT::VecOps::RVec < int>;
-#pragma link C++ class ROOT::VecOps::RVec < float>;
-#pragma link C++ class ROOT::VecOps::RVec < ROOT::Math::XYZVector>;
-#pragma link C++ class ROOT::VecOps::RVec < ROOT::Math::XYZVector>;
-#pragma link C++ class ROOT::VecOps::RVec < float>;
-#pragma link C++ class ROOT::VecOps::RVec < float>;
-#pragma link C++ class ROOT::VecOps::RVec < float>;
+#pragma link C++ class ROOT::VecOps::RVec <int>;
+#pragma link C++ class ROOT::VecOps::RVec <float>;
+#pragma link C++ class ROOT::VecOps::RVec <bool>;
+#pragma link C++ class ROOT::VecOps::RVec <ROOT::Math::XYZVector>;
 
 // to load all other functions
 #pragma link C++ function loadRal;

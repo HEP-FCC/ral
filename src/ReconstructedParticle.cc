@@ -1,6 +1,8 @@
 #include "ral/ReconstructedParticle.h"
+#include "ral/LogicalOperators.h"
 #include <Math/Vector3Dfwd.h>
 #include <cstdlib>
+#include <edm4hep/ReconstructedParticleData.h>
 #include <iostream>
 #include <stdexcept>
 
@@ -203,6 +205,37 @@ int print_goodnessOfPID::operator()(
   std::cout << std::endl;
   m_n_printed += 1;
   return 0;
+}
+
+ROOT::VecOps::RVec<bool> 
+mask_e(
+  LogicalOperators::ComparisonOperator op,
+  float energy,
+  ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+
+  ROOT::VecOps::RVec<bool> result;
+  result.reserve(particles.size());
+  for(edm4hep::ReconstructedParticleData& p : particles){
+    switch (op) {
+      case LogicalOperators::ComparisonOperator::LESS:
+        result.emplace_back(p.energy < energy);
+        break;
+      case LogicalOperators::ComparisonOperator::LESSEQ:
+        result.emplace_back(p.energy <= energy);
+        break;
+      case LogicalOperators::ComparisonOperator::EQ:
+        result.emplace_back(p.energy == energy);
+        break;
+      case LogicalOperators::ComparisonOperator::GREATEREQ:
+        result.emplace_back(p.energy >= energy);
+        break;
+      case LogicalOperators::ComparisonOperator::GREATER:
+        result.emplace_back(p.energy > energy);
+        break;
+    }
+  }
+  return result;
+
 }
 
 } // namespace ReconstructedParticle

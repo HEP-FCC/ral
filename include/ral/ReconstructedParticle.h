@@ -2,6 +2,7 @@
 #define RECONSTRUCTEDPARTICLE_ANALYZERS_H
 
 #include "Math/Vector3D.h"
+#include "ral/LogicalOperators.h"
 #include "ROOT/RVec.hxx"
 #include "edm4hep/ReconstructedParticleData.h"
 
@@ -154,6 +155,12 @@ struct print_goodnessOfPID {
   int operator()(
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
+
+ROOT::VecOps::RVec<bool> 
+    mask_e(
+    LogicalOperators::ComparisonOperator op,
+    float energy,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
 } // namespace ReconstructedParticle
 } // namespace k4::ral
