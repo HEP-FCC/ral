@@ -1,10 +1,12 @@
-#include <Math/Vector3Dfwd.h>
 #include <algorithm>
-#include <catch2/catch_message.hpp>
 #include <random>
-#include "catch2/catch_test_macros.hpp"
+#include <catch2/catch_message.hpp>
+#include <catch2/catch_test_macros.hpp>
+#include <catch2/generators/catch_generators.hpp>
 
 #include "ral/ReconstructedParticle.h"
+#include "ral/LogicalOperators.h"
+#include <Math/Vector3Dfwd.h>
 #include <edm4hep/ReconstructedParticleData.h>
 
 using namespace k4::ral;
@@ -85,4 +87,39 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
       REQUIRE(referencePoint.at(i).z() == particles.at(i).referencePoint.z);
     }
   }
+}
+
+TEST_CASE("Boolean masking analyzers from ReconstructedParticle", "[ReconstructedParticle]") {
+  ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles(20, {});
+  std::ranges::generate(particles.begin(), particles.end(), generateRandomParticle);
+  SECTION("Masking energy"){
+    auto op = GENERATE(
+      LogicalOperators::ComparisonOperator::LESS,
+      LogicalOperators::ComparisonOperator::LESSEQ,
+      LogicalOperators::ComparisonOperator::EQ,
+      LogicalOperators::ComparisonOperator::GREATEREQ,
+      LogicalOperators::ComparisonOperator::GREATER);
+    float n = GENERATE(-50., 0., 50.);
+    auto mask = ReconstructedParticle::mask_e(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      switch (op) {
+        case LogicalOperators::ComparisonOperator::LESS:
+          REQUIRE((particles[i].energy < n) == mask[i]);
+          break;
+        case LogicalOperators::ComparisonOperator::LESSEQ:
+          REQUIRE((particles[i].energy <= n) == mask[i]);
+          break;
+        case LogicalOperators::ComparisonOperator::EQ:
+          REQUIRE((particles[i].energy == n) == mask[i]);
+          break;
+        case LogicalOperators::ComparisonOperator::GREATEREQ:
+          REQUIRE((particles[i].energy >= n) == mask[i]);
+          break;
+        case LogicalOperators::ComparisonOperator::GREATER:
+          REQUIRE((particles[i].energy > n) == mask[i]);
+          break;
+      }
+    }
+  }
+
 }
