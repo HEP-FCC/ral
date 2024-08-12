@@ -120,6 +120,12 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle", "[Reconstructe
           break;
       }
     }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    int size = 0;
+    for (const bool& m : mask){
+      if(m){size++;}
+    }
+    REQUIRE(size == filtered_particles.size());
   }
 
 }
