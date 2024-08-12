@@ -2,6 +2,7 @@
 #include "ROOT/RVec.hxx"
 #include <edm4hep/ReconstructedParticleData.h>
 #include <stdexcept>
+#include <string>
 
 namespace k4::ral {
 
@@ -11,7 +12,8 @@ template <typename T>
 ROOT::VecOps::RVec<T> filter(ROOT::VecOps::RVec<bool> mask,
                              ROOT::VecOps::RVec<T> collection) {
   if (mask.size() != collection.size()) {
-    throw std::length_error("Vectors should have the same length");
+    auto msg = "Different vector lenghts: " + std::to_string(mask.size()) + " and " + std::to_string(collection.size()) + ".";
+    throw std::length_error(msg);
   }
   ROOT::VecOps::RVec<T> result;
   for (int i = 0; i < collection.size(); i++) {
@@ -32,7 +34,8 @@ filter<edm4hep::ReconstructedParticleData>(
 ROOT::VecOps::RVec<bool> operator&&(const ROOT::VecOps::RVec<bool> &vec1,
                                     const ROOT::VecOps::RVec<bool> &vec2) {
   if (vec1.size() != vec2.size()) {
-    throw std::length_error("Vectors should have the same length");
+    auto msg = "Different vector lenghts: " + std::to_string(vec1.size()) + " and " + std::to_string(vec2.size()) + ".";
+    throw std::length_error(msg);
   }
   ROOT::VecOps::RVec<bool> result;
   result.reserve(vec1.size());
@@ -45,7 +48,8 @@ ROOT::VecOps::RVec<bool> operator&&(const ROOT::VecOps::RVec<bool> &vec1,
 ROOT::VecOps::RVec<bool> operator||(const ROOT::VecOps::RVec<bool> &vec1,
                                     const ROOT::VecOps::RVec<bool> &vec2) {
   if (vec1.size() != vec2.size()) {
-    throw std::length_error("Vectors should have the same length");
+    auto msg = "Different vector lenghts: " + std::to_string(vec1.size()) + " and " + std::to_string(vec2.size()) + ".";
+    throw std::length_error(msg);
   }
   ROOT::VecOps::RVec<bool> result;
   result.reserve(vec1.size());

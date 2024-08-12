@@ -232,6 +232,7 @@ mask_e(LogicalOperators::ComparisonOperator op, float energy,
       break;
     }
   }
+  std::cout << "Boolean mask size " << result.size() << ". Particles size " << particles.size() << std::endl;
   return result;
 }
 
