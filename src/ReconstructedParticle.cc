@@ -87,7 +87,7 @@ print_PDG::print_PDG(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
 int print_PDG::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto pdgs = get_PDG(particles);
   std::cout << "Printing PDG from event " << m_n_printed << std::endl;
@@ -105,7 +105,7 @@ print_energy::print_energy(int n_events)
 int print_energy::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto energies = get_energy(particles);
   std::cout << "Printing energy from event " << m_n_printed << std::endl;
@@ -123,7 +123,7 @@ print_momentum::print_momentum(int n_events)
 int print_momentum::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto vectors = get_momentum(particles);
   std::cout << "Printing momentum from event " << m_n_printed << std::endl;
@@ -141,7 +141,7 @@ print_referencePoint::print_referencePoint(int n_events)
 int print_referencePoint::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto points = get_referencePoint(particles);
   std::cout << "Printing referencePoint from event " << m_n_printed
@@ -160,7 +160,7 @@ print_charge::print_charge(int n_events)
 int print_charge::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto charges = get_charge(particles);
   std::cout << "Printing charge from event " << m_n_printed << std::endl;
@@ -177,7 +177,7 @@ print_mass::print_mass(int n_events) : m_n_events{n_events}, m_n_printed{0} {}
 int print_mass::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto masses = get_mass(particles);
   std::cout << "Printing mass from event " << m_n_printed << std::endl;
@@ -195,7 +195,7 @@ print_goodnessOfPID::print_goodnessOfPID(int n_events)
 int print_goodnessOfPID::operator()(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
   if (m_n_events == m_n_printed) {
-    throw std::runtime_error("End printing");
+    return 1;
   }
   auto goodnessOfPIDs = get_goodnessOfPID(particles);
   std::cout << "Printing goodnessOfPID from event " << m_n_printed << std::endl;
@@ -207,35 +207,32 @@ int print_goodnessOfPID::operator()(
   return 0;
 }
 
-ROOT::VecOps::RVec<bool> 
-mask_e(
-  LogicalOperators::ComparisonOperator op,
-  float energy,
-  ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+ROOT::VecOps::RVec<bool>
+mask_e(LogicalOperators::ComparisonOperator op, float energy,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
 
   ROOT::VecOps::RVec<bool> result;
   result.reserve(particles.size());
-  for(edm4hep::ReconstructedParticleData& p : particles){
+  for (edm4hep::ReconstructedParticleData &p : particles) {
     switch (op) {
-      case LogicalOperators::ComparisonOperator::LESS:
-        result.emplace_back(p.energy < energy);
-        break;
-      case LogicalOperators::ComparisonOperator::LESSEQ:
-        result.emplace_back(p.energy <= energy);
-        break;
-      case LogicalOperators::ComparisonOperator::EQ:
-        result.emplace_back(p.energy == energy);
-        break;
-      case LogicalOperators::ComparisonOperator::GREATEREQ:
-        result.emplace_back(p.energy >= energy);
-        break;
-      case LogicalOperators::ComparisonOperator::GREATER:
-        result.emplace_back(p.energy > energy);
-        break;
+    case LogicalOperators::ComparisonOperator::LESS:
+      result.emplace_back(p.energy < energy);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      result.emplace_back(p.energy <= energy);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      result.emplace_back(p.energy == energy);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      result.emplace_back(p.energy >= energy);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      result.emplace_back(p.energy > energy);
+      break;
     }
   }
   return result;
-
 }
 
 } // namespace ReconstructedParticle
