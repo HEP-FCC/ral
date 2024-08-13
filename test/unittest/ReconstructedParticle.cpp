@@ -1,3 +1,4 @@
+#include <Math/Vector4Dfwd.h>
 #include <algorithm>
 #include <random>
 #include <catch2/catch_message.hpp>
@@ -29,7 +30,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   std::ranges::generate(particles.begin(), particles.end(), generateRandomParticle);
 
   SECTION("Getting charge"){
-    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_charge(particles);
+    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_q(particles);
     REQUIRE(charges.size() == particles.size());
     for(size_t i = 0; i < charges.size(); i++){
       REQUIRE(charges.at(i) == particles.at(i).charge);
@@ -37,7 +38,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   }
 
   SECTION("Getting mass"){
-    ROOT::VecOps::RVec<float> mass = ReconstructedParticle::get_mass(particles);
+    ROOT::VecOps::RVec<float> mass = ReconstructedParticle::get_m(particles);
     REQUIRE(mass.size() == particles.size());
     for(size_t i = 0; i < mass.size(); i++){
       REQUIRE(mass.at(i) == particles.at(i).mass);
@@ -45,7 +46,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   }
 
   SECTION("Getting energy"){
-    ROOT::VecOps::RVec<float> energy = ReconstructedParticle::get_energy(particles);
+    ROOT::VecOps::RVec<float> energy = ReconstructedParticle::get_e(particles);
     REQUIRE(energy.size() == particles.size());
     for(size_t i = 0; i < energy.size(); i++){
       REQUIRE(energy.at(i) == particles.at(i).energy);
@@ -61,7 +62,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   }
 
   SECTION("Getting PDG"){
-    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::get_PDG(particles);
+    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::get_pdg(particles);
     REQUIRE(PDG.size() == particles.size());
     for(size_t i = 0; i < PDG.size(); i++){
       REQUIRE(PDG.at(i) == particles.at(i).PDG);
@@ -69,12 +70,13 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   }
 
   SECTION("Getting momentum"){
-    ROOT::VecOps::RVec<ROOT::Math::XYZVector> momentum = ReconstructedParticle::get_momentum(particles);
+    ROOT::VecOps::RVec<ROOT::Math::PxPyPzMVector> momentum = ReconstructedParticle::get_p(particles);
     REQUIRE(momentum.size() == particles.size());
     for(size_t i = 0; i < momentum.size(); i++){
-      REQUIRE(momentum.at(i).x() == particles.at(i).momentum.x);
-      REQUIRE(momentum.at(i).y() == particles.at(i).momentum.y);
-      REQUIRE(momentum.at(i).z() == particles.at(i).momentum.z);
+      REQUIRE(momentum.at(i).px() == particles.at(i).momentum.x);
+      REQUIRE(momentum.at(i).py() == particles.at(i).momentum.y);
+      REQUIRE(momentum.at(i).pz() == particles.at(i).momentum.z);
+      REQUIRE(momentum.at(i).mass() == particles.at(i).mass);
     }
   }
 
