@@ -30,9 +30,6 @@ int get_n(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get PDG member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the PDG member in the class
- * ReconstructedParticle from edm4hep
- *
  * @param particles List of reconstructed particles in an event
  *
  */
@@ -51,9 +48,6 @@ get_abspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get energy member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the energy member in the class
- * ReconstructedParticle from edm4hep
- *
  * @param particles List of reconstructed particles in an event
  *
  */
@@ -63,14 +57,20 @@ get_e(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get the 4 momentum from the ReconstructedParticles
  *
- * Analyzer that can be use to obtain the momentum member in the class
- * ReconstructedParticle from edm4hep
- *
  * @param particles List of reconstructed particles in an event
  *
  */
 ROOT::VecOps::RVec<ROOT::Math::PxPyPzMVector>
 get_p(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Get the modulus of the spatial momentum from the ReconstructedParticles
+ *
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<float>
+get_pmod(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
 /**
  * Get transverse momentum of ReconstructedParticles
@@ -122,7 +122,7 @@ ROOT::VecOps::RVec<float> get_eta(ROOT::VecOps::RVec<edm4hep::ReconstructedParti
 ROOT::VecOps::RVec<float> get_rapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
 /**
- * Get the theta angle of ReconstructedParticles
+ * Get the polar angle of ReconstructedParticles
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -130,7 +130,7 @@ ROOT::VecOps::RVec<float> get_rapidity(ROOT::VecOps::RVec<edm4hep::Reconstructed
 ROOT::VecOps::RVec<float> get_theta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
 /**
- * Get the phi angle of ReconstructedParticles
+ * Get the azimutal angle of ReconstructedParticles
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -139,9 +139,6 @@ ROOT::VecOps::RVec<float> get_phi(ROOT::VecOps::RVec<edm4hep::ReconstructedParti
 
 /**
  * Get referencePoint member from ReconstructedParticles
- *
- * Analyzer that can be use to obtain the referencePoint member in the class
- * ReconstructedParticle from edm4hep
  *
  * @param particles List of reconstructed particles in an event
  *
@@ -184,9 +181,6 @@ ROOT::VecOps::RVec<float> get_z(ROOT::VecOps::RVec<edm4hep::ReconstructedParticl
 /**
  * Get charge member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the charge member in the class
- * ReconstructedParticle from edm4hep
- *
  * @param particles List of reconstructed particles in an event
  *
  */
@@ -205,9 +199,6 @@ get_absq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get mass member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the mass member in the class
- * ReconstructedParticle from edm4hep
- *
  * @param particles List of reconstructed particles in an event
  *
  */
@@ -217,38 +208,35 @@ get_m(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 /**
  * Get goodnessOfPID member from ReconstructedParticles
  *
- * Analyzer that can be use to obtain the goodnessOfPID member in the class
- * ReconstructedParticle from edm4hep
- *
  * @param particles List of reconstructed particles in an event
  *
  */
 ROOT::VecOps::RVec<float> get_goodnessOfPID(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
-/// return the type of the input ReconstructedParticles
-ROOT::VecOps::RVec<int> get_type(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-struct print_PDG {
+/**
+ * Struct that can print the pdg of collection of ReconstructedParticles.
+ */
+struct print_pdg {
   int m_n_events;
   int m_n_printed;
-  print_PDG(int n_events);
+  print_pdg(int n_events);
   int operator()(
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
 
-struct print_energy {
+struct print_e {
   int m_n_events;
   int m_n_printed;
-  print_energy(int n_events);
+  print_e(int n_events);
   int operator()(
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
 
-struct print_momentum {
+struct print_p {
   int m_n_events;
   int m_n_printed;
-  print_momentum(int n_events);
+  print_p(int n_events);
   int operator()(
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
@@ -261,18 +249,18 @@ struct print_referencePoint {
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
 
-struct print_mass {
+struct print_m {
   int m_n_events;
   int m_n_printed;
-  print_mass(int n_events);
+  print_m(int n_events);
   int operator()(
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
 
-struct print_charge {
+struct print_q {
   int m_n_events;
   int m_n_printed;
-  print_charge(int n_events);
+  print_q(int n_events);
   int operator()(
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
@@ -285,9 +273,197 @@ struct print_goodnessOfPID {
       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 };
 
+/**
+ * Creates a boolean mask based on the energy for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the energy that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
 ROOT::VecOps::RVec<bool>
-mask_e(LogicalOperators::ComparisonOperator op, float energy,
+mask_e(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the momentum modulus for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_pmod(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the transverse momentum for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_pt(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the x momentum coordinate for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_px(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the y momentum coordinate  for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_py(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the z momentum coordinate  for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_pz(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the pseudorapidity for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the pseudorapidity that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_eta(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the rapidity for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the rapidity that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_rapidity(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the polar angle for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the angle that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_theta(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the azimutal angle for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the angle that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_phi(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the distance to origin for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_r(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the x coordinate of position for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_x(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the y coordinate of position for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_y(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the z coordinate of position for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_z(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the mass for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the mass that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_m(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+/**
+ * Creates a boolean mask based on the charge for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the charge that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_q(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
 
 } // namespace ReconstructedParticle
 } // namespace k4::ral
