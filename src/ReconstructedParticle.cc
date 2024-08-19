@@ -468,176 +468,233 @@ mask_theta(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
   ROOT::VecOps::RVec<bool> result; 
   result.reserve(particles.size()); 
-  MASKING(float, get_rapidity, op, value, particles, result);
+  MASKING(float, get_theta, op, value, particles, result);
+  return result;
+}
+
+ROOT::VecOps::RVec<bool>
+mask_phi(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_phi, op, value, particles, result);
   return result;
 }
 
 ROOT::VecOps::RVec<bool>
 mask_r(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
-  ROOT::VecOps::RVec<bool> result;
-  ROOT::VecOps::RVec<float> r_vec = get_r(particles);
-  result.reserve(particles.size());
-  for (float & r : r_vec) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      result.emplace_back(r < value);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      result.emplace_back(r <= value);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      result.emplace_back(r == value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      result.emplace_back(r >= value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      result.emplace_back(r > value);
-      break;
-    }
-  }
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_r, op, value, particles, result);
   return result;
 }
 
 ROOT::VecOps::RVec<bool>
 mask_x(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
-  ROOT::VecOps::RVec<bool> result;
-  ROOT::VecOps::RVec<float> x_vec = get_x(particles);
-  result.reserve(particles.size());
-  for (float & x : x_vec) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      result.emplace_back(x < value);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      result.emplace_back(x <= value);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      result.emplace_back(x == value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      result.emplace_back(x >= value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      result.emplace_back(x > value);
-      break;
-    }
-  }
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_x, op, value, particles, result);
   return result;
 }
 
 ROOT::VecOps::RVec<bool>
 mask_y(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
-  ROOT::VecOps::RVec<bool> result;
-  ROOT::VecOps::RVec<float> y_vec = get_y(particles);
-  result.reserve(particles.size());
-  for (float & y : y_vec) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      result.emplace_back(y < value);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      result.emplace_back(y <= value);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      result.emplace_back(y == value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      result.emplace_back(y >= value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      result.emplace_back(y > value);
-      break;
-    }
-  }
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_y, op, value, particles, result);
   return result;
 }
 
 ROOT::VecOps::RVec<bool>
 mask_z(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
-  ROOT::VecOps::RVec<bool> result;
-  ROOT::VecOps::RVec<float> z_vec = get_z(particles);
-  result.reserve(particles.size());
-  for (float & z : z_vec) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      result.emplace_back(z < value);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      result.emplace_back(z <= value);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      result.emplace_back(z == value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      result.emplace_back(z >= value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      result.emplace_back(z > value);
-      break;
-    }
-  }
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_z, op, value, particles, result);
   return result;
 }
 
 ROOT::VecOps::RVec<bool>
 mask_m(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
-  ROOT::VecOps::RVec<bool> result;
-  ROOT::VecOps::RVec<float> m_vec = get_m(particles);
-  result.reserve(particles.size());
-  for (float & m : m_vec) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      result.emplace_back(m < value);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      result.emplace_back(m <= value);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      result.emplace_back(m == value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      result.emplace_back(m >= value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      result.emplace_back(m > value);
-      break;
-    }
-  }
+  
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_m, op, value, particles, result);
   return result;
+
 }
 
 ROOT::VecOps::RVec<bool>
 mask_q(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
-  ROOT::VecOps::RVec<bool> result;
-  ROOT::VecOps::RVec<float> q_vec = get_q(particles);
-  result.reserve(particles.size());
-  for (float & q : q_vec) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      result.emplace_back(q < value);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      result.emplace_back(q <= value);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      result.emplace_back(q == value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      result.emplace_back(q >= value);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      result.emplace_back(q > value);
-      break;
-    }
-  }
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_q, op, value, particles, result);
   return result;
+}
+
+ROOT::VecOps::RVec<bool>
+mask_absq(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(float, get_absq, op, value, particles, result);
+  return result;
+}
+
+ROOT::VecOps::RVec<bool>
+mask_pdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(int, get_pdg, op, value, particles, result);
+  return result;
+}
+
+ROOT::VecOps::RVec<bool>
+mask_abspdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  ROOT::VecOps::RVec<bool> result; 
+  result.reserve(particles.size()); 
+  MASKING(int, get_abspdg, op, value, particles, result);
+  return result;
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_e(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_e(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pmod(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_pmod(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pt(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_pt(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_px(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_px(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_py(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_py(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pz(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_pz(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_eta(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_eta(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_rapidity(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_rapidity(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_theta(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_theta(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_phi(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_phi(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_r(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_r(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_x(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_x(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_y(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_y(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_z(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_z(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_m(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_m(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_q(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_q(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_absq(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_absq(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_pdg(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_abspdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
+  auto mask = mask_abspdg(op, value, particles);
+  return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
 }
 
 } // namespace ReconstructedParticle

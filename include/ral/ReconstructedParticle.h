@@ -464,6 +464,269 @@ ROOT::VecOps::RVec<bool>
 mask_q(LogicalOperators::ComparisonOperator op, float value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
+/**
+ * Creates a boolean mask based on the absolute charge for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the charge that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_absq(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the PDG for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the pdg that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_pdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Creates a boolean mask based on the absolute pdg for later filtering.
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the pdg that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<bool>
+mask_abspdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the energy
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the energy that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_e(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the 3D momentum modulus
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pmod(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the transverse momentum modulus
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pt(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the x momentum 
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_px(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the y momentum 
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_py(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the z momentum 
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the momentum that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pz(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the pseudorapidity
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the pseudorapidity that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_eta(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the rapidity
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the rapidity that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_rapidity(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the polar angle
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the angle that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_theta(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the azimutal angle
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the angle that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_phi(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the distance to origin
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_r(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the x distance
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_x(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the y distance
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_y(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the z distance
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the distance that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_z(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the mass
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the mass that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_m(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the charge
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the charge that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_q(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the absolute charge
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the charge that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_absq(LogicalOperators::ComparisonOperator op, float value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the pdg
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the pdg that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_pdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles based on the absolute pdg
+ *
+ * @param op Comparison operator to apply with the value
+ * @param value Value of the pdg that is used in the comparison
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sel_abspdg(LogicalOperators::ComparisonOperator op, int value,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
 } // namespace ReconstructedParticle
 } // namespace k4::ral
