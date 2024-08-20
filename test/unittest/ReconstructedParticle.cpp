@@ -1,9 +1,12 @@
 #include <Math/Vector4Dfwd.h>
+#include <ROOT/RVec.hxx>
 #include <algorithm>
 #include <random>
+#include <cmath>
 #include <catch2/catch_message.hpp>
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/generators/catch_generators.hpp>
+#include <catch2/matchers/catch_matchers_floating_point.hpp>
 
 #include "ral/ReconstructedParticle.h"
 #include "ral/LogicalOperators.h"
@@ -25,9 +28,160 @@ edm4hep::ReconstructedParticleData generateRandomParticle(){
   return data;
 }
 
+template<typename T>
+void test_masking(LogicalOperators::ComparisonOperator op, T mask_value, T real_value, bool mask) {
+  switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      REQUIRE((real_value < mask_value) == mask);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      REQUIRE((real_value <= mask_value) == mask);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      REQUIRE((real_value == mask_value) == mask);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      REQUIRE((real_value >= mask_value) == mask);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      REQUIRE((real_value > mask_value) == mask);
+      break;
+  }
+}
+
+
 TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle]") {
   ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles(20, {});
   std::ranges::generate(particles.begin(), particles.end(), generateRandomParticle);
+
+  SECTION("Getting momentum modulus"){
+    auto vec = ReconstructedParticle::get_pmod(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      float px = particles[i].momentum.x;
+      float py = particles[i].momentum.y;
+      float pz = particles[i].momentum.z;
+      float pmod = std::sqrt(px*px+py*py+pz*pz);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(pmod, 0.001));
+    }
+  }
+
+  SECTION("Getting transverse momentum"){
+    auto vec = ReconstructedParticle::get_pt(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.pt(), 0.001));
+    }
+  }
+
+  SECTION("Getting x momentum"){
+    auto vec = ReconstructedParticle::get_px(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.px(), 0.001));
+    }
+  }
+
+  SECTION("Getting y momentum"){
+    auto vec = ReconstructedParticle::get_py(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.py(), 0.001));
+    }
+  }
+
+  SECTION("Getting z momentum"){
+    auto vec = ReconstructedParticle::get_pz(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.pz(), 0.001));
+    }
+  }
+
+  SECTION("Getting Pseudorapidity"){
+    auto vec = ReconstructedParticle::get_eta(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.eta(), 0.001));
+    }
+  }
+
+  SECTION("Getting rapidity"){
+    auto vec = ReconstructedParticle::get_rapidity(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.Rapidity(), 0.001));
+    }
+  }
+
+  SECTION("Getting polar angle"){
+    auto vec = ReconstructedParticle::get_theta(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.theta(), 0.001));
+    }
+  }
+
+  SECTION("Getting azimutal angle"){
+    auto vec = ReconstructedParticle::get_phi(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.phi(), 0.001));
+    }
+  }
+
+  SECTION("Getting distance to origin"){
+    auto vec = ReconstructedParticle::get_r(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      float x = particles[i].referencePoint.x;
+      float y = particles[i].referencePoint.y;
+      float z = particles[i].referencePoint.z;
+      float r = std::sqrt(x*x+y*y+z*z);
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(r, 0.001));
+    }
+  }
+
+  SECTION("Getting x distance to origin"){
+    auto vec = ReconstructedParticle::get_x(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      float x = particles[i].referencePoint.x;
+      REQUIRE(vec[i], Catch::Matchers::WithinRel(x, 0.001));
+    }
+  }
 
   SECTION("Getting charge"){
     ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_q(particles);
@@ -91,43 +245,249 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   }
 }
 
+
 TEST_CASE("Boolean masking analyzers from ReconstructedParticle", "[ReconstructedParticle]") {
   ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles(20, {});
   std::ranges::generate(particles.begin(), particles.end(), generateRandomParticle);
+  auto op = GENERATE(
+    LogicalOperators::ComparisonOperator::LESS,
+    LogicalOperators::ComparisonOperator::LESSEQ,
+    LogicalOperators::ComparisonOperator::EQ,
+    LogicalOperators::ComparisonOperator::GREATEREQ,
+    LogicalOperators::ComparisonOperator::GREATER);
+
   SECTION("Masking energy"){
-    auto op = GENERATE(
-      LogicalOperators::ComparisonOperator::LESS,
-      LogicalOperators::ComparisonOperator::LESSEQ,
-      LogicalOperators::ComparisonOperator::EQ,
-      LogicalOperators::ComparisonOperator::GREATEREQ,
-      LogicalOperators::ComparisonOperator::GREATER);
-    float n = GENERATE(-50., 0., 50.);
+    float n = GENERATE(0., 50.);
     auto mask = ReconstructedParticle::mask_e(op, n, particles);
     for(int i = 0; i < particles.size(); i++){
-      switch (op) {
-        case LogicalOperators::ComparisonOperator::LESS:
-          REQUIRE((particles[i].energy < n) == mask[i]);
-          break;
-        case LogicalOperators::ComparisonOperator::LESSEQ:
-          REQUIRE((particles[i].energy <= n) == mask[i]);
-          break;
-        case LogicalOperators::ComparisonOperator::EQ:
-          REQUIRE((particles[i].energy == n) == mask[i]);
-          break;
-        case LogicalOperators::ComparisonOperator::GREATEREQ:
-          REQUIRE((particles[i].energy >= n) == mask[i]);
-          break;
-        case LogicalOperators::ComparisonOperator::GREATER:
-          REQUIRE((particles[i].energy > n) == mask[i]);
-          break;
-      }
+      test_masking(op, n, (float)particles[i].energy, mask[i]);
     }
     auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
-    int size = 0;
-    for (const bool& m : mask){
-      if(m){size++;}
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking momentum modulus"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_pmod(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.P(), mask[i]);
     }
-    REQUIRE(size == filtered_particles.size());
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking transverse momentum"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_pt(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.pt(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking x momentum"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_px(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.px(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking y momentum"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_py(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.py(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking z momentum"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_pz(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.pz(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking pseudorapidity"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_eta(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.eta(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking rapidity"){
+    float n = GENERATE(0., 100, 500);
+    auto mask = ReconstructedParticle::mask_rapidity(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.Rapidity(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+
+  SECTION("Masking polar angle"){
+    float n = GENERATE(0., 3.14, 6.28);
+    auto mask = ReconstructedParticle::mask_theta(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.theta(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking azimutal angle"){
+    float n = GENERATE(0., 3.14, 6.28);
+    auto mask = ReconstructedParticle::mask_phi(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
+                                         particles[i].momentum.y,
+                                         particles[i].momentum.z,
+                                         particles[i].mass);
+      test_masking(op, n, (float)momentum.phi(), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking distance to origin"){
+    float n = GENERATE(0., 100., 500.);
+    auto mask = ReconstructedParticle::mask_r(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      float x = particles[i].referencePoint.x;
+      float y = particles[i].referencePoint.y;
+      float z = particles[i].referencePoint.z;
+      float r = std::sqrt(x * x + y * y + z * z);
+      test_masking(op, n, r, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking x distance to origin"){
+    float n = GENERATE(0., 100., 500.);
+    auto mask = ReconstructedParticle::mask_x(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      float x = particles[i].referencePoint.x;
+      test_masking(op, n, x, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking y distance to origin"){
+    float n = GENERATE(0., 100., 500.);
+    auto mask = ReconstructedParticle::mask_y(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      float y = particles[i].referencePoint.y;
+      test_masking(op, n, y, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking z distance to origin"){
+    float n = GENERATE(0., 100., 500.);
+    auto mask = ReconstructedParticle::mask_z(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      float z = particles[i].referencePoint.z;
+      test_masking(op, n, z, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking particle mass"){
+    float n = GENERATE(0., 100., 500.);
+    auto mask = ReconstructedParticle::mask_m(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      test_masking(op, n, particles[i].mass, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking particle charge"){
+    float n = GENERATE(0., 100., 500.);
+    auto mask = ReconstructedParticle::mask_q(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      test_masking(op, n, particles[i].charge, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking particle absolute charge"){
+    float n = GENERATE(-100., 100., 500.);
+    auto mask = ReconstructedParticle::mask_absq(op, std::abs(n), particles);
+    for(int i = 0; i < particles.size(); i++){
+      test_masking(op, std::abs(n), std::abs(particles[i].charge), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking particle pdg"){
+    int n = GENERATE(-5, 0, 5);
+    auto mask = ReconstructedParticle::mask_pdg(op, n, particles);
+    for(int i = 0; i < particles.size(); i++){
+      test_masking(op, n, particles[i].PDG, mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
+  }
+
+  SECTION("Masking particle abspdg"){
+    int n = GENERATE(-5, 0, 5);
+    auto mask = ReconstructedParticle::mask_abspdg(op, std::abs(n), particles);
+    for(int i = 0; i < particles.size(); i++){
+      test_masking(op, std::abs(n), std::abs(particles[i].PDG), mask[i]);
+    }
+    auto filtered_particles = LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+    REQUIRE(ROOT::VecOps::Sum(mask) == filtered_particles.size());
   }
 
 }
