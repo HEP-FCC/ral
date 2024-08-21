@@ -1,13 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "cefgklmopr",
+  0: "cefgklmoprs",
   1: "p",
   2: "k",
   3: "lpr",
-  4: "fglmop",
+  4: "fglmops",
   5: "m",
   6: "c",
-  7: "egl"
+  7: "egl",
+  8: "m"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "functions",
   5: "variables",
   6: "enums",
-  7: "enumvalues"
+  7: "enumvalues",
+  8: "defines"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Functions",
   5: "Variables",
   6: "Enumerations",
-  7: "Enumerator"
+  7: "Enumerator",
+  8: "Macros"
 };
 
