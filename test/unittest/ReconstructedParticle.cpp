@@ -15,6 +15,8 @@
 
 using namespace k4::ral;
 
+// Helper functions
+
 edm4hep::ReconstructedParticleData generateRandomParticle(){
   std::random_device rd;  // Will be used to obtain a seed for the random number engine
   std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
@@ -49,6 +51,8 @@ void test_masking(LogicalOperators::ComparisonOperator op, T mask_value, T real_
   }
 }
 
+// ----------------- TEST CASES ------------------------------
+
 
 TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle]") {
   ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles(20, {});
@@ -57,137 +61,147 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
   SECTION("Getting momentum modulus"){
     auto vec = ReconstructedParticle::get_pmod(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       float px = particles[i].momentum.x;
       float py = particles[i].momentum.y;
       float pz = particles[i].momentum.z;
       float pmod = std::sqrt(px*px+py*py+pz*pz);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(pmod, 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(pmod, 0.001f));
     }
   }
 
   SECTION("Getting transverse momentum"){
     auto vec = ReconstructedParticle::get_pt(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.pt(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.pt(), 0.001f));
     }
   }
 
   SECTION("Getting x momentum"){
     auto vec = ReconstructedParticle::get_px(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.px(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.px(), 0.001f));
     }
   }
 
   SECTION("Getting y momentum"){
     auto vec = ReconstructedParticle::get_py(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.py(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.py(), 0.001f));
     }
   }
 
   SECTION("Getting z momentum"){
     auto vec = ReconstructedParticle::get_pz(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.pz(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.pz(), 0.001f));
     }
   }
 
   SECTION("Getting Pseudorapidity"){
     auto vec = ReconstructedParticle::get_eta(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.eta(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.eta(), 0.001f));
     }
   }
 
   SECTION("Getting rapidity"){
     auto vec = ReconstructedParticle::get_rapidity(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.Rapidity(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.Rapidity(), 0.001f));
     }
   }
 
   SECTION("Getting polar angle"){
     auto vec = ReconstructedParticle::get_theta(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.theta(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.theta(), 0.001f));
     }
   }
 
   SECTION("Getting azimutal angle"){
     auto vec = ReconstructedParticle::get_phi(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       ROOT::Math::PxPyPzMVector momentum(particles[i].momentum.x,
                                          particles[i].momentum.y,
                                          particles[i].momentum.z,
                                          particles[i].mass);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(momentum.phi(), 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(momentum.phi(), 0.001f));
     }
   }
 
   SECTION("Getting distance to origin"){
     auto vec = ReconstructedParticle::get_r(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       float x = particles[i].referencePoint.x;
       float y = particles[i].referencePoint.y;
       float z = particles[i].referencePoint.z;
       float r = std::sqrt(x*x+y*y+z*z);
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(r, 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(r, 0.001f));
     }
   }
 
   SECTION("Getting x distance to origin"){
     auto vec = ReconstructedParticle::get_x(particles);
     REQUIRE(vec.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
+    for(size_t i = 0; i < vec.size(); i++){
       float x = particles[i].referencePoint.x;
-      REQUIRE(vec[i], Catch::Matchers::WithinRel(x, 0.001));
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(x, 0.001f));
     }
   }
 
-  SECTION("Getting charge"){
-    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_q(particles);
-    REQUIRE(charges.size() == particles.size());
-    for(size_t i = 0; i < charges.size(); i++){
-      REQUIRE(charges.at(i) == particles.at(i).charge);
+  SECTION("Getting y distance to origin"){
+    auto vec = ReconstructedParticle::get_y(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < vec.size(); i++){
+      float y = particles[i].referencePoint.y;
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(y, 0.001f));
+    }
+  }
+
+  SECTION("Getting z distance to origin"){
+    auto vec = ReconstructedParticle::get_z(particles);
+    REQUIRE(vec.size() == particles.size());
+    for(size_t i = 0; i < vec.size(); i++){
+      float z = particles[i].referencePoint.z;
+      REQUIRE_THAT(vec[i], Catch::Matchers::WithinRel(z, 0.001f));
     }
   }
 
@@ -207,11 +221,19 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
     }
   }
 
-  SECTION("Getting goodnessOfPID"){
-    ROOT::VecOps::RVec<float> goodnessOfPID = ReconstructedParticle::get_goodnessOfPID(particles);
-    REQUIRE(goodnessOfPID.size() == particles.size());
-    for(size_t i = 0; i < goodnessOfPID.size(); i++){
-      REQUIRE(goodnessOfPID.at(i) == particles.at(i).goodnessOfPID);
+  SECTION("Getting charge"){
+    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_q(particles);
+    REQUIRE(charges.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      REQUIRE(charges.at(i) == particles.at(i).charge);
+    }
+  }
+
+  SECTION("Getting absolute charge"){
+    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_absq(particles);
+    REQUIRE(charges.size() == particles.size());
+    for(size_t i = 0; i < charges.size(); i++){
+      REQUIRE(charges.at(i) == std::abs(particles.at(i).charge));
     }
   }
 
@@ -223,26 +245,14 @@ TEST_CASE("Getter analyzers from ReconstructedParticle", "[ReconstructedParticle
     }
   }
 
-  SECTION("Getting momentum"){
-    ROOT::VecOps::RVec<ROOT::Math::PxPyPzMVector> momentum = ReconstructedParticle::get_p(particles);
-    REQUIRE(momentum.size() == particles.size());
-    for(size_t i = 0; i < momentum.size(); i++){
-      REQUIRE(momentum.at(i).px() == particles.at(i).momentum.x);
-      REQUIRE(momentum.at(i).py() == particles.at(i).momentum.y);
-      REQUIRE(momentum.at(i).pz() == particles.at(i).momentum.z);
-      REQUIRE(momentum.at(i).mass() == particles.at(i).mass);
+  SECTION("Getting absPDG"){
+    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::get_abspdg(particles);
+    REQUIRE(PDG.size() == particles.size());
+    for(size_t i = 0; i < PDG.size(); i++){
+      REQUIRE(PDG.at(i) == std::abs(particles.at(i).PDG));
     }
   }
 
-  SECTION("Getting referencePoint"){
-    ROOT::VecOps::RVec<ROOT::Math::XYZVector> referencePoint = ReconstructedParticle::get_referencePoint(particles);
-    REQUIRE(referencePoint.size() == particles.size());
-    for(size_t i = 0; i < referencePoint.size(); i++){
-      REQUIRE(referencePoint.at(i).x() == particles.at(i).referencePoint.x);
-      REQUIRE(referencePoint.at(i).y() == particles.at(i).referencePoint.y);
-      REQUIRE(referencePoint.at(i).z() == particles.at(i).referencePoint.z);
-    }
-  }
 }
 
 
