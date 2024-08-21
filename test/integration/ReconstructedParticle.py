@@ -74,27 +74,42 @@ print("Load ROOT dataframe and test ral functions")
 df = ROOT.RDataFrame("events", ROOT_FILE)
 
 ROOT.gInterpreter.ProcessLine("using namespace k4::ral;")
+ROOT.gInterpreter.ProcessLine("using namespace LogicalOperators;")
 
 df = (df
     .Define("charge",
-            "ReconstructedParticle::get_charge(ReconstructedParticles)")
+            "ReconstructedParticle::get_q(ReconstructedParticles)")
     .Define("energy",
-            "ReconstructedParticle::get_energy(ReconstructedParticles)")
+            "ReconstructedParticle::get_e(ReconstructedParticles)")
     .Define("PDG",
-            "ReconstructedParticle::get_PDG(ReconstructedParticles)")
+            "ReconstructedParticle::get_pdg(ReconstructedParticles)")
     .Define("momentum",
-            "ReconstructedParticle::get_momentum(ReconstructedParticles)")
-    .Define("refencePoint",
+            "ReconstructedParticle::get_p(ReconstructedParticles)")
+    .Define("referencePoint",
             "ReconstructedParticle::get_referencePoint(ReconstructedParticles)")
     .Define("mass",
-            "ReconstructedParticle::get_mass(ReconstructedParticles)")
+            "ReconstructedParticle::get_m(ReconstructedParticles)")
     .Define("goodnessOfPID",
             "ReconstructedParticle::get_goodnessOfPID(ReconstructedParticles)")
-    .Define("void",
-            "ReconstructedParticle::print_PDG(5)(ReconstructedParticles)")
+    .Define("mask_e1",
+            "ReconstructedParticle::mask_e(ComparisonOperator::LESS, 1., ReconstructedParticles)")
+    .Define("mask_e2",
+            "ReconstructedParticle::mask_e(ComparisonOperator::GREATER, 5., ReconstructedParticles)")
+    .Define("filter",
+            "filter<edm4hep::ReconstructedParticleData>((mask_e1 && mask_e2), ReconstructedParticles)")
 )
 
 print("Output test result in a new dataframe")
 
-df.Snapshot("events", FINAL_ROOT_FILE, ["charge", "energy"]) 
+df.Snapshot("events", FINAL_ROOT_FILE,
+            [
+            "charge", 
+            "energy", 
+            "PDG", 
+            "momentum", 
+            "referencePoint",
+            "mass",
+            "goodnessOfPID",
+            "filter"
+            ]) 
 
