@@ -5,7 +5,9 @@
 #include <Math/Vector4Dfwd.h>
 #include <ROOT/RVec.hxx>
 #include <cstdlib>
+#include <edm4hep/ClusterData.h>
 #include <edm4hep/ReconstructedParticleData.h>
+#include <edm4hep/TrackData.h>
 #include <iostream>
 #include <stdexcept>
 
@@ -251,6 +253,45 @@ ROOT::VecOps::RVec<float> get_goodnessOfPID(
   result.reserve(particles.size());
   for (edm4hep::ReconstructedParticleData p : particles) {
     result.emplace_back(p.goodnessOfPID);
+  }
+  return result;
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> get_daugthers(
+    edm4hep::ReconstructedParticleData main_particle,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
+  ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> result;
+  result.reserve(main_particle.particles_end - main_particle.particles_begin +
+                 1);
+  for (int i = main_particle.particles_begin; i <= main_particle.particles_end;
+       i++) {
+    result.emplace_back(particles[i]);
+  }
+  return result;
+}
+
+ROOT::VecOps::RVec<edm4hep::ClusterData>
+get_clusters(edm4hep::ReconstructedParticleData main_particle,
+             ROOT::VecOps::RVec<edm4hep::ClusterData> clusters) {
+  ROOT::VecOps::RVec<edm4hep::ClusterData> result;
+  result.reserve(main_particle.particles_end - main_particle.particles_begin +
+                 1);
+  for (int i = main_particle.particles_begin; i <= main_particle.particles_end;
+       i++) {
+    result.emplace_back(clusters[i]);
+  }
+  return result;
+}
+
+ROOT::VecOps::RVec<edm4hep::TrackData>
+get_tracks(edm4hep::ReconstructedParticleData main_particle,
+           ROOT::VecOps::RVec<edm4hep::TrackData> tracks) {
+  ROOT::VecOps::RVec<edm4hep::TrackData> result;
+  result.reserve(main_particle.particles_end - main_particle.particles_begin +
+                 1);
+  for (int i = main_particle.particles_begin; i <= main_particle.particles_end;
+       i++) {
+    result.emplace_back(tracks[i]);
   }
   return result;
 }
@@ -569,6 +610,17 @@ mask_abspdg(LogicalOperators::ComparisonOperator op, int value,
   result.reserve(particles.size());
   MASKING(int, get_abspdg, op, value, particles, result);
   return result;
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> sel_n_elements(
+    int n, ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
+  return ROOT::VecOps::Take(particles, n);
+}
+
+edm4hep::ReconstructedParticleData
+sel_element(int n,
+            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles) {
+  return particles[n];
 }
 
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>

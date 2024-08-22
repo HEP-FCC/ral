@@ -4,7 +4,9 @@
 #include "Math/Vector3D.h"
 #include "Math/Vector4D.h"
 #include "ROOT/RVec.hxx"
+#include "edm4hep/ClusterData.h"
 #include "edm4hep/ReconstructedParticleData.h"
+#include "edm4hep/TrackData.h"
 #include "ral/LogicalOperators.h"
 #include <Math/GenVector/PxPyPzM4D.h>
 #include <Math/Vector4Dfwd.h>
@@ -224,6 +226,39 @@ get_m(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
  */
 ROOT::VecOps::RVec<float> get_goodnessOfPID(
     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Get all the daughter particles of one ReconstructedParticle
+ *
+ * @param main_particle Particle that is going to be look for daughters.
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+get_daugthers(edm4hep::ReconstructedParticleData main_particle,
+              ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Get all the clusters related to one ReconstructedParticle
+ *
+ * @param main_particle Particle that is going to be look for clusters.
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ClusterData>
+get_clusters(edm4hep::ReconstructedParticleData main_particle,
+             ROOT::VecOps::RVec<edm4hep::ClusterData> clusters);
+
+/**
+ * Get all the tracks related to one ReconstructedParticle
+ *
+ * @param main_particle Particle that is going to be look for tracks.
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::TrackData>
+get_tracks(edm4hep::ReconstructedParticleData main_particle,
+           ROOT::VecOps::RVec<edm4hep::TrackData> tracks);
 
 /**
  * Struct that can print the pdg of collection of ReconstructedParticles.
@@ -515,6 +550,28 @@ mask_pdg(LogicalOperators::ComparisonOperator op, int value,
  */
 ROOT::VecOps::RVec<bool>
 mask_abspdg(LogicalOperators::ComparisonOperator op, int value,
+            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select a subcollection of ReconstructedParticles
+ *
+ * @param n Number of elements that would be selected. Positive number selects
+ * from the begining and negative number select from the end
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> sel_n_elements(
+    int n, ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
+
+/**
+ * Select one ReconstructedParticle
+ *
+ * @param n Index of the element selected
+ * @param particles List of reconstructed particles in an event
+ *
+ */
+edm4hep::ReconstructedParticleData
+sel_element(int n,
             ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
 /**
