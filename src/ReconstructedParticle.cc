@@ -1,7 +1,9 @@
 #include "ral/ReconstructedParticle.h"
 #include "ral/LogicalOperators.h"
+#include <Math/GenVector/PxPyPzM4D.h>
 #include <Math/Vector3Dfwd.h>
 #include <Math/Vector4Dfwd.h>
+#include <ROOT/RVec.hxx>
 #include <cstdlib>
 #include <edm4hep/ReconstructedParticleData.h>
 #include <iostream>
@@ -695,6 +697,191 @@ sel_abspdg(LogicalOperators::ComparisonOperator op, int value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles){
   auto mask = mask_abspdg(op, value, particles);
   return LogicalOperators::filter<edm4hep::ReconstructedParticleData>(mask, particles);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_e(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+    bool result = x.energy < y.energy;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pmod(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::PxPyPzMVector v1(x.momentum.x, x.momentum.y, x.momentum.z, x.mass);
+        ROOT::Math::PxPyPzMVector v2(y.momentum.x, y.momentum.y, y.momentum.z, y.mass);
+      bool result = v1.P() < v2.P();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::PxPyPzMVector v1(x.momentum.x, x.momentum.y, x.momentum.z, x.mass);
+        ROOT::Math::PxPyPzMVector v2(y.momentum.x, y.momentum.y, y.momentum.z, y.mass);
+      bool result = v1.pt() < v2.pt();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_px(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.momentum.x < y.momentum.x;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_py(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.momentum.y < y.momentum.y;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.momentum.z < y.momentum.z;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_eta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::PxPyPzMVector v1(x.momentum.x, x.momentum.y, x.momentum.z, x.mass);
+        ROOT::Math::PxPyPzMVector v2(y.momentum.x, y.momentum.y, y.momentum.z, y.mass);
+      bool result = v1.eta() < v2.eta();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_rapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::PxPyPzMVector v1(x.momentum.x, x.momentum.y, x.momentum.z, x.mass);
+        ROOT::Math::PxPyPzMVector v2(y.momentum.x, y.momentum.y, y.momentum.z, y.mass);
+      bool result = v1.Rapidity() < v2.Rapidity();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_theta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::PxPyPzMVector v1(x.momentum.x, x.momentum.y, x.momentum.z, x.mass);
+        ROOT::Math::PxPyPzMVector v2(y.momentum.x, y.momentum.y, y.momentum.z, y.mass);
+      bool result = v1.theta() < v2.theta();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_phi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::PxPyPzMVector v1(x.momentum.x, x.momentum.y, x.momentum.z, x.mass);
+        ROOT::Math::PxPyPzMVector v2(y.momentum.x, y.momentum.y, y.momentum.z, y.mass);
+      bool result = v1.phi() < v2.phi();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_r(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+        ROOT::Math::XYZVector v1(x.referencePoint.x, x.referencePoint.y, x.referencePoint.z);
+        ROOT::Math::XYZVector v2(y.referencePoint.x, y.referencePoint.y, y.referencePoint.z);
+      bool result = v1.R() < v2.R();
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_x(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.referencePoint.x < y.referencePoint.x;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_y(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.referencePoint.y < y.referencePoint.y;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_z(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.referencePoint.z < y.referencePoint.z;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_m(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.mass < y.mass;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_q(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.charge < y.charge;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_absq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = std::abs(x.charge) < std::abs(y.charge);
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = x.PDG < y.PDG;
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
+}
+
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_abspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse){
+  auto lambda = [reverse] (edm4hep::ReconstructedParticleData x, edm4hep::ReconstructedParticleData y ) {
+      bool result = std::abs(x.PDG) < std::abs(y.PDG);
+    return reverse ? !result : result;};
+  return ROOT::VecOps::Sort(particles, lambda);
 }
 
 } // namespace ReconstructedParticle

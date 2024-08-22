@@ -728,6 +728,215 @@ ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 sel_abspdg(LogicalOperators::ComparisonOperator op, int value,
        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
 
+/**
+ * Sort a collection of Reconstructed particles in ascending order of energy
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_e(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of momentum modulus
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pmod(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of transverse momentum
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of x momentum
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_px(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of y momentum
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_py(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of z momentum
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of pseudorapidity
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_eta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of rapidity
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_rapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of polar angle
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_theta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of azimutal angle
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_phi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of distance to origin
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_r(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of x distance to origin
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_x(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of y distance to origin
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_y(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of z distance to origin
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_z(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of mass
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_m(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of charge
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_q(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of absolute charge
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_absq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of pdg
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_pdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
+/**
+ * Sort a collection of Reconstructed particles in ascending order of absolute pdg
+ *
+ * @param particles List of reconstructed particles in an event
+ * @param reverse Boolean flag to change the sorting order
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sort_abspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+       bool reverse = false);
+
 } // namespace ReconstructedParticle
 } // namespace k4::ral
 
