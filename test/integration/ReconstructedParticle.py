@@ -29,87 +29,66 @@ OUTPUT_CARD = {
 ROOT_FILE = "/tmp/test.root"
 FINAL_ROOT_FILE = "/tmp/test_final.root"
 
-if not Path(ROOT_FILE).exists():
+if __name__ == "__main__":
 
-    print("Downloading Pythia files")
+    print("ReconstructedParticle Integration Test: PRE-TEST".center(80, "-"))
 
-    get_file(**PYTHIA_CARD)
-    get_file(**DETECTOR_CARD) 
-    get_file(**OUTPUT_CARD)
-
-    print("Running Pythia to generate root file")
-
-    subprocess.run(
-        [
-            "DelphesPythia8_EDM4HEP", 
-            DETECTOR_CARD["path"],
-            OUTPUT_CARD["path"],
-            PYTHIA_CARD["path"],
-            ROOT_FILE
-        ],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
-    ).check_returncode()
-else:
-    subprocess.run(
-        [
-            "podio-dump", 
-            ROOT_FILE
-        ],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
-    ).check_returncode()
-
-print("Loading ROOT libraries")
-
-if not ROOT.gSystem.Load("libral") and ROOT.gSystem.Load("libedm4hep"):
-    print('RAL Found!')
-    print('EDM4HEP Found!')
-if ROOT.loadRal() and ROOT.edm4hep.ReconstructedParticleData():
-    print('RAL Loaded!')
-    print('EDM4HEP Loaded!')
-
-print("Load ROOT dataframe and test ral functions")
-
-df = ROOT.RDataFrame("events", ROOT_FILE)
-
-ROOT.gInterpreter.ProcessLine("using namespace k4::ral;")
-ROOT.gInterpreter.ProcessLine("using namespace LogicalOperators;")
-
-df = (df
-    .Define("charge",
-            "ReconstructedParticle::get_q(ReconstructedParticles)")
-    .Define("energy",
-            "ReconstructedParticle::get_e(ReconstructedParticles)")
-    .Define("PDG",
-            "ReconstructedParticle::get_pdg(ReconstructedParticles)")
-    .Define("momentum",
-            "ReconstructedParticle::get_p(ReconstructedParticles)")
-    .Define("referencePoint",
-            "ReconstructedParticle::get_referencePoint(ReconstructedParticles)")
-    .Define("mass",
-            "ReconstructedParticle::get_m(ReconstructedParticles)")
-    .Define("goodnessOfPID",
-            "ReconstructedParticle::get_goodnessOfPID(ReconstructedParticles)")
-    .Define("mask_e1",
-            "ReconstructedParticle::mask_e(ComparisonOperator::LESS, 1., ReconstructedParticles)")
-    .Define("mask_e2",
-            "ReconstructedParticle::mask_e(ComparisonOperator::GREATER, 5., ReconstructedParticles)")
-    .Define("filter",
-            "filter<edm4hep::ReconstructedParticleData>((mask_e1 && mask_e2), ReconstructedParticles)")
-)
-
-print("Output test result in a new dataframe")
-
-df.Snapshot("events", FINAL_ROOT_FILE,
+    if not Path(ROOT_FILE).exists():
+        print("Downloading Pythia files")
+        get_file(**PYTHIA_CARD)
+        get_file(**DETECTOR_CARD) 
+        get_file(**OUTPUT_CARD)
+        print("Running Pythia to generate root file")
+        subprocess.run(
             [
-            "charge", 
-            "energy", 
-            "PDG", 
-            "momentum", 
-            "referencePoint",
-            "mass",
-            "goodnessOfPID",
-            "filter"
-            ]) 
+                "DelphesPythia8_EDM4HEP", 
+                DETECTOR_CARD["path"],
+                OUTPUT_CARD["path"],
+                PYTHIA_CARD["path"],
+                ROOT_FILE
+            ],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        ).check_returncode()
+    # else:
+    #     subprocess.run(
+    #         [
+    #             "podio-dump", 
+    #             ROOT_FILE
+    #         ],
+    #         stdout=subprocess.DEVNULL,
+    #         stderr=subprocess.DEVNULL
+    #     ).check_returncode()
+
+    print("ReconstructedParticle Integration Test: START".center(80, "-"))
+
+    print("Loading ROOT libraries")
+    if not ROOT.gSystem.Load("libral") and ROOT.gSystem.Load("libedm4hep"):
+        print('RAL Found!')
+        print('EDM4HEP Found!')
+    if ROOT.loadRal() and ROOT.edm4hep.ReconstructedParticleData():
+        print('RAL Loaded!')
+        print('EDM4HEP Loaded!')
+
+    print("Loading ROOT dataframe and test ral functions")
+    df = ROOT.RDataFrame("events", ROOT_FILE)
+    ROOT.gInterpreter.ProcessLine("using namespace k4::ral;")
+    ROOT.gInterpreter.ProcessLine("using namespace LogicalOperators;")
+    df = (df
+        .Define("e1",
+                "ReconstructedParticle::sel_e(ComparisonOperator::LESS, 1., ReconstructedParticles)")
+        .Define("e2",
+                "ReconstructedParticle::sel_e(ComparisonOperator::GREATER, 5., e1)")
+        .Define("mass",
+                "ReconstructedParticle::get_m(e2)")
+        .Define("total_mass",
+                "ROOT::VecOps::Sum(mass)")
+    )
+    print("Output test result in a new dataframe")
+    df.Snapshot("events", FINAL_ROOT_FILE,
+                [
+                "e2",
+                "mass",
+                "total_mass"
+                ]) 
 

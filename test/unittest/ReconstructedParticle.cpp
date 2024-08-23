@@ -21,13 +21,19 @@ edm4hep::ReconstructedParticleData generateRandomParticle() {
   std::random_device
       rd; // Will be used to obtain a seed for the random number engine
   std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
-  std::uniform_real_distribution<> dis_real(-1000.0, 1000.0);
-  std::uniform_int_distribution<> dis_int(-1000, 1000);
+  std::uniform_real_distribution<float> dis_real(-1000.0, 1000.0);
+  std::uniform_int_distribution<int> dis_int(-1000, 1000);
   edm4hep::ReconstructedParticleData data;
   data.PDG = dis_int(gen);
-  data.mass = dis_real(gen);
+  data.mass = std::abs(dis_real(gen));
   data.charge = dis_real(gen);
-  data.energy = dis_real(gen);
+  data.energy = std::abs(dis_real(gen));
+  data.momentum.x = dis_real(gen);
+  data.momentum.y = dis_real(gen);
+  data.momentum.z = dis_real(gen);
+  data.referencePoint.x = dis_real(gen);
+  data.referencePoint.y = dis_real(gen);
+  data.referencePoint.z = dis_real(gen);
   return data;
 }
 
