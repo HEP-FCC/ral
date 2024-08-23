@@ -194,6 +194,15 @@ Functions</h2></td></tr>
 <tr class="memitem:af0600e76b43b08f059a9de00b57b471c" id="r_af0600e76b43b08f059a9de00b57b471c"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0600e76b43b08f059a9de00b57b471c">get_goodnessOfPID</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
 <tr class="memdesc:af0600e76b43b08f059a9de00b57b471c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get goodnessOfPID member from ReconstructedParticles.  <br /></td></tr>
 <tr class="separator:af0600e76b43b08f059a9de00b57b471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21df36292f8945274e429ea5dd0084a" id="r_ad21df36292f8945274e429ea5dd0084a"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad21df36292f8945274e429ea5dd0084a">get_daugthers</a> (edm4hep::ReconstructedParticleData main_particle, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
+<tr class="memdesc:ad21df36292f8945274e429ea5dd0084a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the daughter particles of one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>.  <br /></td></tr>
+<tr class="separator:ad21df36292f8945274e429ea5dd0084a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef392c8663f48c04b6329cab682ebef" id="r_aeef392c8663f48c04b6329cab682ebef"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ClusterData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeef392c8663f48c04b6329cab682ebef">get_clusters</a> (edm4hep::ReconstructedParticleData main_particle, ROOT::VecOps::RVec&lt; edm4hep::ClusterData &gt; clusters)</td></tr>
+<tr class="memdesc:aeef392c8663f48c04b6329cab682ebef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the clusters related to one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>.  <br /></td></tr>
+<tr class="separator:aeef392c8663f48c04b6329cab682ebef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39dc4bb1988bf2fadcd9672b6fcb0eb3" id="r_a39dc4bb1988bf2fadcd9672b6fcb0eb3"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::TrackData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39dc4bb1988bf2fadcd9672b6fcb0eb3">get_tracks</a> (edm4hep::ReconstructedParticleData main_particle, ROOT::VecOps::RVec&lt; edm4hep::TrackData &gt; tracks)</td></tr>
+<tr class="memdesc:a39dc4bb1988bf2fadcd9672b6fcb0eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the tracks related to one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>.  <br /></td></tr>
+<tr class="separator:a39dc4bb1988bf2fadcd9672b6fcb0eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8ae2a87d1f3ca00e837ab3e77183c93" id="r_ac8ae2a87d1f3ca00e837ab3e77183c93"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8ae2a87d1f3ca00e837ab3e77183c93">mask_e</a> (<a class="el" href="namespacek4_1_1ral_1_1LogicalOperators.html#a2b0439fe6dd51aea6c48003928a4f260">LogicalOperators::ComparisonOperator</a> op, float value, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
 <tr class="memdesc:ac8ae2a87d1f3ca00e837ab3e77183c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a boolean mask based on the energy for later filtering.  <br /></td></tr>
 <tr class="separator:ac8ae2a87d1f3ca00e837ab3e77183c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,6 +260,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4e3a5e3ae5f3faa99bce01f84eeb99fb" id="r_a4e3a5e3ae5f3faa99bce01f84eeb99fb"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e3a5e3ae5f3faa99bce01f84eeb99fb">mask_abspdg</a> (<a class="el" href="namespacek4_1_1ral_1_1LogicalOperators.html#a2b0439fe6dd51aea6c48003928a4f260">LogicalOperators::ComparisonOperator</a> op, int value, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
 <tr class="memdesc:a4e3a5e3ae5f3faa99bce01f84eeb99fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a boolean mask based on the absolute pdg for later filtering.  <br /></td></tr>
 <tr class="separator:a4e3a5e3ae5f3faa99bce01f84eeb99fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88bbf92cbb3ab63a6f182d806734d276" id="r_a88bbf92cbb3ab63a6f182d806734d276"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88bbf92cbb3ab63a6f182d806734d276">sel_n_elements</a> (int n, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
+<tr class="memdesc:a88bbf92cbb3ab63a6f182d806734d276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a subcollection of ReconstructedParticles.  <br /></td></tr>
+<tr class="separator:a88bbf92cbb3ab63a6f182d806734d276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c056e5e16fa67b6d47c0005ee8c50e2" id="r_a4c056e5e16fa67b6d47c0005ee8c50e2"><td class="memItemLeft" align="right" valign="top">edm4hep::ReconstructedParticleData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c056e5e16fa67b6d47c0005ee8c50e2">sel_element</a> (int n, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
+<tr class="memdesc:a4c056e5e16fa67b6d47c0005ee8c50e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>.  <br /></td></tr>
+<tr class="separator:a4c056e5e16fa67b6d47c0005ee8c50e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a20c3bdacb90105a1545286c40ee5af" id="r_a0a20c3bdacb90105a1545286c40ee5af"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a20c3bdacb90105a1545286c40ee5af">sel_e</a> (<a class="el" href="namespacek4_1_1ral_1_1LogicalOperators.html#a2b0439fe6dd51aea6c48003928a4f260">LogicalOperators::ComparisonOperator</a> op, float value, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
 <tr class="memdesc:a0a20c3bdacb90105a1545286c40ee5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a subcollection of ReconstructedParticles based on the energy.  <br /></td></tr>
 <tr class="separator:a0a20c3bdacb90105a1545286c40ee5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -308,6 +323,63 @@ Functions</h2></td></tr>
 <tr class="memitem:ab5f93a3e287f6795cb0fbb2b9a0c8118" id="r_ab5f93a3e287f6795cb0fbb2b9a0c8118"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5f93a3e287f6795cb0fbb2b9a0c8118">sel_abspdg</a> (<a class="el" href="namespacek4_1_1ral_1_1LogicalOperators.html#a2b0439fe6dd51aea6c48003928a4f260">LogicalOperators::ComparisonOperator</a> op, int value, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)</td></tr>
 <tr class="memdesc:ab5f93a3e287f6795cb0fbb2b9a0c8118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a subcollection of ReconstructedParticles based on the absolute pdg.  <br /></td></tr>
 <tr class="separator:ab5f93a3e287f6795cb0fbb2b9a0c8118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eaa288b632781fd780f025a86f0db5c" id="r_a8eaa288b632781fd780f025a86f0db5c"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eaa288b632781fd780f025a86f0db5c">sort_e</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a8eaa288b632781fd780f025a86f0db5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of energy.  <br /></td></tr>
+<tr class="separator:a8eaa288b632781fd780f025a86f0db5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3102cbb19c0eb9fb21e36f4c64c785" id="r_aed3102cbb19c0eb9fb21e36f4c64c785"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed3102cbb19c0eb9fb21e36f4c64c785">sort_pmod</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:aed3102cbb19c0eb9fb21e36f4c64c785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of momentum modulus.  <br /></td></tr>
+<tr class="separator:aed3102cbb19c0eb9fb21e36f4c64c785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831cb43efb69bf14017bfd043663b313" id="r_a831cb43efb69bf14017bfd043663b313"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a831cb43efb69bf14017bfd043663b313">sort_pt</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a831cb43efb69bf14017bfd043663b313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of transverse momentum.  <br /></td></tr>
+<tr class="separator:a831cb43efb69bf14017bfd043663b313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be8f6f56c47516b1b3a900f0183be78" id="r_a5be8f6f56c47516b1b3a900f0183be78"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be8f6f56c47516b1b3a900f0183be78">sort_px</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a5be8f6f56c47516b1b3a900f0183be78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of x momentum.  <br /></td></tr>
+<tr class="separator:a5be8f6f56c47516b1b3a900f0183be78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea5599f4717885ecfe3c6213e98d507" id="r_a8ea5599f4717885ecfe3c6213e98d507"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ea5599f4717885ecfe3c6213e98d507">sort_py</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a8ea5599f4717885ecfe3c6213e98d507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of y momentum.  <br /></td></tr>
+<tr class="separator:a8ea5599f4717885ecfe3c6213e98d507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a60f24617576f26e14e811dd31952a" id="r_a46a60f24617576f26e14e811dd31952a"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a60f24617576f26e14e811dd31952a">sort_pz</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a46a60f24617576f26e14e811dd31952a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of z momentum.  <br /></td></tr>
+<tr class="separator:a46a60f24617576f26e14e811dd31952a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ce19e81fad51103ff8e3d1751763f7" id="r_a03ce19e81fad51103ff8e3d1751763f7"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03ce19e81fad51103ff8e3d1751763f7">sort_eta</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a03ce19e81fad51103ff8e3d1751763f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of pseudorapidity.  <br /></td></tr>
+<tr class="separator:a03ce19e81fad51103ff8e3d1751763f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d0869bb5654ad7fc4dc2878e03cba6" id="r_a70d0869bb5654ad7fc4dc2878e03cba6"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70d0869bb5654ad7fc4dc2878e03cba6">sort_rapidity</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a70d0869bb5654ad7fc4dc2878e03cba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of rapidity.  <br /></td></tr>
+<tr class="separator:a70d0869bb5654ad7fc4dc2878e03cba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d1e1af14c917b417ce8def599218a9" id="r_a12d1e1af14c917b417ce8def599218a9"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12d1e1af14c917b417ce8def599218a9">sort_theta</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a12d1e1af14c917b417ce8def599218a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of polar angle.  <br /></td></tr>
+<tr class="separator:a12d1e1af14c917b417ce8def599218a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4f65f00b081559a5330a271958d0c3" id="r_aaa4f65f00b081559a5330a271958d0c3"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa4f65f00b081559a5330a271958d0c3">sort_phi</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:aaa4f65f00b081559a5330a271958d0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of azimutal angle.  <br /></td></tr>
+<tr class="separator:aaa4f65f00b081559a5330a271958d0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01573f180155300a416b4171a035ee83" id="r_a01573f180155300a416b4171a035ee83"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01573f180155300a416b4171a035ee83">sort_r</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a01573f180155300a416b4171a035ee83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of distance to origin.  <br /></td></tr>
+<tr class="separator:a01573f180155300a416b4171a035ee83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e43f1de87d4e1feb826cb37fe4bf262" id="r_a6e43f1de87d4e1feb826cb37fe4bf262"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e43f1de87d4e1feb826cb37fe4bf262">sort_x</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a6e43f1de87d4e1feb826cb37fe4bf262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of x distance to origin.  <br /></td></tr>
+<tr class="separator:a6e43f1de87d4e1feb826cb37fe4bf262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2e71fdde4bd1c11f3c4fa81968c221" id="r_a0a2e71fdde4bd1c11f3c4fa81968c221"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a2e71fdde4bd1c11f3c4fa81968c221">sort_y</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a0a2e71fdde4bd1c11f3c4fa81968c221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of y distance to origin.  <br /></td></tr>
+<tr class="separator:a0a2e71fdde4bd1c11f3c4fa81968c221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7b00f91805e452aac0d0cb56ce5c17" id="r_a1f7b00f91805e452aac0d0cb56ce5c17"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f7b00f91805e452aac0d0cb56ce5c17">sort_z</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a1f7b00f91805e452aac0d0cb56ce5c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of z distance to origin.  <br /></td></tr>
+<tr class="separator:a1f7b00f91805e452aac0d0cb56ce5c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2ddd5f185c22b52e022d8ac349108e" id="r_aba2ddd5f185c22b52e022d8ac349108e"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba2ddd5f185c22b52e022d8ac349108e">sort_m</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:aba2ddd5f185c22b52e022d8ac349108e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of mass.  <br /></td></tr>
+<tr class="separator:aba2ddd5f185c22b52e022d8ac349108e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36764e219cc2f6848dd78d86b132bb9" id="r_af36764e219cc2f6848dd78d86b132bb9"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af36764e219cc2f6848dd78d86b132bb9">sort_q</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:af36764e219cc2f6848dd78d86b132bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of charge.  <br /></td></tr>
+<tr class="separator:af36764e219cc2f6848dd78d86b132bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1b979bf52f91776751ebd52b91f304" id="r_a5a1b979bf52f91776751ebd52b91f304"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a1b979bf52f91776751ebd52b91f304">sort_absq</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a5a1b979bf52f91776751ebd52b91f304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of absolute charge.  <br /></td></tr>
+<tr class="separator:a5a1b979bf52f91776751ebd52b91f304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44af5e32011900b712474bdf8ed8252c" id="r_a44af5e32011900b712474bdf8ed8252c"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44af5e32011900b712474bdf8ed8252c">sort_pdg</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a44af5e32011900b712474bdf8ed8252c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of pdg.  <br /></td></tr>
+<tr class="separator:a44af5e32011900b712474bdf8ed8252c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d616d1f6890d7c9e21d19f12f61a50" id="r_a47d616d1f6890d7c9e21d19f12f61a50"><td class="memItemLeft" align="right" valign="top">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47d616d1f6890d7c9e21d19f12f61a50">sort_abspdg</a> (ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles, bool reverse=false)</td></tr>
+<tr class="memdesc:a47d616d1f6890d7c9e21d19f12f61a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort a collection of Reconstructed particles in ascending order of absolute pdg.  <br /></td></tr>
+<tr class="separator:a47d616d1f6890d7c9e21d19f12f61a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Englobe analyzers that acts on the <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a> class. </p>
@@ -355,6 +427,66 @@ Functions</h2></td></tr>
 <p>Get absolute charge from ReconstructedParticles. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeef392c8663f48c04b6329cab682ebef" name="aeef392c8663f48c04b6329cab682ebef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef392c8663f48c04b6329cab682ebef">&#9670;&#160;</a></span>get_clusters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ClusterData &gt; k4::ral::ReconstructedParticle::get_clusters </td>
+          <td>(</td>
+          <td class="paramtype">edm4hep::ReconstructedParticleData</td>          <td class="paramname"><span class="paramname"><em>main_particle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ClusterData &gt;</td>          <td class="paramname"><span class="paramname"><em>clusters</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all the clusters related to one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">main_particle</td><td>Particle that is going to be look for clusters. </td></tr>
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad21df36292f8945274e429ea5dd0084a" name="ad21df36292f8945274e429ea5dd0084a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad21df36292f8945274e429ea5dd0084a">&#9670;&#160;</a></span>get_daugthers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::get_daugthers </td>
+          <td>(</td>
+          <td class="paramtype">edm4hep::ReconstructedParticleData</td>          <td class="paramname"><span class="paramname"><em>main_particle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all the daughter particles of one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">main_particle</td><td>Particle that is going to be look for daughters. </td></tr>
     <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
   </table>
   </dd>
@@ -805,6 +937,36 @@ Functions</h2></td></tr>
 <p>Get the polar angle of ReconstructedParticles. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a39dc4bb1988bf2fadcd9672b6fcb0eb3" name="a39dc4bb1988bf2fadcd9672b6fcb0eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39dc4bb1988bf2fadcd9672b6fcb0eb3">&#9670;&#160;</a></span>get_tracks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::TrackData &gt; k4::ral::ReconstructedParticle::get_tracks </td>
+          <td>(</td>
+          <td class="paramtype">edm4hep::ReconstructedParticleData</td>          <td class="paramname"><span class="paramname"><em>main_particle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::TrackData &gt;</td>          <td class="paramname"><span class="paramname"><em>tracks</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all the tracks related to one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">main_particle</td><td>Particle that is going to be look for tracks. </td></tr>
     <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
   </table>
   </dd>
@@ -1679,6 +1841,36 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4c056e5e16fa67b6d47c0005ee8c50e2" name="a4c056e5e16fa67b6d47c0005ee8c50e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c056e5e16fa67b6d47c0005ee8c50e2">&#9670;&#160;</a></span>sel_element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">edm4hep::ReconstructedParticleData k4::ral::ReconstructedParticle::sel_element </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select one <a class="el" href="namespacek4_1_1ral_1_1ReconstructedParticle.html" title="Englobe analyzers that acts on the ReconstructedParticle class.">ReconstructedParticle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Index of the element selected </td></tr>
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="afc5e63b133cdd9ebb090eb826ff17875" name="afc5e63b133cdd9ebb090eb826ff17875"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc5e63b133cdd9ebb090eb826ff17875">&#9670;&#160;</a></span>sel_eta()</h2>
 
@@ -1744,6 +1936,36 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">op</td><td>Comparison operator to apply with the value </td></tr>
     <tr><td class="paramname">value</td><td>Value of the mass that is used in the comparison </td></tr>
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a88bbf92cbb3ab63a6f182d806734d276" name="a88bbf92cbb3ab63a6f182d806734d276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88bbf92cbb3ab63a6f182d806734d276">&#9670;&#160;</a></span>sel_n_elements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sel_n_elements </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select a subcollection of ReconstructedParticles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Number of elements that would be selected. Positive number selects from the begining and negative number select from the end </td></tr>
     <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
   </table>
   </dd>
@@ -2249,6 +2471,576 @@ Functions</h2></td></tr>
     <tr><td class="paramname">op</td><td>Comparison operator to apply with the value </td></tr>
     <tr><td class="paramname">value</td><td>Value of the distance that is used in the comparison </td></tr>
     <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47d616d1f6890d7c9e21d19f12f61a50" name="a47d616d1f6890d7c9e21d19f12f61a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d616d1f6890d7c9e21d19f12f61a50">&#9670;&#160;</a></span>sort_abspdg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_abspdg </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of absolute pdg. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5a1b979bf52f91776751ebd52b91f304" name="a5a1b979bf52f91776751ebd52b91f304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a1b979bf52f91776751ebd52b91f304">&#9670;&#160;</a></span>sort_absq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_absq </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of absolute charge. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8eaa288b632781fd780f025a86f0db5c" name="a8eaa288b632781fd780f025a86f0db5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eaa288b632781fd780f025a86f0db5c">&#9670;&#160;</a></span>sort_e()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_e </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of energy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a03ce19e81fad51103ff8e3d1751763f7" name="a03ce19e81fad51103ff8e3d1751763f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ce19e81fad51103ff8e3d1751763f7">&#9670;&#160;</a></span>sort_eta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_eta </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of pseudorapidity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba2ddd5f185c22b52e022d8ac349108e" name="aba2ddd5f185c22b52e022d8ac349108e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2ddd5f185c22b52e022d8ac349108e">&#9670;&#160;</a></span>sort_m()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_m </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of mass. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a44af5e32011900b712474bdf8ed8252c" name="a44af5e32011900b712474bdf8ed8252c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44af5e32011900b712474bdf8ed8252c">&#9670;&#160;</a></span>sort_pdg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_pdg </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of pdg. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaa4f65f00b081559a5330a271958d0c3" name="aaa4f65f00b081559a5330a271958d0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4f65f00b081559a5330a271958d0c3">&#9670;&#160;</a></span>sort_phi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_phi </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of azimutal angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aed3102cbb19c0eb9fb21e36f4c64c785" name="aed3102cbb19c0eb9fb21e36f4c64c785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3102cbb19c0eb9fb21e36f4c64c785">&#9670;&#160;</a></span>sort_pmod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_pmod </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of momentum modulus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a831cb43efb69bf14017bfd043663b313" name="a831cb43efb69bf14017bfd043663b313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831cb43efb69bf14017bfd043663b313">&#9670;&#160;</a></span>sort_pt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_pt </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of transverse momentum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5be8f6f56c47516b1b3a900f0183be78" name="a5be8f6f56c47516b1b3a900f0183be78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be8f6f56c47516b1b3a900f0183be78">&#9670;&#160;</a></span>sort_px()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_px </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of x momentum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ea5599f4717885ecfe3c6213e98d507" name="a8ea5599f4717885ecfe3c6213e98d507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea5599f4717885ecfe3c6213e98d507">&#9670;&#160;</a></span>sort_py()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_py </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of y momentum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a46a60f24617576f26e14e811dd31952a" name="a46a60f24617576f26e14e811dd31952a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a60f24617576f26e14e811dd31952a">&#9670;&#160;</a></span>sort_pz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_pz </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of z momentum. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af36764e219cc2f6848dd78d86b132bb9" name="af36764e219cc2f6848dd78d86b132bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36764e219cc2f6848dd78d86b132bb9">&#9670;&#160;</a></span>sort_q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_q </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of charge. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a01573f180155300a416b4171a035ee83" name="a01573f180155300a416b4171a035ee83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01573f180155300a416b4171a035ee83">&#9670;&#160;</a></span>sort_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_r </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of distance to origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a70d0869bb5654ad7fc4dc2878e03cba6" name="a70d0869bb5654ad7fc4dc2878e03cba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d0869bb5654ad7fc4dc2878e03cba6">&#9670;&#160;</a></span>sort_rapidity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_rapidity </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of rapidity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a12d1e1af14c917b417ce8def599218a9" name="a12d1e1af14c917b417ce8def599218a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d1e1af14c917b417ce8def599218a9">&#9670;&#160;</a></span>sort_theta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_theta </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of polar angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e43f1de87d4e1feb826cb37fe4bf262" name="a6e43f1de87d4e1feb826cb37fe4bf262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e43f1de87d4e1feb826cb37fe4bf262">&#9670;&#160;</a></span>sort_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_x </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of x distance to origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a2e71fdde4bd1c11f3c4fa81968c221" name="a0a2e71fdde4bd1c11f3c4fa81968c221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2e71fdde4bd1c11f3c4fa81968c221">&#9670;&#160;</a></span>sort_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_y </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of y distance to origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f7b00f91805e452aac0d0cb56ce5c17" name="a1f7b00f91805e452aac0d0cb56ce5c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7b00f91805e452aac0d0cb56ce5c17">&#9670;&#160;</a></span>sort_z()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; k4::ral::ReconstructedParticle::sort_z </td>
+          <td>(</td>
+          <td class="paramtype">ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt;</td>          <td class="paramname"><span class="paramname"><em>particles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>reverse</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort a collection of Reconstructed particles in ascending order of z distance to origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particles</td><td>List of reconstructed particles in an event </td></tr>
+    <tr><td class="paramname">reverse</td><td>Boolean flag to change the sorting order </td></tr>
   </table>
   </dd>
 </dl>
