@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metaprograming"
+authors = [
+    {name = "Juan Carlos Aranda Huecas", email = "juanki0396@gmail.com"},
+]
+description = "Code for doing metaprograming for generating Cpp files for the RAL library"
+readme = "README.md"
+version = "0.1"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["metaprograming"]
