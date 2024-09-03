@@ -2,7 +2,7 @@
 namespace k4::ral {
 namespace ReconstructedParticle {
 ROOT::VecOps::RVec<float>
-get_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -15,7 +15,7 @@ get_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -28,7 +28,7 @@ get_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPx(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -41,7 +41,7 @@ get_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPy(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -54,7 +54,7 @@ get_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -67,7 +67,7 @@ get_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getEta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -80,7 +80,7 @@ get_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getRapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -93,7 +93,7 @@ get_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getTheta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -106,7 +106,7 @@ get_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPhi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -119,7 +119,7 @@ get_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -133,7 +133,7 @@ get_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPtEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -147,7 +147,7 @@ get_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPxEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -161,7 +161,7 @@ get_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPyEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -175,7 +175,7 @@ get_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPzEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -189,7 +189,7 @@ get_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getEtaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -203,7 +203,7 @@ get_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getRapidityEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -217,7 +217,7 @@ get_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getThetaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -231,7 +231,7 @@ get_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPhiEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -245,7 +245,7 @@ get_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getR(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -257,7 +257,7 @@ get_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getX(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -269,7 +269,7 @@ get_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getY(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -281,7 +281,7 @@ get_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getZ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -293,7 +293,7 @@ get_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getREnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -306,7 +306,7 @@ get_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getXEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -319,7 +319,7 @@ get_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getYEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -332,7 +332,7 @@ get_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getZEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -345,7 +345,7 @@ get_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getE(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -358,7 +358,7 @@ get_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getEEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -372,7 +372,7 @@ get_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getM(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -383,7 +383,7 @@ get_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getQ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -394,7 +394,7 @@ get_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-get_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getAbsq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -405,7 +405,7 @@ get_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-get_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getPdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -416,7 +416,7 @@ get_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-get_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getAbspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -427,7 +427,7 @@ get_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-get_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getSimStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -438,7 +438,7 @@ get_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-get_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+getGenStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::MCParticleData &item : collection) {
@@ -448,8 +448,469 @@ get_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   }
   return vec;
 }
-int print_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_p(collection);
+ROOT::VecOps::RVec<float>
+getP(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.P();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPt(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.pt();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPx(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.px();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPy(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.py();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPz(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.pz();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getEta(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.eta();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getRapidity(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.Rapidity();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getTheta(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.theta();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPhi(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.phi();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.P();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPtEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.pt();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPxEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.px();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPyEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.py();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPzEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.pz();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getEtaEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.eta();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getRapidityEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.Rapidity();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getThetaEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.theta();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getPhiEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.phi();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getR(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getVertex().x, item.getVertex().y,
+                                  item.getVertex().z);
+    result = rresult.r();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getX(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getVertex().x, item.getVertex().y,
+                                  item.getVertex().z);
+    result = rresult.x();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getY(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getVertex().x, item.getVertex().y,
+                                  item.getVertex().z);
+    result = rresult.y();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getZ(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getVertex().x, item.getVertex().y,
+                                  item.getVertex().z);
+    result = rresult.z();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getREnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getEndpoint().x, item.getEndpoint().y,
+                                  item.getEndpoint().z);
+    result = rresult.r();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getXEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getEndpoint().x, item.getEndpoint().y,
+                                  item.getEndpoint().z);
+    result = rresult.x();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getYEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getEndpoint().x, item.getEndpoint().y,
+                                  item.getEndpoint().z);
+    result = rresult.y();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getZEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::XYZVector rresult(item.getEndpoint().x, item.getEndpoint().y,
+                                  item.getEndpoint().z);
+    result = rresult.z();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getE(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(item.getMomentum().x,
+                                      item.getMomentum().y,
+                                      item.getMomentum().z, item.getMass());
+    result = presult.e();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getEEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    ROOT::Math::PxPyPzMVector presult(
+        item.getMomentumAtEndpoint().x, item.getMomentumAtEndpoint().y,
+        item.getMomentumAtEndpoint().z, item.getMass());
+    result = presult.e();
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getM(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    result = (item.getMass());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getQ(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    result = (item.getCharge());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<float>
+getAbsq(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    float result;
+    result = std::abs(item.getCharge());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<int>
+getPdg(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    int result;
+    result = (item.getPDG());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<int>
+getAbspdg(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    int result;
+    result = std::abs(item.getPDG());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<int>
+getSimStat(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    int result;
+    result = (item.getSimulatorStatus());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<int>
+getGenStat(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::MCParticle &item : collection) {
+    int result;
+    result = (item.getGeneratorStatus());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
+int printP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getP(collection);
   std::cout << "Momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -457,8 +918,8 @@ int print_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_pt(collection);
+int printPt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPt(collection);
   std::cout << "Transverse momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -466,8 +927,8 @@ int print_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_px(collection);
+int printPx(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPx(collection);
   std::cout << "X momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -475,8 +936,8 @@ int print_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_py(collection);
+int printPy(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPy(collection);
   std::cout << "Y momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -484,8 +945,8 @@ int print_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_pz(collection);
+int printPz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPz(collection);
   std::cout << "Z momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -493,8 +954,8 @@ int print_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_eta(collection);
+int printEta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getEta(collection);
   std::cout << "Pseudorapidity: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -502,8 +963,8 @@ int print_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_rapidity(collection);
+int printRapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getRapidity(collection);
   std::cout << "Rapidity: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -511,8 +972,8 @@ int print_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_theta(collection);
+int printTheta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getTheta(collection);
   std::cout << "Polar angle: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -520,8 +981,8 @@ int print_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_phi(collection);
+int printPhi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPhi(collection);
   std::cout << "Azimutal angle: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -529,8 +990,8 @@ int print_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_p_end(collection);
+int printPEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPEnd(collection);
   std::cout << "Momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -538,8 +999,8 @@ int print_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_pt_end(collection);
+int printPtEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPtEnd(collection);
   std::cout << "Transverse momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -547,8 +1008,8 @@ int print_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_px_end(collection);
+int printPxEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPxEnd(collection);
   std::cout << "X momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -556,8 +1017,8 @@ int print_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_py_end(collection);
+int printPyEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPyEnd(collection);
   std::cout << "Y momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -565,8 +1026,8 @@ int print_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_pz_end(collection);
+int printPzEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPzEnd(collection);
   std::cout << "Z momentum: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -574,8 +1035,8 @@ int print_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_eta_end(collection);
+int printEtaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getEtaEnd(collection);
   std::cout << "Pseudorapidity: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -583,8 +1044,8 @@ int print_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_rapidity_end(collection);
+int printRapidityEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getRapidityEnd(collection);
   std::cout << "Rapidity: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -592,8 +1053,8 @@ int print_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_theta_end(collection);
+int printThetaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getThetaEnd(collection);
   std::cout << "Polar angle: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -601,8 +1062,8 @@ int print_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_phi_end(collection);
+int printPhiEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getPhiEnd(collection);
   std::cout << "Azimutal angle: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -610,8 +1071,8 @@ int print_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_r(collection);
+int printR(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getR(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -619,8 +1080,8 @@ int print_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_x(collection);
+int printX(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getX(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -628,8 +1089,8 @@ int print_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_y(collection);
+int printY(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getY(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -637,8 +1098,8 @@ int print_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_z(collection);
+int printZ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getZ(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -646,8 +1107,8 @@ int print_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_r_end(collection);
+int printREnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getREnd(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -655,8 +1116,8 @@ int print_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_x_end(collection);
+int printXEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getXEnd(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -664,8 +1125,8 @@ int print_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_y_end(collection);
+int printYEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getYEnd(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -673,8 +1134,8 @@ int print_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_z_end(collection);
+int printZEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getZEnd(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -682,8 +1143,8 @@ int print_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_e(collection);
+int printE(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getE(collection);
   std::cout << "Energy: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -691,8 +1152,8 @@ int print_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_e_end(collection);
+int printEEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getEEnd(collection);
   std::cout << "Energy: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -700,8 +1161,8 @@ int print_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_m(collection);
+int printM(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getM(collection);
   std::cout << "Mass: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -709,8 +1170,8 @@ int print_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_q(collection);
+int printQ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getQ(collection);
   std::cout << "Charge: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -718,8 +1179,8 @@ int print_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<float> vec = get_absq(collection);
+int printAbsq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = getAbsq(collection);
   std::cout << "Absolute charge: ";
   for (const float &item : vec) {
     std::cout << item << " ";
@@ -727,8 +1188,8 @@ int print_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<int> vec = get_pdg(collection);
+int printPdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = getPdg(collection);
   std::cout << "Pdg: ";
   for (const int &item : vec) {
     std::cout << item << " ";
@@ -736,8 +1197,8 @@ int print_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<int> vec = get_abspdg(collection);
+int printAbspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = getAbspdg(collection);
   std::cout << "Absolute pdg: ";
   for (const int &item : vec) {
     std::cout << item << " ";
@@ -745,8 +1206,8 @@ int print_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<int> vec = get_sim_stat(collection);
+int printSimStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = getSimStat(collection);
   std::cout << "Simulator status: ";
   for (const int &item : vec) {
     std::cout << item << " ";
@@ -754,8 +1215,323 @@ int print_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int print_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<int> vec = get_gen_stat(collection);
+int printGenStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = getGenStat(collection);
+  std::cout << "Generator status: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printP(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getP(collection);
+  std::cout << "Momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPt(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPt(collection);
+  std::cout << "Transverse momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPx(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPx(collection);
+  std::cout << "X momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPy(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPy(collection);
+  std::cout << "Y momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPz(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPz(collection);
+  std::cout << "Z momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printEta(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getEta(collection);
+  std::cout << "Pseudorapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printRapidity(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getRapidity(collection);
+  std::cout << "Rapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printTheta(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getTheta(collection);
+  std::cout << "Polar angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPhi(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPhi(collection);
+  std::cout << "Azimutal angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPEnd(collection);
+  std::cout << "Momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPtEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPtEnd(collection);
+  std::cout << "Transverse momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPxEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPxEnd(collection);
+  std::cout << "X momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPyEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPyEnd(collection);
+  std::cout << "Y momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPzEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPzEnd(collection);
+  std::cout << "Z momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printEtaEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getEtaEnd(collection);
+  std::cout << "Pseudorapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printRapidityEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getRapidityEnd(collection);
+  std::cout << "Rapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printThetaEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getThetaEnd(collection);
+  std::cout << "Polar angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPhiEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getPhiEnd(collection);
+  std::cout << "Azimutal angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printR(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getR(collection);
+  std::cout << "Distance to origin: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printX(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getX(collection);
+  std::cout << "X coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printY(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getY(collection);
+  std::cout << "Y coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printZ(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getZ(collection);
+  std::cout << "Z coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printREnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getREnd(collection);
+  std::cout << "Distance to origin: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printXEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getXEnd(collection);
+  std::cout << "X coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printYEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getYEnd(collection);
+  std::cout << "Y coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printZEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getZEnd(collection);
+  std::cout << "Z coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printE(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getE(collection);
+  std::cout << "Energy: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printEEnd(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getEEnd(collection);
+  std::cout << "Energy: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printM(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getM(collection);
+  std::cout << "Mass: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printQ(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getQ(collection);
+  std::cout << "Charge: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printAbsq(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getAbsq(collection);
+  std::cout << "Absolute charge: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printPdg(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec = getPdg(collection);
+  std::cout << "Pdg: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printAbspdg(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec = getAbspdg(collection);
+  std::cout << "Absolute pdg: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printSimStat(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec = getSimStat(collection);
+  std::cout << "Simulator status: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printGenStat(const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<int> vec = getGenStat(collection);
   std::cout << "Generator status: ";
   for (const int &item : vec) {
     std::cout << item << " ";
@@ -764,11 +1540,38 @@ int print_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   return 0;
 }
 ROOT::VecOps::RVec<bool>
-mask_p(LogicalOperators::ComparisonOperator op, float val,
+maskP(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getP(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPt(LogicalOperators::ComparisonOperator op, float val,
        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_p(collection);
+  ROOT::VecOps::RVec<float> vals = getPt(collection);
   for (const float &item : vals) {
     switch (op) {
     case LogicalOperators::ComparisonOperator::LESS:
@@ -791,11 +1594,92 @@ mask_p(LogicalOperators::ComparisonOperator op, float val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
-mask_pt(LogicalOperators::ComparisonOperator op, float val,
+maskPx(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPx(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPy(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPy(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPz(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPz(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskEta(LogicalOperators::ComparisonOperator op, float val,
         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_pt(collection);
+  ROOT::VecOps::RVec<float> vals = getEta(collection);
   for (const float &item : vals) {
     switch (op) {
     case LogicalOperators::ComparisonOperator::LESS:
@@ -818,335 +1702,11 @@ mask_pt(LogicalOperators::ComparisonOperator op, float val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
-mask_px(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_px(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_py(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_py(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_pz(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_pz(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_eta(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_eta(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_rapidity(LogicalOperators::ComparisonOperator op, float val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_rapidity(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_theta(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_theta(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_phi(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_phi(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_p_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_p_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_pt_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_pt_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_px_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_px_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_py_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_py_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_pz_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_pz_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_eta_end(LogicalOperators::ComparisonOperator op, float val,
+maskRapidity(LogicalOperators::ComparisonOperator op, float val,
              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_eta_end(collection);
+  ROOT::VecOps::RVec<float> vals = getRapidity(collection);
   for (const float &item : vals) {
     switch (op) {
     case LogicalOperators::ComparisonOperator::LESS:
@@ -1169,11 +1729,11 @@ mask_eta_end(LogicalOperators::ComparisonOperator op, float val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
-mask_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
-                  ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+maskTheta(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_rapidity_end(collection);
+  ROOT::VecOps::RVec<float> vals = getTheta(collection);
   for (const float &item : vals) {
     switch (op) {
     case LogicalOperators::ComparisonOperator::LESS:
@@ -1196,730 +1756,2101 @@ mask_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
-mask_theta_end(LogicalOperators::ComparisonOperator op, float val,
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPhi(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPtEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPtEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPxEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPxEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPyEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPyEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPzEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPzEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getEtaEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+                ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getRapidityEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getThetaEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPhiEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskR(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getR(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskX(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getX(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskY(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getY(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskZ(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getZ(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskREnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getREnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskXEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getXEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskYEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getYEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskZEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getZEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskE(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getE(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskEEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getEEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskM(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getM(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskQ(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getQ(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskAbsq(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getAbsq(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPdg(LogicalOperators::ComparisonOperator op, int val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getPdg(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getAbspdg(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskSimStat(LogicalOperators::ComparisonOperator op, int val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getSimStat(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskGenStat(LogicalOperators::ComparisonOperator op, int val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getGenStat(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskP(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getP(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPt(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPt(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPx(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPx(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPy(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPy(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPz(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPz(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskEta(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getEta(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskRapidity(LogicalOperators::ComparisonOperator op, float val,
+             const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getRapidity(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskTheta(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getTheta(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPhi(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPtEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPtEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPxEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPxEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPyEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPyEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPzEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPzEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+           const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getEtaEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+                const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getRapidityEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+             const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getThetaEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+           const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getPhiEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskR(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getR(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskX(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getX(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskY(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getY(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskZ(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getZ(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskREnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getREnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskXEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getXEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskYEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getYEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskZEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getZEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskE(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getE(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskEEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getEEnd(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskM(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getM(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskQ(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getQ(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskAbsq(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<float> vals = getAbsq(collection);
+  for (const float &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskPdg(LogicalOperators::ComparisonOperator op, int val,
+        const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getPdg(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getAbspdg(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskSimStat(LogicalOperators::ComparisonOperator op, int val,
+            const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getSimStat(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
+maskGenStat(LogicalOperators::ComparisonOperator op, int val,
+            const edm4hep::MCParticleCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<int> vals = getGenStat(collection);
+  for (const int &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selP(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskP(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPt(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPt(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPx(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPx(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPy(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPy(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPz(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPz(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selEta(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskEta(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selRapidity(LogicalOperators::ComparisonOperator op, float val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskRapidity(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selTheta(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskTheta(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPhi(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPhi(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPtEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPtEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPxEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPxEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPyEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPyEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPzEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPzEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskEtaEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
                ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_theta_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
+  auto mask = maskRapidityEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<bool>
-mask_phi_end(LogicalOperators::ComparisonOperator op, float val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_phi_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_r(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_r(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_x(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_x(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_y(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_y(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_z(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_z(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_r_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_r_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_x_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_x_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_y_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_y_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_z_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_z_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_e(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_e(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_e_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_e_end(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_m(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_m(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_q(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_q(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_absq(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = get_absq(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_pdg(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<int> vals = get_pdg(collection);
-  for (const int &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_abspdg(LogicalOperators::ComparisonOperator op, int val,
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selThetaEnd(LogicalOperators::ComparisonOperator op, float val,
             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<int> vals = get_abspdg(collection);
-  for (const int &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_sim_stat(LogicalOperators::ComparisonOperator op, int val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<int> vals = get_sim_stat(collection);
-  for (const int &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-mask_gen_stat(LogicalOperators::ComparisonOperator op, int val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<int> vals = get_gen_stat(collection);
-  for (const int &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_p(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_p(op, val, collection);
+  auto mask = maskThetaEnd(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pt(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_pt(op, val, collection);
+selPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPhiEnd(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_px(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_px(op, val, collection);
+selR(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskR(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_py(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_py(op, val, collection);
+selX(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskX(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pz(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_pz(op, val, collection);
+selY(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskY(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_eta(LogicalOperators::ComparisonOperator op, float val,
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskZ(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selREnd(LogicalOperators::ComparisonOperator op, float val,
         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_eta(op, val, collection);
+  auto mask = maskREnd(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_rapidity(LogicalOperators::ComparisonOperator op, float val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_rapidity(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_theta(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_theta(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_phi(LogicalOperators::ComparisonOperator op, float val,
+selXEnd(LogicalOperators::ComparisonOperator op, float val,
         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_phi(op, val, collection);
+  auto mask = maskXEnd(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_p_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_p_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pt_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_pt_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_px_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_px_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_py_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_py_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pz_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_pz_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_eta_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_eta_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
-                 ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_rapidity_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_theta_end(LogicalOperators::ComparisonOperator op, float val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_theta_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_phi_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_phi_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_r(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_r(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_x(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_x(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_y(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_y(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_z(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_z(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_r_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_r_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_x_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_x_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_y_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_y_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_z_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_z_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_e(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_e(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_e_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_e_end(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_m(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_m(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_q(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_q(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_absq(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_absq(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pdg(LogicalOperators::ComparisonOperator op, int val,
+selYEnd(LogicalOperators::ComparisonOperator op, float val,
         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_pdg(op, val, collection);
+  auto mask = maskYEnd(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_abspdg(LogicalOperators::ComparisonOperator op, int val,
+selZEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskZEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selE(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskE(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selEEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskEEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selM(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskM(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selQ(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskQ(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selAbsq(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskAbsq(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selPdg(LogicalOperators::ComparisonOperator op, int val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskPdg(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selAbspdg(LogicalOperators::ComparisonOperator op, int val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskAbspdg(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+selSimStat(LogicalOperators::ComparisonOperator op, int val,
            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_abspdg(op, val, collection);
+  auto mask = maskSimStat(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_sim_stat(LogicalOperators::ComparisonOperator op, int val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_sim_stat(op, val, collection);
+selGenStat(LogicalOperators::ComparisonOperator op, int val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  auto mask = maskGenStat(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selP(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskP(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPt(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPt(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPx(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPx(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPy(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPy(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPz(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPz(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selEta(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskEta(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selRapidity(LogicalOperators::ComparisonOperator op, float val,
+            const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskRapidity(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selTheta(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskTheta(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPhi(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPhi(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPtEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPtEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPxEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPxEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPyEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPyEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPzEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPzEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskEtaEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+               const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskRapidityEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+            const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskThetaEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPhiEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selR(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskR(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selX(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskX(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selY(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskY(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskZ(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selREnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskREnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selXEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskXEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selYEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskYEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selZEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskZEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selE(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskE(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selEEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskEEnd(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selM(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskM(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selQ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskQ(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selAbsq(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskAbsq(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selPdg(LogicalOperators::ComparisonOperator op, int val,
+       const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskPdg(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selAbspdg(LogicalOperators::ComparisonOperator op, int val,
+          const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskAbspdg(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selSimStat(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskSimStat(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::MCParticleCollection
+selGenStat(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::MCParticleCollection &collection) {
+  auto mask = maskGenStat(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_gen_stat(LogicalOperators::ComparisonOperator op, int val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
-  auto mask = mask_gen_stat(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -1935,7 +3866,7 @@ sort_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortPt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -1951,7 +3882,7 @@ sort_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortPx(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -1967,7 +3898,7 @@ sort_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortPy(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -1983,7 +3914,7 @@ sort_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortPz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -1999,7 +3930,7 @@ sort_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortEta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2015,8 +3946,8 @@ sort_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-              bool reverse) {
+sortRapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+             bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2032,8 +3963,8 @@ sort_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortTheta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2049,7 +3980,7 @@ sort_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortPhi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2065,8 +3996,7 @@ sort_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortPEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2082,8 +4012,8 @@ sort_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse) {
+sortPtEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2099,8 +4029,8 @@ sort_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse) {
+sortPxEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2116,8 +4046,8 @@ sort_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse) {
+sortPyEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2133,8 +4063,8 @@ sort_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse) {
+sortPzEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2150,8 +4080,8 @@ sort_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-             bool reverse) {
+sortEtaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+           bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2167,8 +4097,8 @@ sort_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-                  bool reverse) {
+sortRapidityEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+                bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2184,8 +4114,8 @@ sort_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-               bool reverse) {
+sortThetaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+             bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2201,8 +4131,8 @@ sort_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-             bool reverse) {
+sortPhiEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+           bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2218,7 +4148,7 @@ sort_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortR(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2232,7 +4162,7 @@ sort_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortX(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2246,7 +4176,7 @@ sort_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortY(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2260,7 +4190,7 @@ sort_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortZ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2274,8 +4204,7 @@ sort_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortREnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2289,8 +4218,7 @@ sort_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortXEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2304,8 +4232,7 @@ sort_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortYEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2319,8 +4246,7 @@ sort_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortZEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2334,7 +4260,7 @@ sort_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortE(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2350,8 +4276,7 @@ sort_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse) {
+sortEEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2367,7 +4292,7 @@ sort_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortM(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2379,7 +4304,7 @@ sort_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortQ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2391,8 +4316,7 @@ sort_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-          bool reverse) {
+sortAbsq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     float a, b;
@@ -2404,7 +4328,7 @@ sort_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
+sortPdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     int a, b;
@@ -2416,8 +4340,8 @@ sort_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse) {
+sortAbspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+           bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     int a, b;
@@ -2429,8 +4353,8 @@ sort_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-              bool reverse) {
+sortSimStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+            bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     int a, b;
@@ -2442,8 +4366,8 @@ sort_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-              bool reverse) {
+sortGenStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+            bool reverse) {
   auto lambda = [reverse](edm4hep::MCParticleData x,
                           edm4hep::MCParticleData y) {
     int a, b;
@@ -2453,6 +4377,865 @@ sort_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
     return reverse ? !result : result;
   };
   return ROOT::VecOps::Sort(collection, lambda);
+}
+edm4hep::MCParticleCollection sortP(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.P();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.P();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortPt(edm4hep::MCParticleCollection &collection,
+                                     bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.pt();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.pt();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortPx(edm4hep::MCParticleCollection &collection,
+                                     bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.px();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.px();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortPy(edm4hep::MCParticleCollection &collection,
+                                     bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.py();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.py();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortPz(edm4hep::MCParticleCollection &collection,
+                                     bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.pz();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.pz();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortEta(edm4hep::MCParticleCollection &collection,
+                                      bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.eta();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.eta();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortRapidity(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.Rapidity();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.Rapidity();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortTheta(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.theta();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.theta();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortPhi(edm4hep::MCParticleCollection &collection,
+                                      bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.phi();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.phi();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortPEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.P();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.P();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortPtEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.pt();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.pt();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortPxEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.px();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.px();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortPyEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.py();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.py();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortPzEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.pz();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.pz();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortEtaEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.eta();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.eta();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortRapidityEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.Rapidity();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.Rapidity();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortThetaEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.theta();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.theta();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortPhiEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.phi();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.phi();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortR(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getVertex().x, x.getVertex().y, x.getVertex().z);
+    a = ra.r();
+    ROOT::Math::XYZVector rb(y.getVertex().x, y.getVertex().y, y.getVertex().z);
+    b = rb.r();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortX(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getVertex().x, x.getVertex().y, x.getVertex().z);
+    a = ra.x();
+    ROOT::Math::XYZVector rb(y.getVertex().x, y.getVertex().y, y.getVertex().z);
+    b = rb.x();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortY(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getVertex().x, x.getVertex().y, x.getVertex().z);
+    a = ra.y();
+    ROOT::Math::XYZVector rb(y.getVertex().x, y.getVertex().y, y.getVertex().z);
+    b = rb.y();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortZ(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getVertex().x, x.getVertex().y, x.getVertex().z);
+    a = ra.z();
+    ROOT::Math::XYZVector rb(y.getVertex().x, y.getVertex().y, y.getVertex().z);
+    b = rb.z();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortREnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getEndpoint().x, x.getEndpoint().y,
+                             x.getEndpoint().z);
+    a = ra.r();
+    ROOT::Math::XYZVector rb(y.getEndpoint().x, y.getEndpoint().y,
+                             y.getEndpoint().z);
+    b = rb.r();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortXEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getEndpoint().x, x.getEndpoint().y,
+                             x.getEndpoint().z);
+    a = ra.x();
+    ROOT::Math::XYZVector rb(y.getEndpoint().x, y.getEndpoint().y,
+                             y.getEndpoint().z);
+    b = rb.x();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortYEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getEndpoint().x, x.getEndpoint().y,
+                             x.getEndpoint().z);
+    a = ra.y();
+    ROOT::Math::XYZVector rb(y.getEndpoint().x, y.getEndpoint().y,
+                             y.getEndpoint().z);
+    b = rb.y();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortZEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::XYZVector ra(x.getEndpoint().x, x.getEndpoint().y,
+                             x.getEndpoint().z);
+    a = ra.z();
+    ROOT::Math::XYZVector rb(y.getEndpoint().x, y.getEndpoint().y,
+                             y.getEndpoint().z);
+    b = rb.z();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortE(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentum().x, x.getMomentum().y,
+                                 x.getMomentum().z, x.getMass());
+    a = pa.e();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentum().x, y.getMomentum().y,
+                                 y.getMomentum().z, y.getMass());
+    b = pb.e();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortEEnd(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    ROOT::Math::PxPyPzMVector pa(x.getMomentumAtEndpoint().x,
+                                 x.getMomentumAtEndpoint().y,
+                                 x.getMomentumAtEndpoint().z, x.getMass());
+    a = pa.e();
+    ROOT::Math::PxPyPzMVector pb(y.getMomentumAtEndpoint().x,
+                                 y.getMomentumAtEndpoint().y,
+                                 y.getMomentumAtEndpoint().z, y.getMass());
+    b = pb.e();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortM(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    a = x.getMass();
+    b = y.getMass();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortQ(edm4hep::MCParticleCollection &collection,
+                                    bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    a = x.getCharge();
+    b = y.getCharge();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortAbsq(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    float a, b;
+    a = std::abs(x.getCharge());
+    b = std::abs(y.getCharge());
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection sortPdg(edm4hep::MCParticleCollection &collection,
+                                      bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    int a, b;
+    a = x.getPDG();
+    b = y.getPDG();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortAbspdg(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    int a, b;
+    a = std::abs(x.getPDG());
+    b = std::abs(y.getPDG());
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortSimStat(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    int a, b;
+    a = x.getSimulatorStatus();
+    b = y.getSimulatorStatus();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::MCParticleCollection
+sortGenStat(edm4hep::MCParticleCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::MCParticle x, edm4hep::MCParticle y) {
+    int a, b;
+    a = x.getGeneratorStatus();
+    b = y.getGeneratorStatus();
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::MCParticle> vec;
+  for (const edm4hep::MCParticle &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::MCParticleCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::MCParticle &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
 }
 } // namespace ReconstructedParticle
 } // namespace k4::ral

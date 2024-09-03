@@ -1,7 +1,7 @@
 #include <Math/Vector3D.h>
 #include <Math/Vector4D.h>
 #include <cmath>
-#include <edm4hep/MCParticleData.h>
+#include <edm4hep/MCParticleCollection.h>
 #include <iostream>
 #include <ral/LogicalOperators.h>
 namespace k4::ral {
@@ -13,7 +13,7 @@ namespace ReconstructedParticle {
  *
  */
 ROOT::VecOps::RVec<float>
-get_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get transverse momentum from each item in a collection of MCParticle.
  *
@@ -21,7 +21,7 @@ get_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get x momentum from each item in a collection of MCParticle.
  *
@@ -29,7 +29,7 @@ get_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPx(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get y momentum from each item in a collection of MCParticle.
  *
@@ -37,7 +37,7 @@ get_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPy(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get z momentum from each item in a collection of MCParticle.
  *
@@ -45,7 +45,7 @@ get_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get pseudorapidity from each item in a collection of MCParticle.
  *
@@ -53,7 +53,7 @@ get_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getEta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get rapidity from each item in a collection of MCParticle.
  *
@@ -61,7 +61,7 @@ get_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getRapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get polar angle from each item in a collection of MCParticle.
  *
@@ -69,7 +69,7 @@ get_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getTheta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get azimutal angle from each item in a collection of MCParticle.
  *
@@ -77,7 +77,7 @@ get_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPhi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get momentum from each item in a collection of MCParticle.
  *
@@ -85,7 +85,7 @@ get_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get transverse momentum from each item in a collection of MCParticle.
  *
@@ -93,7 +93,7 @@ get_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPtEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get x momentum from each item in a collection of MCParticle.
  *
@@ -101,7 +101,7 @@ get_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPxEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get y momentum from each item in a collection of MCParticle.
  *
@@ -109,7 +109,7 @@ get_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPyEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get z momentum from each item in a collection of MCParticle.
  *
@@ -117,7 +117,7 @@ get_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPzEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get pseudorapidity from each item in a collection of MCParticle.
  *
@@ -125,7 +125,7 @@ get_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getEtaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get rapidity from each item in a collection of MCParticle.
  *
@@ -133,7 +133,7 @@ get_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getRapidityEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get polar angle from each item in a collection of MCParticle.
  *
@@ -141,7 +141,7 @@ get_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getThetaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get azimutal angle from each item in a collection of MCParticle.
  *
@@ -149,7 +149,7 @@ get_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPhiEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get distance to origin from each item in a collection of MCParticle.
  *
@@ -157,7 +157,7 @@ get_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getR(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get x coordinate from each item in a collection of MCParticle.
  *
@@ -165,7 +165,7 @@ get_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getX(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get y coordinate from each item in a collection of MCParticle.
  *
@@ -173,7 +173,7 @@ get_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getY(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get z coordinate from each item in a collection of MCParticle.
  *
@@ -181,7 +181,7 @@ get_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getZ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get distance to origin from each item in a collection of MCParticle.
  *
@@ -189,7 +189,7 @@ get_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getREnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get x coordinate from each item in a collection of MCParticle.
  *
@@ -197,7 +197,7 @@ get_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getXEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get y coordinate from each item in a collection of MCParticle.
  *
@@ -205,7 +205,7 @@ get_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getYEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get z coordinate from each item in a collection of MCParticle.
  *
@@ -213,7 +213,7 @@ get_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getZEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get energy from each item in a collection of MCParticle.
  *
@@ -221,7 +221,7 @@ get_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getE(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get energy from each item in a collection of MCParticle.
  *
@@ -229,7 +229,7 @@ get_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getEEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get mass from each item in a collection of MCParticle.
  *
@@ -237,7 +237,7 @@ get_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getM(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get charge from each item in a collection of MCParticle.
  *
@@ -245,7 +245,7 @@ get_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getQ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get absolute charge from each item in a collection of MCParticle.
  *
@@ -253,7 +253,7 @@ get_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-get_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getAbsq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get pdg from each item in a collection of MCParticle.
  *
@@ -261,7 +261,7 @@ get_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-get_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getPdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get absolute pdg from each item in a collection of MCParticle.
  *
@@ -269,7 +269,7 @@ get_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-get_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getAbspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get simulator status from each item in a collection of MCParticle.
  *
@@ -277,7 +277,7 @@ get_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-get_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getSimStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Get generator status from each item in a collection of MCParticle.
  *
@@ -285,252 +285,768 @@ get_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-get_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+getGenStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Get momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getP(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get transverse momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPt(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get x momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPx(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get y momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPy(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get z momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPz(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get pseudorapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getEta(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get rapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getRapidity(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get polar angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getTheta(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get azimutal angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPhi(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get transverse momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPtEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get x momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPxEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get y momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPyEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get z momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPzEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get pseudorapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getEtaEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get rapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getRapidityEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get polar angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getThetaEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get azimutal angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPhiEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get distance to origin from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getR(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get x coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getX(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get y coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getY(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get z coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getZ(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get distance to origin from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getREnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get x coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getXEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get y coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getYEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get z coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getZEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get energy from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getE(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get energy from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getEEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get mass from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getM(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get charge from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float> getQ(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get absolute charge from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getAbsq(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get pdg from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<int> getPdg(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get absolute pdg from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<int>
+getAbspdg(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get simulator status from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<int>
+getSimStat(const edm4hep::MCParticleCollection &collection);
+/**
+ * Get generator status from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<int>
+getGenStat(const edm4hep::MCParticleCollection &collection);
 /**
  * Print momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print transverse momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print x momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPx(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print y momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPy(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print z momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print pseudorapidity from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printEta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print rapidity from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printRapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print polar angle from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printTheta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print azimutal angle from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPhi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print transverse momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPtEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print x momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPxEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print y momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPyEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print z momentum from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPzEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print pseudorapidity from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printEtaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print rapidity from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printRapidityEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print polar angle from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printThetaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print azimutal angle from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPhiEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print distance to origin from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printR(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print x coordinate from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printX(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print y coordinate from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printY(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print z coordinate from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printZ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print distance to origin from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printREnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print x coordinate from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printXEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print y coordinate from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printYEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print z coordinate from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printZEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print energy from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printE(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print energy from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printEEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print mass from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printM(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print charge from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printQ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print absolute charge from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printAbsq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print pdg from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printPdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print absolute pdg from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printAbspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print simulator status from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printSimStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Print generator status from each item in a collection of MCParticle.
  *
  * @param collection Collection of MCParticle to look in
  *
  */
-int print_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+int printGenStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printP(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print transverse momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPt(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print x momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPx(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print y momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPy(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print z momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPz(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print pseudorapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printEta(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print rapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printRapidity(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print polar angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printTheta(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print azimutal angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPhi(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print transverse momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPtEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print x momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPxEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print y momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPyEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print z momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPzEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print pseudorapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printEtaEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print rapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printRapidityEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print polar angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printThetaEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print azimutal angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPhiEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print distance to origin from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printR(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print x coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printX(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print y coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printY(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print z coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printZ(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print distance to origin from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printREnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print x coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printXEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print y coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printYEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print z coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printZEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print energy from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printE(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print energy from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printEEnd(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print mass from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printM(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print charge from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printQ(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print absolute charge from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printAbsq(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print pdg from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printPdg(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print absolute pdg from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printAbspdg(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print simulator status from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printSimStat(const edm4hep::MCParticleCollection &collection);
+/**
+ * Print generator status from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int printGenStat(const edm4hep::MCParticleCollection &collection);
 /**
  * Create boolean mask based on the value of momentum from each item in a
  * collection of MCParticle.
@@ -541,8 +1057,8 @@ int print_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_p(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskP(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of transverse momentum from each item
  * in a collection of MCParticle.
@@ -553,8 +1069,8 @@ mask_p(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_pt(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPt(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of x momentum from each item in a
  * collection of MCParticle.
@@ -565,8 +1081,8 @@ mask_pt(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_px(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPx(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of y momentum from each item in a
  * collection of MCParticle.
@@ -577,8 +1093,8 @@ mask_px(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_py(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPy(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of z momentum from each item in a
  * collection of MCParticle.
@@ -589,8 +1105,8 @@ mask_py(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_pz(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPz(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of pseudorapidity from each item in a
  * collection of MCParticle.
@@ -601,8 +1117,8 @@ mask_pz(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_eta(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskEta(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of rapidity from each item in a
  * collection of MCParticle.
@@ -613,8 +1129,8 @@ mask_eta(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_rapidity(LogicalOperators::ComparisonOperator op, float val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskRapidity(LogicalOperators::ComparisonOperator op, float val,
+             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of polar angle from each item in a
  * collection of MCParticle.
@@ -625,8 +1141,8 @@ mask_rapidity(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_theta(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskTheta(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of azimutal angle from each item in a
  * collection of MCParticle.
@@ -637,8 +1153,8 @@ mask_theta(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_phi(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of momentum from each item in a
  * collection of MCParticle.
@@ -649,8 +1165,8 @@ mask_phi(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_p_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of transverse momentum from each item
  * in a collection of MCParticle.
@@ -661,8 +1177,8 @@ mask_p_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_pt_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPtEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of x momentum from each item in a
  * collection of MCParticle.
@@ -673,8 +1189,8 @@ mask_pt_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_px_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPxEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of y momentum from each item in a
  * collection of MCParticle.
@@ -685,8 +1201,8 @@ mask_px_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_py_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPyEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of z momentum from each item in a
  * collection of MCParticle.
@@ -697,8 +1213,8 @@ mask_py_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_pz_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPzEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of pseudorapidity from each item in a
  * collection of MCParticle.
@@ -709,8 +1225,8 @@ mask_pz_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_eta_end(LogicalOperators::ComparisonOperator op, float val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of rapidity from each item in a
  * collection of MCParticle.
@@ -721,8 +1237,8 @@ mask_eta_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
-                  ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+                ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of polar angle from each item in a
  * collection of MCParticle.
@@ -733,8 +1249,8 @@ mask_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_theta_end(LogicalOperators::ComparisonOperator op, float val,
-               ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of azimutal angle from each item in a
  * collection of MCParticle.
@@ -745,8 +1261,8 @@ mask_theta_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_phi_end(LogicalOperators::ComparisonOperator op, float val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
  * in a collection of MCParticle.
@@ -757,8 +1273,8 @@ mask_phi_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_r(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskR(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of x coordinate from each item in a
  * collection of MCParticle.
@@ -769,8 +1285,8 @@ mask_r(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_x(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskX(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of y coordinate from each item in a
  * collection of MCParticle.
@@ -781,8 +1297,8 @@ mask_x(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_y(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskY(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of z coordinate from each item in a
  * collection of MCParticle.
@@ -793,8 +1309,8 @@ mask_y(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_z(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskZ(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
  * in a collection of MCParticle.
@@ -805,8 +1321,8 @@ mask_z(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_r_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskREnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of x coordinate from each item in a
  * collection of MCParticle.
@@ -817,8 +1333,8 @@ mask_r_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_x_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskXEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of y coordinate from each item in a
  * collection of MCParticle.
@@ -829,8 +1345,8 @@ mask_x_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_y_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskYEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of z coordinate from each item in a
  * collection of MCParticle.
@@ -841,8 +1357,8 @@ mask_y_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_z_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskZEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of energy from each item in a
  * collection of MCParticle.
@@ -853,8 +1369,8 @@ mask_z_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_e(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskE(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of energy from each item in a
  * collection of MCParticle.
@@ -865,8 +1381,8 @@ mask_e(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_e_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskEEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of mass from each item in a collection
  * of MCParticle.
@@ -877,8 +1393,8 @@ mask_e_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_m(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskM(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of charge from each item in a
  * collection of MCParticle.
@@ -889,8 +1405,8 @@ mask_m(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_q(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskQ(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of absolute charge from each item in a
  * collection of MCParticle.
@@ -901,8 +1417,8 @@ mask_q(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_absq(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskAbsq(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of pdg from each item in a collection
  * of MCParticle.
@@ -913,8 +1429,8 @@ mask_absq(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_pdg(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskPdg(LogicalOperators::ComparisonOperator op, int val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of absolute pdg from each item in a
  * collection of MCParticle.
@@ -925,8 +1441,8 @@ mask_pdg(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_abspdg(LogicalOperators::ComparisonOperator op, int val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of simulator status from each item in
  * a collection of MCParticle.
@@ -937,8 +1453,8 @@ mask_abspdg(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_sim_stat(LogicalOperators::ComparisonOperator op, int val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskSimStat(LogicalOperators::ComparisonOperator op, int val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of generator status from each item in
  * a collection of MCParticle.
@@ -949,8 +1465,428 @@ mask_sim_stat(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<bool>
-mask_gen_stat(LogicalOperators::ComparisonOperator op, int val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+maskGenStat(LogicalOperators::ComparisonOperator op, int val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Create boolean mask based on the value of momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskP(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of transverse momentum from each item
+ * in a collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPt(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of x momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPx(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of y momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPy(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of z momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPz(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of pseudorapidity from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskEta(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of rapidity from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskRapidity(LogicalOperators::ComparisonOperator op, float val,
+             const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of polar angle from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskTheta(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of azimutal angle from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of transverse momentum from each item
+ * in a collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPtEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of x momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPxEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of y momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPyEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of z momentum from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPzEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of pseudorapidity from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+           const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of rapidity from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+                const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of polar angle from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+             const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of azimutal angle from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+           const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of distance to origin from each item
+ * in a collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskR(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of x coordinate from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskX(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of y coordinate from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskY(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of z coordinate from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of distance to origin from each item
+ * in a collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskREnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of x coordinate from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskXEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of y coordinate from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskYEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of z coordinate from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskZEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of energy from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskE(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of energy from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskEEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of mass from each item in a collection
+ * of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskM(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of charge from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool> maskQ(LogicalOperators::ComparisonOperator op,
+                               float val,
+                               const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of absolute charge from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskAbsq(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of pdg from each item in a collection
+ * of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPdg(LogicalOperators::ComparisonOperator op, int val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of absolute pdg from each item in a
+ * collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of simulator status from each item in
+ * a collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskSimStat(LogicalOperators::ComparisonOperator op, int val,
+            const edm4hep::MCParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of generator status from each item in
+ * a collection of MCParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskGenStat(LogicalOperators::ComparisonOperator op, int val,
+            const edm4hep::MCParticleCollection &collection);
 /**
  * Select a subgroup of MCParticle based on the value of momentum.
  *
@@ -960,8 +1896,8 @@ mask_gen_stat(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_p(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selP(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of transverse momentum.
  *
@@ -971,8 +1907,8 @@ sel_p(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pt(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPt(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of x momentum.
  *
@@ -982,8 +1918,8 @@ sel_pt(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_px(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPx(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of y momentum.
  *
@@ -993,8 +1929,8 @@ sel_px(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_py(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPy(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of z momentum.
  *
@@ -1004,8 +1940,8 @@ sel_py(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pz(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPz(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of pseudorapidity.
  *
@@ -1015,8 +1951,8 @@ sel_pz(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_eta(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selEta(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of rapidity.
  *
@@ -1026,8 +1962,8 @@ sel_eta(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_rapidity(LogicalOperators::ComparisonOperator op, float val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selRapidity(LogicalOperators::ComparisonOperator op, float val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of polar angle.
  *
@@ -1037,8 +1973,8 @@ sel_rapidity(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_theta(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selTheta(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of azimutal angle.
  *
@@ -1048,8 +1984,8 @@ sel_theta(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_phi(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPhi(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of momentum.
  *
@@ -1059,8 +1995,8 @@ sel_phi(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_p_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of transverse momentum.
  *
@@ -1070,8 +2006,8 @@ sel_p_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pt_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPtEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of x momentum.
  *
@@ -1081,8 +2017,8 @@ sel_pt_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_px_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPxEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of y momentum.
  *
@@ -1092,8 +2028,8 @@ sel_px_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_py_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPyEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of z momentum.
  *
@@ -1103,8 +2039,8 @@ sel_py_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pz_end(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPzEnd(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of pseudorapidity.
  *
@@ -1114,8 +2050,8 @@ sel_pz_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_eta_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of rapidity.
  *
@@ -1125,8 +2061,8 @@ sel_eta_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
-                 ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+               ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of polar angle.
  *
@@ -1136,8 +2072,8 @@ sel_rapidity_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_theta_end(LogicalOperators::ComparisonOperator op, float val,
-              ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of azimutal angle.
  *
@@ -1147,8 +2083,8 @@ sel_theta_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_phi_end(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of distance to origin.
  *
@@ -1158,8 +2094,8 @@ sel_phi_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_r(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selR(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of x coordinate.
  *
@@ -1169,8 +2105,8 @@ sel_r(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_x(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selX(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of y coordinate.
  *
@@ -1180,8 +2116,8 @@ sel_x(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_y(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selY(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of z coordinate.
  *
@@ -1191,8 +2127,8 @@ sel_y(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_z(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of distance to origin.
  *
@@ -1202,8 +2138,8 @@ sel_z(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_r_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selREnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of x coordinate.
  *
@@ -1213,8 +2149,8 @@ sel_r_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_x_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selXEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of y coordinate.
  *
@@ -1224,8 +2160,8 @@ sel_x_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_y_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selYEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of z coordinate.
  *
@@ -1235,8 +2171,8 @@ sel_y_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_z_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selZEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of energy.
  *
@@ -1246,8 +2182,8 @@ sel_z_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_e(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selE(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of energy.
  *
@@ -1257,8 +2193,8 @@ sel_e(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_e_end(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selEEnd(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of mass.
  *
@@ -1268,8 +2204,8 @@ sel_e_end(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_m(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selM(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of charge.
  *
@@ -1279,8 +2215,8 @@ sel_m(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_q(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selQ(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of absolute charge.
  *
@@ -1290,8 +2226,8 @@ sel_q(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_absq(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selAbsq(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of pdg.
  *
@@ -1301,8 +2237,8 @@ sel_absq(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_pdg(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selPdg(LogicalOperators::ComparisonOperator op, int val,
+       ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of absolute pdg.
  *
@@ -1312,8 +2248,8 @@ sel_pdg(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_abspdg(LogicalOperators::ComparisonOperator op, int val,
-           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selAbspdg(LogicalOperators::ComparisonOperator op, int val,
+          ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of simulator status.
  *
@@ -1323,8 +2259,8 @@ sel_abspdg(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_sim_stat(LogicalOperators::ComparisonOperator op, int val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selSimStat(LogicalOperators::ComparisonOperator op, int val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Select a subgroup of MCParticle based on the value of generator status.
  *
@@ -1334,8 +2270,393 @@ sel_sim_stat(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sel_gen_stat(LogicalOperators::ComparisonOperator op, int val,
-             ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+selGenStat(LogicalOperators::ComparisonOperator op, int val,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Select a subgroup of MCParticle based on the value of momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selP(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of transverse momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPt(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of x momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPx(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of y momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPy(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of z momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPz(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of pseudorapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selEta(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of rapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selRapidity(LogicalOperators::ComparisonOperator op, float val,
+            const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of polar angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selTheta(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of azimutal angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPhi(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of transverse momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPtEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of x momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPxEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of y momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPyEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of z momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPzEnd(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of pseudorapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selEtaEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of rapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selRapidityEnd(LogicalOperators::ComparisonOperator op, float val,
+               const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of polar angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selThetaEnd(LogicalOperators::ComparisonOperator op, float val,
+            const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of azimutal angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPhiEnd(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of distance to origin.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selR(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of x coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selX(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of y coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selY(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of z coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of distance to origin.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selREnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of x coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selXEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of y coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selYEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of z coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selZEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of energy.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selE(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of energy.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selEEnd(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of mass.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selM(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of charge.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selQ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of absolute charge.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selAbsq(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of pdg.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selPdg(LogicalOperators::ComparisonOperator op, int val,
+       const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of absolute pdg.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selAbspdg(LogicalOperators::ComparisonOperator op, int val,
+          const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of simulator status.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selSimStat(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::MCParticleCollection &collection);
+/**
+ * Select a subgroup of MCParticle based on the value of generator status.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+edm4hep::MCParticleCollection
+selGenStat(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::MCParticleCollection &collection);
 /**
  * Sort a collection of MCParticle based on the value of momentum.
  *
@@ -1344,8 +2665,8 @@ sel_gen_stat(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of transverse momentum.
  *
@@ -1354,8 +2675,8 @@ sort_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-        bool reverse = false);
+sortPt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+       bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of x momentum.
  *
@@ -1364,8 +2685,8 @@ sort_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-        bool reverse = false);
+sortPx(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+       bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of y momentum.
  *
@@ -1374,8 +2695,8 @@ sort_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-        bool reverse = false);
+sortPy(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+       bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of z momentum.
  *
@@ -1384,8 +2705,8 @@ sort_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-        bool reverse = false);
+sortPz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+       bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of pseudorapidity.
  *
@@ -1394,8 +2715,8 @@ sort_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-         bool reverse = false);
+sortEta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+        bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of rapidity.
  *
@@ -1404,8 +2725,8 @@ sort_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-              bool reverse = false);
+sortRapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+             bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of polar angle.
  *
@@ -1414,8 +2735,8 @@ sort_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortTheta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of azimutal angle.
  *
@@ -1424,8 +2745,8 @@ sort_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-         bool reverse = false);
+sortPhi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+        bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of momentum.
  *
@@ -1434,8 +2755,8 @@ sort_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortPEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of transverse momentum.
  *
@@ -1444,8 +2765,8 @@ sort_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse = false);
+sortPtEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of x momentum.
  *
@@ -1454,8 +2775,8 @@ sort_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse = false);
+sortPxEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of y momentum.
  *
@@ -1464,8 +2785,8 @@ sort_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse = false);
+sortPyEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of z momentum.
  *
@@ -1474,8 +2795,8 @@ sort_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse = false);
+sortPzEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+          bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of pseudorapidity.
  *
@@ -1484,8 +2805,8 @@ sort_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-             bool reverse = false);
+sortEtaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+           bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of rapidity.
  *
@@ -1494,8 +2815,8 @@ sort_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-                  bool reverse = false);
+sortRapidityEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+                bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of polar angle.
  *
@@ -1504,8 +2825,8 @@ sort_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-               bool reverse = false);
+sortThetaEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+             bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of azimutal angle.
  *
@@ -1514,8 +2835,8 @@ sort_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-             bool reverse = false);
+sortPhiEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+           bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of distance to origin.
  *
@@ -1524,8 +2845,8 @@ sort_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortR(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of x coordinate.
  *
@@ -1534,8 +2855,8 @@ sort_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortX(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of y coordinate.
  *
@@ -1544,8 +2865,8 @@ sort_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortY(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of z coordinate.
  *
@@ -1554,8 +2875,8 @@ sort_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortZ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of distance to origin.
  *
@@ -1564,8 +2885,8 @@ sort_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortREnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of x coordinate.
  *
@@ -1574,8 +2895,8 @@ sort_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortXEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of y coordinate.
  *
@@ -1584,8 +2905,8 @@ sort_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortYEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of z coordinate.
  *
@@ -1594,8 +2915,8 @@ sort_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortZEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of energy.
  *
@@ -1604,8 +2925,8 @@ sort_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortE(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of energy.
  *
@@ -1614,8 +2935,8 @@ sort_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-           bool reverse = false);
+sortEEnd(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of mass.
  *
@@ -1624,8 +2945,8 @@ sort_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortM(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of charge.
  *
@@ -1634,8 +2955,8 @@ sort_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-       bool reverse = false);
+sortQ(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+      bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of absolute charge.
  *
@@ -1644,8 +2965,8 @@ sort_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-          bool reverse = false);
+sortAbsq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+         bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of pdg.
  *
@@ -1654,8 +2975,8 @@ sort_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-         bool reverse = false);
+sortPdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+        bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of absolute pdg.
  *
@@ -1664,8 +2985,8 @@ sort_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-            bool reverse = false);
+sortAbspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+           bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of simulator status.
  *
@@ -1674,8 +2995,8 @@ sort_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-              bool reverse = false);
+sortSimStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+            bool reverse = false);
 /**
  * Sort a collection of MCParticle based on the value of generator status.
  *
@@ -1684,7 +3005,323 @@ sort_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::MCParticleData>
-sort_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
-              bool reverse = false);
+sortGenStat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection,
+            bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortP(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of transverse momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortPt(edm4hep::MCParticleCollection &collection,
+                                     bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of x momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortPx(edm4hep::MCParticleCollection &collection,
+                                     bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of y momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortPy(edm4hep::MCParticleCollection &collection,
+                                     bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of z momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortPz(edm4hep::MCParticleCollection &collection,
+                                     bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of pseudorapidity.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortEta(edm4hep::MCParticleCollection &collection,
+                                      bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of rapidity.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortRapidity(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of polar angle.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortTheta(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of azimutal angle.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortPhi(edm4hep::MCParticleCollection &collection,
+                                      bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortPEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of transverse momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortPtEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of x momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortPxEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of y momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortPyEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of z momentum.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortPzEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of pseudorapidity.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortEtaEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of rapidity.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortRapidityEnd(edm4hep::MCParticleCollection &collection,
+                bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of polar angle.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortThetaEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of azimutal angle.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortPhiEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of distance to origin.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortR(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of x coordinate.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortX(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of y coordinate.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortY(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of z coordinate.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortZ(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of distance to origin.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortREnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of x coordinate.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortXEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of y coordinate.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortYEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of z coordinate.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortZEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of energy.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortE(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of energy.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortEEnd(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of mass.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortM(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of charge.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortQ(edm4hep::MCParticleCollection &collection,
+                                    bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of absolute charge.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortAbsq(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of pdg.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection sortPdg(edm4hep::MCParticleCollection &collection,
+                                      bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of absolute pdg.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortAbspdg(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of simulator status.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortSimStat(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Sort a collection of MCParticle based on the value of generator status.
+ *
+ * @param collection Collection of MCParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::MCParticleCollection
+sortGenStat(edm4hep::MCParticleCollection &collection, bool reverse = false);
 } // namespace ReconstructedParticle
 } // namespace k4::ral
