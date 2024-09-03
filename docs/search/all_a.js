@@ -2,7 +2,7 @@ var searchData=
 [
   ['sel_5fabspdg_0',['sel_abspdg',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#ab5f93a3e287f6795cb0fbb2b9a0c8118',1,'k4::ral::ReconstructedParticle']]],
   ['sel_5fabsq_1',['sel_absq',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#ac2d500bff2b31c32ea6fe27ec2226646',1,'k4::ral::ReconstructedParticle']]],
-  ['sel_5fe_2',['sel_e',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#a0a20c3bdacb90105a1545286c40ee5af',1,'k4::ral::ReconstructedParticle']]],
+  ['sel_5fe_2',['sel_e',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#a0a20c3bdacb90105a1545286c40ee5af',1,'k4::ral::ReconstructedParticle::sel_e(LogicalOperators::ComparisonOperator op, float value, ROOT::VecOps::RVec&lt; edm4hep::ReconstructedParticleData &gt; particles)'],['../namespacek4_1_1ral_1_1ReconstructedParticle.html#a0ea0e265125745d5982a5cdbf937ae79',1,'k4::ral::ReconstructedParticle::sel_e(LogicalOperators::ComparisonOperator op, float value, const edm4hep::ReconstructedParticleCollection &amp;particles)']]],
   ['sel_5felement_3',['sel_element',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#a4c056e5e16fa67b6d47c0005ee8c50e2',1,'k4::ral::ReconstructedParticle']]],
   ['sel_5feta_4',['sel_eta',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#afc5e63b133cdd9ebb090eb826ff17875',1,'k4::ral::ReconstructedParticle']]],
   ['sel_5fm_5',['sel_m',['../namespacek4_1_1ral_1_1ReconstructedParticle.html#a38816a63f0ef1ace61946b8a0de47bbe',1,'k4::ral::ReconstructedParticle']]],
