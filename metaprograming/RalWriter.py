@@ -2,6 +2,7 @@ from pathlib import Path
 from metaprograming.FunctionSignature import FunctionSignature 
 from metaprograming.RalEnums import Edm4hepCollection 
 from metaprograming.FunctionGetter import FunctionGetter
+from metaprograming.FunctionPrinter import FunctionPrinter
 from metaprograming.FunctionMask import FunctionMask
 from metaprograming.FunctionSelector import FunctionSelector
 from metaprograming.FunctionSorter import FunctionSorter
@@ -33,6 +34,11 @@ class RalClassWriter:
         getter = FunctionGetter(name, out_t, self.edm_class, col_t, doc_property, 
                                 get_code)
         self.functions.append(getter)
+
+    def add_printer(self, name: str, out_t: str, col_t: Edm4hepCollection, 
+                   doc_property: str) -> None:
+        printer = FunctionPrinter(name, out_t, self.edm_class, col_t, doc_property)
+        self.functions.append(printer)
 
     def add_mask(self, name: str, val_t: str, col_t: Edm4hepCollection, 
                  doc_property: str) -> None:

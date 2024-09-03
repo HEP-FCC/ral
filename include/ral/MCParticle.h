@@ -2,6 +2,7 @@
 #include <Math/Vector4D.h>
 #include <cmath>
 #include <edm4hep/MCParticleData.h>
+#include <iostream>
 #include <ral/LogicalOperators.h>
 namespace k4::ral {
 namespace ReconstructedParticle {
@@ -285,6 +286,251 @@ get_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
  */
 ROOT::VecOps::RVec<int>
 get_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print transverse momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print x momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print y momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print z momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print pseudorapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print rapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print polar angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print azimutal angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print transverse momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print x momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print y momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print z momentum from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print pseudorapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print rapidity from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print polar angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print azimutal angle from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print distance to origin from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print x coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print y coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print z coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print distance to origin from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print x coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print y coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print z coordinate from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print energy from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print energy from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print mass from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print charge from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print absolute charge from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print pdg from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print absolute pdg from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print simulator status from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
+/**
+ * Print generator status from each item in a collection of MCParticle.
+ *
+ * @param collection Collection of MCParticle to look in
+ *
+ */
+int print_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection);
 /**
  * Create boolean mask based on the value of momentum from each item in a
  * collection of MCParticle.

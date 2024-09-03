@@ -448,6 +448,321 @@ get_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   }
   return vec;
 }
+int print_p(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_p(collection);
+  std::cout << "Momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_pt(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_pt(collection);
+  std::cout << "Transverse momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_px(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_px(collection);
+  std::cout << "X momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_py(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_py(collection);
+  std::cout << "Y momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_pz(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_pz(collection);
+  std::cout << "Z momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_eta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_eta(collection);
+  std::cout << "Pseudorapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_rapidity(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_rapidity(collection);
+  std::cout << "Rapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_theta(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_theta(collection);
+  std::cout << "Polar angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_phi(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_phi(collection);
+  std::cout << "Azimutal angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_p_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_p_end(collection);
+  std::cout << "Momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_pt_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_pt_end(collection);
+  std::cout << "Transverse momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_px_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_px_end(collection);
+  std::cout << "X momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_py_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_py_end(collection);
+  std::cout << "Y momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_pz_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_pz_end(collection);
+  std::cout << "Z momentum: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_eta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_eta_end(collection);
+  std::cout << "Pseudorapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_rapidity_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_rapidity_end(collection);
+  std::cout << "Rapidity: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_theta_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_theta_end(collection);
+  std::cout << "Polar angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_phi_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_phi_end(collection);
+  std::cout << "Azimutal angle: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_r(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_r(collection);
+  std::cout << "Distance to origin: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_x(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_x(collection);
+  std::cout << "X coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_y(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_y(collection);
+  std::cout << "Y coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_z(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_z(collection);
+  std::cout << "Z coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_r_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_r_end(collection);
+  std::cout << "Distance to origin: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_x_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_x_end(collection);
+  std::cout << "X coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_y_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_y_end(collection);
+  std::cout << "Y coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_z_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_z_end(collection);
+  std::cout << "Z coordinate: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_e(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_e(collection);
+  std::cout << "Energy: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_e_end(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_e_end(collection);
+  std::cout << "Energy: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_m(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_m(collection);
+  std::cout << "Mass: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_q(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_q(collection);
+  std::cout << "Charge: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_absq(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<float> vec = get_absq(collection);
+  std::cout << "Absolute charge: ";
+  for (const float &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_pdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = get_pdg(collection);
+  std::cout << "Pdg: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_abspdg(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = get_abspdg(collection);
+  std::cout << "Absolute pdg: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_sim_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = get_sim_stat(collection);
+  std::cout << "Simulator status: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int print_gen_stat(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
+  ROOT::VecOps::RVec<int> vec = get_gen_stat(collection);
+  std::cout << "Generator status: ";
+  for (const int &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
 ROOT::VecOps::RVec<bool>
 mask_p(LogicalOperators::ComparisonOperator op, float val,
        ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
