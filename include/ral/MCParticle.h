@@ -3323,5 +3323,39 @@ sortSimStat(edm4hep::MCParticleCollection &collection, bool reverse = false);
  */
 edm4hep::MCParticleCollection
 sortGenStat(edm4hep::MCParticleCollection &collection, bool reverse = false);
+/**
+ * Get the collection of MCParticle related to a MCParticle.
+ *
+ * @param item MCParticle from which to look for the related collection.
+ * @param relatedCollection Complete collection of MCParticle to filter
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+getParents(edm4hep::MCParticleData item,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> relatedCollection);
+/**
+ * Get the collection of MCParticle related to a MCParticle.
+ *
+ * @param item MCParticle to look in for related collection
+ *
+ */
+edm4hep::MCParticleCollection getParents(const edm4hep::MCParticle &item);
+/**
+ * Get the collection of MCParticle related to a MCParticle.
+ *
+ * @param item MCParticle from which to look for the related collection.
+ * @param relatedCollection Complete collection of MCParticle to filter
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+getDaughters(edm4hep::MCParticleData item,
+             ROOT::VecOps::RVec<edm4hep::MCParticleData> relatedCollection);
+/**
+ * Get the collection of MCParticle related to a MCParticle.
+ *
+ * @param item MCParticle to look in for related collection
+ *
+ */
+edm4hep::MCParticleCollection getDaughters(const edm4hep::MCParticle &item);
 } // namespace ReconstructedParticle
 } // namespace k4::ral

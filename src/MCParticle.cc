@@ -5237,5 +5237,43 @@ sortGenStat(edm4hep::MCParticleCollection &collection, bool reverse) {
   };
   return newCollection;
 }
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+getParents(edm4hep::MCParticleData item,
+           ROOT::VecOps::RVec<edm4hep::MCParticleData> relatedCollection) {
+  ROOT::VecOps::RVec<edm4hep::MCParticleData> vec;
+  size_t len = item.parents_end - item.parents_begin;
+  vec.reserve(len);
+  for (int i = item.parents_begin; i < item.parents_end; i++) {
+    vec.emplace_back(relatedCollection[i]);
+  }
+  return vec;
+}
+edm4hep::MCParticleCollection getParents(const edm4hep::MCParticle &item) {
+  edm4hep::MCParticleCollection vec;
+  vec.setSubsetCollection();
+  for (auto it = item.parents_begin(); it != item.parents_end(); it++) {
+    vec.push_back(*it);
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<edm4hep::MCParticleData>
+getDaughters(edm4hep::MCParticleData item,
+             ROOT::VecOps::RVec<edm4hep::MCParticleData> relatedCollection) {
+  ROOT::VecOps::RVec<edm4hep::MCParticleData> vec;
+  size_t len = item.daughters_end - item.daughters_begin;
+  vec.reserve(len);
+  for (int i = item.daughters_begin; i < item.daughters_end; i++) {
+    vec.emplace_back(relatedCollection[i]);
+  }
+  return vec;
+}
+edm4hep::MCParticleCollection getDaughters(const edm4hep::MCParticle &item) {
+  edm4hep::MCParticleCollection vec;
+  vec.setSubsetCollection();
+  for (auto it = item.daughters_begin(); it != item.daughters_end(); it++) {
+    vec.push_back(*it);
+  }
+  return vec;
+}
 } // namespace ReconstructedParticle
 } // namespace k4::ral

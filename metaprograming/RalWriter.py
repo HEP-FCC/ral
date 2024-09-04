@@ -6,6 +6,7 @@ from metaprograming.FunctionPrinter import FunctionPrinter
 from metaprograming.FunctionMask import FunctionMask
 from metaprograming.FunctionSelector import FunctionSelector
 from metaprograming.FunctionSorter import FunctionSorter
+from metaprograming.FunctionCollectionRequest import FunctionCollectionRequest
 
 class RalClassWriter:
 
@@ -55,6 +56,17 @@ class RalClassWriter:
         sorter = FunctionSorter(name, val_t, self.edm_class, col_t, doc_property, 
                                 get_code)
         self.functions.append(sorter)
+
+    def add_collection_request(self, name: str,
+                               out_edm_t: str,
+                               col_t: Edm4hepCollection, 
+                               m_index: str) -> None:
+        requester = FunctionCollectionRequest(name, 
+                                           self.edm_class, 
+                                           out_edm_t,
+                                           col_t,
+                                           m_index)
+        self.functions.append(requester)
 
     def write(self, h_file: str, src_file: str) -> None:
         with open(self.include_dir / h_file, "w") as header, open(self.src_dir / src_file, "w") as source:

@@ -570,6 +570,11 @@ def write_mcparticle_code(header_dir: str, src_dir: str):
     writer.add_sorter("GenStat", "int", Edm4hepCollection.COLLECTION, "generator status",
                       "a = x.getGeneratorStatus();\nb = y.getGeneratorStatus();\n")
 
+    writer.add_collection_request("Parents", "MCParticle", Edm4hepCollection.RVEC, "parents")
+    writer.add_collection_request("Parents", "MCParticle", Edm4hepCollection.COLLECTION, "parents")
+    writer.add_collection_request("Daughters", "MCParticle", Edm4hepCollection.RVEC, "daughters")
+    writer.add_collection_request("Daughters", "MCParticle", Edm4hepCollection.COLLECTION, "daughters")
+
     writer.write("MCParticle.h", "MCParticle.cc")
 
 if __name__ == "__main__":
