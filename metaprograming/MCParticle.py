@@ -15,7 +15,7 @@ def write_mcparticle_code(header_dir: str, src_dir: str):
     writer.add_include("ral/LogicalOperators.h")
 
     writer.add_namespace("k4::ral")
-    writer.add_namespace("ReconstructedParticle")
+    writer.add_namespace("MCParticle")
 
     writer.add_getter("P", "float", Edm4hepCollection.RVEC, "momentum",
                       momentum_property_from_DataClass("item", "momentum",  "P", "result"))
@@ -157,7 +157,6 @@ def write_mcparticle_code(header_dir: str, src_dir: str):
                       obj_member("item", "getSimulatorStatus()", "result"))
     writer.add_getter("GenStat", "int", Edm4hepCollection.COLLECTION, "generator status",
                       obj_member("item", "getGeneratorStatus()", "result"))
-
 
     writer.add_printer("P", "float", Edm4hepCollection.RVEC, "momentum")
     writer.add_printer("Pt", "float", Edm4hepCollection.RVEC, "transverse momentum")

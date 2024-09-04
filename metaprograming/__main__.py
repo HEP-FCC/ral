@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 from metaprograming.MCParticle import write_mcparticle_code
+from metaprograming.ReconstructedParticle import write_recoparticle_code
 
 parser = ArgumentParser(
         prog="metaprograming",
@@ -12,3 +13,4 @@ h_dir = args.headerDir
 s_dir = args.srcDir
 
 write_mcparticle_code(h_dir, s_dir)
+write_recoparticle_code(h_dir, s_dir)

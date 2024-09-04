@@ -5,7 +5,7 @@
 #include <iostream>
 #include <ral/LogicalOperators.h>
 namespace k4::ral {
-namespace ReconstructedParticle {
+namespace MCParticle {
 /**
  * Get momentum from each item in a collection of MCParticle.
  *
@@ -3357,5 +3357,5 @@ getDaughters(edm4hep::MCParticleData item,
  *
  */
 edm4hep::MCParticleCollection getDaughters(const edm4hep::MCParticle &item);
-} // namespace ReconstructedParticle
+} // namespace MCParticle
 } // namespace k4::ral

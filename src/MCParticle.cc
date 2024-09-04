@@ -1,6 +1,6 @@
 #include <ral/MCParticle.h>
 namespace k4::ral {
-namespace ReconstructedParticle {
+namespace MCParticle {
 ROOT::VecOps::RVec<float>
 getP(ROOT::VecOps::RVec<edm4hep::MCParticleData> collection) {
   ROOT::VecOps::RVec<float> vec;
@@ -5275,5 +5275,5 @@ edm4hep::MCParticleCollection getDaughters(const edm4hep::MCParticle &item) {
   }
   return vec;
 }
-} // namespace ReconstructedParticle
+} // namespace MCParticle
 } // namespace k4::ral

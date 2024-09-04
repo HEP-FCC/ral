@@ -1,1052 +1,1923 @@
-#ifndef RECONSTRUCTEDPARTICLE_ANALYZERS_H
-#define RECONSTRUCTEDPARTICLE_ANALYZERS_H
-
-#include "Math/Vector3D.h"
-#include "Math/Vector4D.h"
-#include "ROOT/RVec.hxx"
-#include "edm4hep/ClusterData.h"
-#include "edm4hep/ReconstructedParticleCollection.h"
-#include "edm4hep/TrackData.h"
-#include "ral/LogicalOperators.h"
-#include <Math/GenVector/PxPyPzM4D.h>
-#include <Math/Vector4Dfwd.h>
-
-/**
- * Main namespace of the library
- */
+#include <Math/Vector3D.h>
+#include <Math/Vector4D.h>
+#include <cmath>
+#include <edm4hep/ClusterCollection.h>
+#include <edm4hep/ReconstructedParticleCollection.h>
+#include <edm4hep/TrackCollection.h>
+#include <iostream>
+#include <ral/LogicalOperators.h>
 namespace k4::ral {
-
-/**
- * Englobe analyzers that acts on the ReconstructedParticle class
- */
 namespace ReconstructedParticle {
-
 /**
- * Get number of elements in ReconstructedParticles
+ * Get momentum from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int get_n(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+ROOT::VecOps::RVec<float>
+getP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
 /**
- * Get PDG member from ReconstructedParticles
+ * Get transverse momentum from each item in a collection of
+ * ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get x momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get y momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get z momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get pseudorapidity from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get rapidity from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get polar angle from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get azimutal angle from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get distance to origin from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get x coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get y coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get z coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get energy from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get mass from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get charge from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get absolute charge from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<float>
+getAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Get pdg from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<int>
-get_pdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
 /**
- * Get absolute PDG value from ReconstructedParticles
+ * Get absolute pdg from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<int>
-get_abspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getAbspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
 /**
- * Get energy member from ReconstructedParticles
+ * Get momentum from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_e(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getP(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get the 4 momentum from the ReconstructedParticles
+ * Get transverse momentum from each item in a collection of
+ * ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<ROOT::Math::PxPyPzMVector>
-get_p(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Get the modulus of the spatial momentum from the ReconstructedParticles
- *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_pmod(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getPt(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get transverse momentum of ReconstructedParticles
+ * Get x momentum from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_pt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getPx(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get x component momentum of ReconstructedParticles
+ * Get y momentum from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_px(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getPy(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get y component momentum of ReconstructedParticles
+ * Get z momentum from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_py(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getPz(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get z component momentum of ReconstructedParticles
+ * Get pseudorapidity from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_pz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getEta(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get the pseudo-rapidity of ReconstructedParticles
+ * Get rapidity from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_eta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getRapidity(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get the rapidity of ReconstructedParticles
+ * Get polar angle from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_rapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getTheta(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get the polar angle of ReconstructedParticles
+ * Get azimutal angle from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_theta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getPhi(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get the azimutal angle of ReconstructedParticles
+ * Get distance to origin from each item in a collection of
+ * ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_phi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getR(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get referencePoint member from ReconstructedParticles
+ * Get x coordinate from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<ROOT::Math::XYZVector> get_referencePoint(
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Get the distance to the origin from ReconstructedParticles
- *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_r(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getX(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get x coordinate of the position from ReconstructedParticles
+ * Get y coordinate from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_x(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getY(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get y coordinate of the position from ReconstructedParticles
+ * Get z coordinate from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_y(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getZ(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get z coordinate of the position from ReconstructedParticles
+ * Get energy from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_z(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getE(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get charge member from ReconstructedParticles
+ * Get mass from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_q(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getM(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get absolute charge from ReconstructedParticles
+ * Get charge from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_absq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getQ(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get mass member from ReconstructedParticles
+ * Get absolute charge from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<float>
-get_m(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+getAbsq(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get mass member from ReconstructedParticles
+ * Get pdg from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
-ROOT::VecOps::RVec<float>
-get_m(const edm4hep::ReconstructedParticleCollection &particles);
-
+ROOT::VecOps::RVec<int>
+getPdg(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get goodnessOfPID member from ReconstructedParticles
+ * Get absolute pdg from each item in a collection of ReconstructedParticle.
  *
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
-ROOT::VecOps::RVec<float> get_goodnessOfPID(
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+ROOT::VecOps::RVec<int>
+getAbspdg(const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Get all the daughter particles of one ReconstructedParticle
+ * Print momentum from each item in a collection of ReconstructedParticle.
  *
- * @param main_particle Particle that is going to be look for daughters.
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print transverse momentum from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print x momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print y momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print z momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print pseudorapidity from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print rapidity from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printRapidity(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print polar angle from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printTheta(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print azimutal angle from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print distance to origin from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print x coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print y coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print z coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print energy from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print mass from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print charge from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print absolute charge from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printAbsq(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print pdg from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print absolute pdg from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printAbspdg(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Print momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printP(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print transverse momentum from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPt(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print x momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPx(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print y momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPy(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print z momentum from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPz(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print pseudorapidity from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printEta(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print rapidity from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printRapidity(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print polar angle from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printTheta(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print azimutal angle from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPhi(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print distance to origin from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printR(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print x coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printX(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print y coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printY(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print z coordinate from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printZ(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print energy from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printE(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print mass from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printM(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print charge from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printQ(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print absolute charge from each item in a collection of
+ * ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printAbsq(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print pdg from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printPdg(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Print absolute pdg from each item in a collection of ReconstructedParticle.
+ *
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+int printAbspdg(const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskP(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of transverse momentum from each item
+ * in a collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPt(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of x momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPx(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of y momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPy(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of z momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPz(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of pseudorapidity from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskEta(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of rapidity from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskRapidity(LogicalOperators::ComparisonOperator op, float val,
+             ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of polar angle from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskTheta(LogicalOperators::ComparisonOperator op, float val,
+          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of azimutal angle from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of distance to origin from each item
+ * in a collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskR(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of x coordinate from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskX(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of y coordinate from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskY(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of z coordinate from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskZ(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of energy from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskE(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of mass from each item in a collection
+ * of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskM(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of charge from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskQ(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of absolute charge from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskAbsq(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of pdg from each item in a collection
+ * of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPdg(LogicalOperators::ComparisonOperator op, int val,
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of absolute pdg from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
+           ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Create boolean mask based on the value of momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskP(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of transverse momentum from each item
+ * in a collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPt(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of x momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPx(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of y momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPy(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of z momentum from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPz(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of pseudorapidity from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskEta(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of rapidity from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskRapidity(LogicalOperators::ComparisonOperator op, float val,
+             const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of polar angle from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskTheta(LogicalOperators::ComparisonOperator op, float val,
+          const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of azimutal angle from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of distance to origin from each item
+ * in a collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskR(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of x coordinate from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskX(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of y coordinate from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskY(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of z coordinate from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskZ(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of energy from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskE(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of mass from each item in a collection
+ * of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskM(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of charge from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskQ(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of absolute charge from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskAbsq(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of pdg from each item in a collection
+ * of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskPdg(LogicalOperators::ComparisonOperator op, int val,
+        const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Create boolean mask based on the value of absolute pdg from each item in a
+ * collection of ReconstructedParticle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<bool>
+maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
+           const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-get_daugthers(edm4hep::ReconstructedParticleData main_particle,
-              ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+selP(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
 /**
- * Get all the clusters related to one ReconstructedParticle
+ * Select a subgroup of ReconstructedParticle based on the value of transverse
+ * momentum.
  *
- * @param main_particle Particle that is going to be look for clusters.
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-get_clusters(edm4hep::ReconstructedParticleData main_particle,
-             ROOT::VecOps::RVec<edm4hep::ClusterData> clusters);
-
-/**
- * Get all the tracks related to one ReconstructedParticle
- *
- * @param main_particle Particle that is going to be look for tracks.
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::TrackData>
-get_tracks(edm4hep::ReconstructedParticleData main_particle,
-           ROOT::VecOps::RVec<edm4hep::TrackData> tracks);
-
-/**
- * Struct that can print the pdg of collection of ReconstructedParticles.
- */
-struct print_pdg {
-  int m_n_events;
-  int m_n_printed;
-  print_pdg(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-struct print_e {
-  int m_n_events;
-  int m_n_printed;
-  print_e(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-struct print_p {
-  int m_n_events;
-  int m_n_printed;
-  print_p(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-struct print_referencePoint {
-  int m_n_events;
-  int m_n_printed;
-  print_referencePoint(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-struct print_m {
-  int m_n_events;
-  int m_n_printed;
-  print_m(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-struct print_q {
-  int m_n_events;
-  int m_n_printed;
-  print_q(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-struct print_goodnessOfPID {
-  int m_n_events;
-  int m_n_printed;
-  print_goodnessOfPID(int n_events);
-  int operator()(
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-};
-
-/**
- * Creates a boolean mask based on the energy for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the energy that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_e(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the momentum modulus for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_pmod(LogicalOperators::ComparisonOperator op, float value,
-          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the transverse momentum for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_pt(LogicalOperators::ComparisonOperator op, float value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the x momentum coordinate for later
- * filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_px(LogicalOperators::ComparisonOperator op, float value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the y momentum coordinate  for later
- * filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_py(LogicalOperators::ComparisonOperator op, float value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the z momentum coordinate  for later
- * filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_pz(LogicalOperators::ComparisonOperator op, float value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the pseudorapidity for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the pseudorapidity that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_eta(LogicalOperators::ComparisonOperator op, float value,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the rapidity for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the rapidity that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_rapidity(LogicalOperators::ComparisonOperator op, float value,
-              ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the polar angle for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the angle that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_theta(LogicalOperators::ComparisonOperator op, float value,
-           ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the azimutal angle for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the angle that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_phi(LogicalOperators::ComparisonOperator op, float value,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the distance to origin for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_r(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the x coordinate of position for later
- * filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_x(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the y coordinate of position for later
- * filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_y(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the z coordinate of position for later
- * filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_z(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the mass for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the mass that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_m(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-/**
- * Creates a boolean mask based on the charge for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the charge that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_q(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the absolute charge for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the charge that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_absq(LogicalOperators::ComparisonOperator op, float value,
-          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the PDG for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the pdg that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_pdg(LogicalOperators::ComparisonOperator op, int value,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Creates a boolean mask based on the absolute pdg for later filtering.
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the pdg that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<bool>
-mask_abspdg(LogicalOperators::ComparisonOperator op, int value,
-            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles
- *
- * @param n Number of elements that would be selected. Positive number selects
- * from the begining and negative number select from the end
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> sel_n_elements(
-    int n, ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select one ReconstructedParticle
- *
- * @param n Index of the element selected
- * @param particles List of reconstructed particles in an event
- *
- */
-edm4hep::ReconstructedParticleData
-sel_element(int n,
-            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the energy
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the energy that is used in the comparison
- * @param particles List of reconstructed particles in an event
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_e(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+selPt(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
 /**
- * Select a subcollection of ReconstructedParticles based on the energy
+ * Select a subgroup of ReconstructedParticle based on the value of x momentum.
  *
- * @param op Comparison operator to apply with the value
- * @param value Value of the energy that is used in the comparison
- * @param particles Collection of reconstructed particles in an event
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selPx(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of y momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selPy(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of z momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selPz(LogicalOperators::ComparisonOperator op, float val,
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of
+ * pseudorapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selEta(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of rapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selRapidity(LogicalOperators::ComparisonOperator op, float val,
+            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of polar angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selTheta(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of azimutal
+ * angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selPhi(LogicalOperators::ComparisonOperator op, float val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of distance to
+ * origin.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selR(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of x
+ * coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selX(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of y
+ * coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selY(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of z
+ * coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of energy.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selE(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of mass.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selM(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of charge.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selQ(LogicalOperators::ComparisonOperator op, float val,
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of absolute
+ * charge.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selAbsq(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of pdg.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selPdg(LogicalOperators::ComparisonOperator op, int val,
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of absolute
+ * pdg.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+selAbspdg(LogicalOperators::ComparisonOperator op, int val,
+          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
  *
  */
 edm4hep::ReconstructedParticleCollection
-sel_e(LogicalOperators::ComparisonOperator op, float value,
-      const edm4hep::ReconstructedParticleCollection &particles);
-
+selP(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
 /**
- * Select a subcollection of ReconstructedParticles based on the 3D momentum
- * modulus
+ * Select a subgroup of ReconstructedParticle based on the value of transverse
+ * momentum.
  *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selPt(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of x momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selPx(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of y momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selPy(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of z momentum.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selPz(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of
+ * pseudorapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selEta(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of rapidity.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selRapidity(LogicalOperators::ComparisonOperator op, float val,
+            const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of polar angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selTheta(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of azimutal
+ * angle.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selPhi(LogicalOperators::ComparisonOperator op, float val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of distance to
+ * origin.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selR(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of x
+ * coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selX(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of y
+ * coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selY(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of z
+ * coordinate.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of energy.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selE(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of mass.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selM(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of charge.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selQ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of absolute
+ * charge.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selAbsq(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of pdg.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selPdg(LogicalOperators::ComparisonOperator op, int val,
+       const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Select a subgroup of ReconstructedParticle based on the value of absolute
+ * pdg.
+ *
+ * @param op Logical operation applied to create the mask.
+ * @param val Value to compare with.
+ * @param collection Collection of ReconstructedParticle to look in
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+selAbspdg(LogicalOperators::ComparisonOperator op, int val,
+          const edm4hep::ReconstructedParticleCollection &collection);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of momentum.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_pmod(LogicalOperators::ComparisonOperator op, float value,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
+sortP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
 /**
- * Select a subcollection of ReconstructedParticles based on the transverse
- * momentum modulus
+ * Sort a collection of ReconstructedParticle based on the value of transverse
+ * momentum.
  *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_pt(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the x momentum
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_px(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the y momentum
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_py(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the z momentum
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the momentum that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_pz(LogicalOperators::ComparisonOperator op, float value,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the pseudorapidity
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the pseudorapidity that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_eta(LogicalOperators::ComparisonOperator op, float value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the rapidity
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the rapidity that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_rapidity(LogicalOperators::ComparisonOperator op, float value,
-             ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the polar angle
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the angle that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_theta(LogicalOperators::ComparisonOperator op, float value,
-          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the azimutal angle
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the angle that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_phi(LogicalOperators::ComparisonOperator op, float value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the distance to
- * origin
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_r(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the x distance
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_x(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the y distance
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_y(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the z distance
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the distance that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_z(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the mass
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the mass that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_m(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the charge
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the charge that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_q(LogicalOperators::ComparisonOperator op, float value,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the absolute charge
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the charge that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_absq(LogicalOperators::ComparisonOperator op, float value,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the pdg
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the pdg that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_pdg(LogicalOperators::ComparisonOperator op, int value,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Select a subcollection of ReconstructedParticles based on the absolute pdg
- *
- * @param op Comparison operator to apply with the value
- * @param value Value of the pdg that is used in the comparison
- * @param particles List of reconstructed particles in an event
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sel_abspdg(LogicalOperators::ComparisonOperator op, int value,
-           ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles);
-
-/**
- * Sort a collection of Reconstructed particles in ascending order of energy
- *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_e(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+sortPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
        bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of momentum
- * modulus
+ * Sort a collection of ReconstructedParticle based on the value of x momentum.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_pmod(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+sortPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+       bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of y momentum.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+       bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of z momentum.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+       bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of
+ * pseudorapidity.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+        bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of rapidity.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+             bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of polar angle.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
           bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of transverse
- * momentum
+ * Sort a collection of ReconstructedParticle based on the value of azimutal
+ * angle.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_pt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+sortPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
         bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of x momentum
+ * Sort a collection of ReconstructedParticle based on the value of distance to
+ * origin.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_px(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-        bool reverse = false);
-
+sortR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of y momentum
+ * Sort a collection of ReconstructedParticle based on the value of x
+ * coordinate.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_py(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-        bool reverse = false);
-
+sortX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of z momentum
+ * Sort a collection of ReconstructedParticle based on the value of y
+ * coordinate.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_pz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-        bool reverse = false);
-
+sortY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of
- * pseudorapidity
+ * Sort a collection of ReconstructedParticle based on the value of z
+ * coordinate.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_eta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+sortZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of energy.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of mass.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of charge.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of absolute
+ * charge.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
+sortAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
          bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of rapidity
+ * Sort a collection of ReconstructedParticle based on the value of pdg.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_rapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-              bool reverse = false);
-
+sortPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+        bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of polar
- * angle
+ * Sort a collection of ReconstructedParticle based on the value of momentum.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_theta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-           bool reverse = false);
-
+edm4hep::ReconstructedParticleCollection
+sortP(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of azimutal
- * angle
+ * Sort a collection of ReconstructedParticle based on the value of transverse
+ * momentum.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_phi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-         bool reverse = false);
-
-/**
- * Sort a collection of Reconstructed particles in ascending order of distance
- * to origin
- *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
- *
- */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_r(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+edm4hep::ReconstructedParticleCollection
+sortPt(edm4hep::ReconstructedParticleCollection &collection,
        bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of x distance
- * to origin
+ * Sort a collection of ReconstructedParticle based on the value of x momentum.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_x(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+edm4hep::ReconstructedParticleCollection
+sortPx(edm4hep::ReconstructedParticleCollection &collection,
        bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of y distance
- * to origin
+ * Sort a collection of ReconstructedParticle based on the value of y momentum.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_y(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+edm4hep::ReconstructedParticleCollection
+sortPy(edm4hep::ReconstructedParticleCollection &collection,
        bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of z distance
- * to origin
+ * Sort a collection of ReconstructedParticle based on the value of z momentum.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_z(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+edm4hep::ReconstructedParticleCollection
+sortPz(edm4hep::ReconstructedParticleCollection &collection,
        bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of mass
+ * Sort a collection of ReconstructedParticle based on the value of
+ * pseudorapidity.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_m(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-       bool reverse = false);
-
+edm4hep::ReconstructedParticleCollection
+sortEta(edm4hep::ReconstructedParticleCollection &collection,
+        bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of charge
+ * Sort a collection of ReconstructedParticle based on the value of rapidity.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_q(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-       bool reverse = false);
-
+edm4hep::ReconstructedParticleCollection
+sortRapidity(edm4hep::ReconstructedParticleCollection &collection,
+             bool reverse = false);
 /**
- * Sort a collection of Reconstructed particles in ascending order of absolute
- * charge
+ * Sort a collection of ReconstructedParticle based on the value of polar angle.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_absq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+edm4hep::ReconstructedParticleCollection
+sortTheta(edm4hep::ReconstructedParticleCollection &collection,
           bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of pdg
+ * Sort a collection of ReconstructedParticle based on the value of azimutal
+ * angle.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_pdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
+edm4hep::ReconstructedParticleCollection
+sortPhi(edm4hep::ReconstructedParticleCollection &collection,
+        bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of distance to
+ * origin.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortR(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of x
+ * coordinate.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortX(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of y
+ * coordinate.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortY(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of z
+ * coordinate.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortZ(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of energy.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortE(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of mass.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortM(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of charge.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortQ(edm4hep::ReconstructedParticleCollection &collection,
+      bool reverse = false);
+/**
+ * Sort a collection of ReconstructedParticle based on the value of absolute
+ * charge.
+ *
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+sortAbsq(edm4hep::ReconstructedParticleCollection &collection,
          bool reverse = false);
-
 /**
- * Sort a collection of Reconstructed particles in ascending order of absolute
- * pdg
+ * Sort a collection of ReconstructedParticle based on the value of pdg.
  *
- * @param particles List of reconstructed particles in an event
- * @param reverse Boolean flag to change the sorting order
+ * @param collection Collection of ReconstructedParticle to be sorted
+ * @param reverse Change the order of sorting.
  *
  */
-ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sort_abspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> particles,
-            bool reverse = false);
-
+edm4hep::ReconstructedParticleCollection
+sortPdg(edm4hep::ReconstructedParticleCollection &collection,
+        bool reverse = false);
+/**
+ * Get the collection of ReconstructedParticle related to a
+ * ReconstructedParticle.
+ *
+ * @param item ReconstructedParticle from which to look for the related
+ * collection.
+ * @param relatedCollection Complete collection of ReconstructedParticle to
+ * filter
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> getParticles(
+    edm4hep::ReconstructedParticleData item,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> relatedCollection);
+/**
+ * Get the collection of Track related to a ReconstructedParticle.
+ *
+ * @param item ReconstructedParticle from which to look for the related
+ * collection.
+ * @param relatedCollection Complete collection of Track to filter
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::TrackData>
+getTracks(edm4hep::ReconstructedParticleData item,
+          ROOT::VecOps::RVec<edm4hep::TrackData> relatedCollection);
+/**
+ * Get the collection of Cluster related to a ReconstructedParticle.
+ *
+ * @param item ReconstructedParticle from which to look for the related
+ * collection.
+ * @param relatedCollection Complete collection of Cluster to filter
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ClusterData>
+getClusters(edm4hep::ReconstructedParticleData item,
+            ROOT::VecOps::RVec<edm4hep::ClusterData> relatedCollection);
+/**
+ * Get the collection of ReconstructedParticle related to a
+ * ReconstructedParticle.
+ *
+ * @param item ReconstructedParticle to look in for related collection
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+getParticles(const edm4hep::ReconstructedParticle &item);
+/**
+ * Get the collection of Track related to a ReconstructedParticle.
+ *
+ * @param item ReconstructedParticle to look in for related collection
+ *
+ */
+edm4hep::TrackCollection getTracks(const edm4hep::ReconstructedParticle &item);
+/**
+ * Get the collection of Cluster related to a ReconstructedParticle.
+ *
+ * @param item ReconstructedParticle to look in for related collection
+ *
+ */
+edm4hep::ClusterCollection
+getClusters(const edm4hep::ReconstructedParticle &item);
 } // namespace ReconstructedParticle
 } // namespace k4::ral
-
-#endif
