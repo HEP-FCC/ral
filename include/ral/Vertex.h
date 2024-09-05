@@ -753,5 +753,24 @@ edm4hep::VertexCollection sortY(edm4hep::VertexCollection &collection,
  */
 edm4hep::VertexCollection sortZ(edm4hep::VertexCollection &collection,
                                 bool reverse = false);
+/**
+ * Get the collection of ReconstructedParticle related to a Vertex.
+ *
+ * @param item Vertex from which to look for the related collection.
+ * @param relatedCollection Complete collection of ReconstructedParticle to
+ * filter
+ *
+ */
+ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> getParticles(
+    edm4hep::VertexData item,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> relatedCollection);
+/**
+ * Get the collection of ReconstructedParticle related to a Vertex.
+ *
+ * @param item Vertex to look in for related collection
+ *
+ */
+edm4hep::ReconstructedParticleCollection
+getParticles(const edm4hep::Vertex &item);
 } // namespace Vertex
 } // namespace k4::ral
