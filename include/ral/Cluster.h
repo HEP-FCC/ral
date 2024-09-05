@@ -1,5 +1,7 @@
+#include <Math/Vector3D.h>
 #include <cmath>
-#include <edm4hep/TrackCollection.h>
+#include <edm4hep/CalorimeterHitCollection.h>
+#include <edm4hep/ClusterCollection.h>
 #include <iostream>
 #include <ral/LogicalOperators.h>
 namespace k4::ral {
@@ -26,7 +28,7 @@ getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  * @param collection Collection of Cluster to look in
  *
  */
-ROOT::VecOps::RVec<int>
+ROOT::VecOps::RVec<float>
 getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
 /**
  * Get intrinsic phi angle from each item in a collection of Cluster.
@@ -34,7 +36,7 @@ getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  * @param collection Collection of Cluster to look in
  *
  */
-ROOT::VecOps::RVec<int>
+ROOT::VecOps::RVec<float>
 getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
 /**
  * Get distance to origin from each item in a collection of Cluster.
@@ -89,14 +91,15 @@ getEnergy(const edm4hep::ClusterCollection &collection);
  * @param collection Collection of Cluster to look in
  *
  */
-ROOT::VecOps::RVec<int> getITheta(const edm4hep::ClusterCollection &collection);
+ROOT::VecOps::RVec<float>
+getITheta(const edm4hep::ClusterCollection &collection);
 /**
  * Get intrinsic phi angle from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-ROOT::VecOps::RVec<int> getPhi(const edm4hep::ClusterCollection &collection);
+ROOT::VecOps::RVec<float> getPhi(const edm4hep::ClusterCollection &collection);
 /**
  * Get distance to origin from each item in a collection of Cluster.
  *
@@ -271,7 +274,7 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-maskITheta(LogicalOperators::ComparisonOperator op, int val,
+maskITheta(LogicalOperators::ComparisonOperator op, float val,
            ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
 /**
  * Create boolean mask based on the value of intrinsic phi angle from each item
@@ -283,7 +286,7 @@ maskITheta(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<bool>
-maskPhi(LogicalOperators::ComparisonOperator op, int val,
+maskPhi(LogicalOperators::ComparisonOperator op, float val,
         ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
@@ -367,7 +370,7 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<bool>
-maskITheta(LogicalOperators::ComparisonOperator op, int val,
+maskITheta(LogicalOperators::ComparisonOperator op, float val,
            const edm4hep::ClusterCollection &collection);
 /**
  * Create boolean mask based on the value of intrinsic phi angle from each item
@@ -379,7 +382,7 @@ maskITheta(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<bool> maskPhi(LogicalOperators::ComparisonOperator op,
-                                 int val,
+                                 float val,
                                  const edm4hep::ClusterCollection &collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
@@ -460,7 +463,7 @@ selEnergy(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-selITheta(LogicalOperators::ComparisonOperator op, int val,
+selITheta(LogicalOperators::ComparisonOperator op, float val,
           ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
 /**
  * Select a subgroup of Cluster based on the value of intrinsic phi angle.
@@ -471,7 +474,7 @@ selITheta(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-selPhi(LogicalOperators::ComparisonOperator op, int val,
+selPhi(LogicalOperators::ComparisonOperator op, float val,
        ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
 /**
  * Select a subgroup of Cluster based on the value of distance to origin.
@@ -548,7 +551,7 @@ selEnergy(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 edm4hep::ClusterCollection
-selITheta(LogicalOperators::ComparisonOperator op, int val,
+selITheta(LogicalOperators::ComparisonOperator op, float val,
           const edm4hep::ClusterCollection &collection);
 /**
  * Select a subgroup of Cluster based on the value of intrinsic phi angle.
@@ -559,7 +562,7 @@ selITheta(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 edm4hep::ClusterCollection selPhi(LogicalOperators::ComparisonOperator op,
-                                  int val,
+                                  float val,
                                   const edm4hep::ClusterCollection &collection);
 /**
  * Select a subgroup of Cluster based on the value of distance to origin.

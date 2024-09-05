@@ -1,22 +1,33 @@
-#include <ral/Cluster.h>
+#include <ral/CalorimeterHit.h>
 namespace k4::ral {
-namespace Cluster {
+namespace CalorimeterHit {
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     int result;
     result = (item.type);
     vec.emplace_back(result);
   }
   return vec;
 }
+ROOT::VecOps::RVec<unsigned long long>
+getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+  ROOT::VecOps::RVec<unsigned long long> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::CalorimeterHitData &item : collection) {
+    unsigned long long result;
+    result = (item.cellID);
+    vec.emplace_back(result);
+  }
+  return vec;
+}
 ROOT::VecOps::RVec<float>
-getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     float result;
     result = (item.energy);
     vec.emplace_back(result);
@@ -24,32 +35,21 @@ getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     float result;
-    result = (item.iTheta);
+    result = (item.time);
     vec.emplace_back(result);
   }
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
-    float result;
-    result = (item.phi);
-    vec.emplace_back(result);
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
-  ROOT::VecOps::RVec<float> vec;
-  vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.position.x, item.position.y,
                                   item.position.z);
@@ -59,10 +59,10 @@ getR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.position.x, item.position.y,
                                   item.position.z);
@@ -72,10 +72,10 @@ getX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.position.x, item.position.y,
                                   item.position.z);
@@ -85,10 +85,10 @@ getY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::ClusterData &item : collection) {
+  for (const edm4hep::CalorimeterHitData &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.position.x, item.position.y,
                                   item.position.z);
@@ -97,21 +97,33 @@ getZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   }
   return vec;
 }
-ROOT::VecOps::RVec<int> getType(const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<int>
+getType(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     int result;
     result = (item.getType());
     vec.emplace_back(result);
   }
   return vec;
 }
+ROOT::VecOps::RVec<unsigned long long>
+getCellID(const edm4hep::CalorimeterHitCollection &collection) {
+  ROOT::VecOps::RVec<unsigned long long> vec;
+  vec.reserve(collection.size());
+  for (const edm4hep::CalorimeterHit &item : collection) {
+    unsigned long long result;
+    result = (item.getCellID());
+    vec.emplace_back(result);
+  }
+  return vec;
+}
 ROOT::VecOps::RVec<float>
-getEnergy(const edm4hep::ClusterCollection &collection) {
+getEnergy(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     result = (item.getEnergy());
     vec.emplace_back(result);
@@ -119,30 +131,21 @@ getEnergy(const edm4hep::ClusterCollection &collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getITheta(const edm4hep::ClusterCollection &collection) {
+getTime(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
-    result = (item.getITheta());
+    result = (item.getTime());
     vec.emplace_back(result);
   }
   return vec;
 }
-ROOT::VecOps::RVec<float> getPhi(const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<float>
+getR(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
-    float result;
-    result = (item.getPhi());
-    vec.emplace_back(result);
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<float> getR(const edm4hep::ClusterCollection &collection) {
-  ROOT::VecOps::RVec<float> vec;
-  vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
@@ -151,10 +154,11 @@ ROOT::VecOps::RVec<float> getR(const edm4hep::ClusterCollection &collection) {
   }
   return vec;
 }
-ROOT::VecOps::RVec<float> getX(const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<float>
+getX(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
@@ -163,10 +167,11 @@ ROOT::VecOps::RVec<float> getX(const edm4hep::ClusterCollection &collection) {
   }
   return vec;
 }
-ROOT::VecOps::RVec<float> getY(const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<float>
+getY(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
@@ -175,10 +180,11 @@ ROOT::VecOps::RVec<float> getY(const edm4hep::ClusterCollection &collection) {
   }
   return vec;
 }
-ROOT::VecOps::RVec<float> getZ(const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<float>
+getZ(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
-  for (const edm4hep::Cluster &item : collection) {
+  for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
@@ -187,7 +193,7 @@ ROOT::VecOps::RVec<float> getZ(const edm4hep::ClusterCollection &collection) {
   }
   return vec;
 }
-int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<int> vec = getType(collection);
   std::cout << "Type: ";
   for (const int &item : vec) {
@@ -196,7 +202,16 @@ int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+  ROOT::VecOps::RVec<unsigned long long> vec = getCellID(collection);
+  std::cout << "Detector cell id: ";
+  for (const unsigned long long &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec = getEnergy(collection);
   std::cout << "Energy: ";
   for (const float &item : vec) {
@@ -205,25 +220,16 @@ int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
-  ROOT::VecOps::RVec<float> vec = getITheta(collection);
-  std::cout << "Intrinsic theta angle: ";
+int printTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+  ROOT::VecOps::RVec<float> vec = getTime(collection);
+  std::cout << "Time of the hit: ";
   for (const float &item : vec) {
     std::cout << item << " ";
   }
   std::cout << std::endl;
   return 0;
 }
-int printPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
-  ROOT::VecOps::RVec<float> vec = getPhi(collection);
-  std::cout << "Intrinsic phi angle: ";
-  for (const float &item : vec) {
-    std::cout << item << " ";
-  }
-  std::cout << std::endl;
-  return 0;
-}
-int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec = getR(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
@@ -232,7 +238,7 @@ int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec = getX(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
@@ -241,7 +247,7 @@ int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec = getY(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
@@ -250,7 +256,7 @@ int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<float> vec = getZ(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
@@ -259,7 +265,7 @@ int printZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printType(const edm4hep::ClusterCollection &collection) {
+int printType(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<int> vec = getType(collection);
   std::cout << "Type: ";
   for (const int &item : vec) {
@@ -268,7 +274,16 @@ int printType(const edm4hep::ClusterCollection &collection) {
   std::cout << std::endl;
   return 0;
 }
-int printEnergy(const edm4hep::ClusterCollection &collection) {
+int printCellID(const edm4hep::CalorimeterHitCollection &collection) {
+  ROOT::VecOps::RVec<unsigned long long> vec = getCellID(collection);
+  std::cout << "Detector cell id: ";
+  for (const unsigned long long &item : vec) {
+    std::cout << item << " ";
+  }
+  std::cout << std::endl;
+  return 0;
+}
+int printEnergy(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec = getEnergy(collection);
   std::cout << "Energy: ";
   for (const float &item : vec) {
@@ -277,25 +292,16 @@ int printEnergy(const edm4hep::ClusterCollection &collection) {
   std::cout << std::endl;
   return 0;
 }
-int printITheta(const edm4hep::ClusterCollection &collection) {
-  ROOT::VecOps::RVec<float> vec = getITheta(collection);
-  std::cout << "Intrinsic theta angle: ";
+int printTime(const edm4hep::CalorimeterHitCollection &collection) {
+  ROOT::VecOps::RVec<float> vec = getTime(collection);
+  std::cout << "Time of the hit: ";
   for (const float &item : vec) {
     std::cout << item << " ";
   }
   std::cout << std::endl;
   return 0;
 }
-int printPhi(const edm4hep::ClusterCollection &collection) {
-  ROOT::VecOps::RVec<float> vec = getPhi(collection);
-  std::cout << "Intrinsic phi angle: ";
-  for (const float &item : vec) {
-    std::cout << item << " ";
-  }
-  std::cout << std::endl;
-  return 0;
-}
-int printR(const edm4hep::ClusterCollection &collection) {
+int printR(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec = getR(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
@@ -304,7 +310,7 @@ int printR(const edm4hep::ClusterCollection &collection) {
   std::cout << std::endl;
   return 0;
 }
-int printX(const edm4hep::ClusterCollection &collection) {
+int printX(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec = getX(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
@@ -313,7 +319,7 @@ int printX(const edm4hep::ClusterCollection &collection) {
   std::cout << std::endl;
   return 0;
 }
-int printY(const edm4hep::ClusterCollection &collection) {
+int printY(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec = getY(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
@@ -322,7 +328,7 @@ int printY(const edm4hep::ClusterCollection &collection) {
   std::cout << std::endl;
   return 0;
 }
-int printZ(const edm4hep::ClusterCollection &collection) {
+int printZ(const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<float> vec = getZ(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
@@ -333,7 +339,7 @@ int printZ(const edm4hep::ClusterCollection &collection) {
 }
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getType(collection);
@@ -359,8 +365,35 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
+maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
+           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<unsigned long long> vals = getCellID(collection);
+  for (const unsigned long long &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
 maskEnergy(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getEnergy(collection);
@@ -386,38 +419,11 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
-maskITheta(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+maskTime(LogicalOperators::ComparisonOperator op, float val,
+         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = getITheta(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool>
-maskPhi(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = getPhi(collection);
+  ROOT::VecOps::RVec<float> vals = getTime(collection);
   for (const float &item : vals) {
     switch (op) {
     case LogicalOperators::ComparisonOperator::LESS:
@@ -441,7 +447,7 @@ maskPhi(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getR(collection);
@@ -468,7 +474,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getX(collection);
@@ -495,7 +501,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getY(collection);
@@ -522,7 +528,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getZ(collection);
@@ -549,7 +555,7 @@ maskZ(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         const edm4hep::ClusterCollection &collection) {
+         const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getType(collection);
@@ -575,8 +581,35 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
+maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
+           const edm4hep::CalorimeterHitCollection &collection) {
+  ROOT::VecOps::RVec<bool> vec;
+  vec.reserve(collection.size());
+  ROOT::VecOps::RVec<unsigned long long> vals = getCellID(collection);
+  for (const unsigned long long &item : vals) {
+    switch (op) {
+    case LogicalOperators::ComparisonOperator::LESS:
+      vec.emplace_back(item < val);
+      break;
+    case LogicalOperators::ComparisonOperator::LESSEQ:
+      vec.emplace_back(item <= val);
+      break;
+    case LogicalOperators::ComparisonOperator::EQ:
+      vec.emplace_back(item == val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATEREQ:
+      vec.emplace_back(item >= val);
+      break;
+    case LogicalOperators::ComparisonOperator::GREATER:
+      vec.emplace_back(item > val);
+      break;
+    }
+  }
+  return vec;
+}
+ROOT::VecOps::RVec<bool>
 maskEnergy(LogicalOperators::ComparisonOperator op, float val,
-           const edm4hep::ClusterCollection &collection) {
+           const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getEnergy(collection);
@@ -602,11 +635,11 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
   return vec;
 }
 ROOT::VecOps::RVec<bool>
-maskITheta(LogicalOperators::ComparisonOperator op, float val,
-           const edm4hep::ClusterCollection &collection) {
+maskTime(LogicalOperators::ComparisonOperator op, float val,
+         const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = getITheta(collection);
+  ROOT::VecOps::RVec<float> vals = getTime(collection);
   for (const float &item : vals) {
     switch (op) {
     case LogicalOperators::ComparisonOperator::LESS:
@@ -628,36 +661,9 @@ maskITheta(LogicalOperators::ComparisonOperator op, float val,
   }
   return vec;
 }
-ROOT::VecOps::RVec<bool> maskPhi(LogicalOperators::ComparisonOperator op,
-                                 float val,
-                                 const edm4hep::ClusterCollection &collection) {
-  ROOT::VecOps::RVec<bool> vec;
-  vec.reserve(collection.size());
-  ROOT::VecOps::RVec<float> vals = getPhi(collection);
-  for (const float &item : vals) {
-    switch (op) {
-    case LogicalOperators::ComparisonOperator::LESS:
-      vec.emplace_back(item < val);
-      break;
-    case LogicalOperators::ComparisonOperator::LESSEQ:
-      vec.emplace_back(item <= val);
-      break;
-    case LogicalOperators::ComparisonOperator::EQ:
-      vec.emplace_back(item == val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATEREQ:
-      vec.emplace_back(item >= val);
-      break;
-    case LogicalOperators::ComparisonOperator::GREATER:
-      vec.emplace_back(item > val);
-      break;
-    }
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<bool> maskR(LogicalOperators::ComparisonOperator op,
-                               float val,
-                               const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<bool>
+maskR(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getR(collection);
@@ -682,9 +688,9 @@ ROOT::VecOps::RVec<bool> maskR(LogicalOperators::ComparisonOperator op,
   }
   return vec;
 }
-ROOT::VecOps::RVec<bool> maskX(LogicalOperators::ComparisonOperator op,
-                               float val,
-                               const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<bool>
+maskX(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getX(collection);
@@ -709,9 +715,9 @@ ROOT::VecOps::RVec<bool> maskX(LogicalOperators::ComparisonOperator op,
   }
   return vec;
 }
-ROOT::VecOps::RVec<bool> maskY(LogicalOperators::ComparisonOperator op,
-                               float val,
-                               const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<bool>
+maskY(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getY(collection);
@@ -736,9 +742,9 @@ ROOT::VecOps::RVec<bool> maskY(LogicalOperators::ComparisonOperator op,
   }
   return vec;
 }
-ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
-                               float val,
-                               const edm4hep::ClusterCollection &collection) {
+ROOT::VecOps::RVec<bool>
+maskZ(LogicalOperators::ComparisonOperator op, float val,
+      const edm4hep::CalorimeterHitCollection &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getZ(collection);
@@ -763,105 +769,107 @@ ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
   }
   return vec;
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   auto mask = maskType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
+          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+  auto mask = maskCellID(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selEnergy(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   auto mask = maskEnergy(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-selITheta(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
-  auto mask = maskITheta(op, val, collection);
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+selTime(LogicalOperators::ComparisonOperator op, float val,
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+  auto mask = maskTime(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-selPhi(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
-  auto mask = maskPhi(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-ROOT::VecOps::RVec<edm4hep::ClusterData>
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   auto mask = maskR(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   auto mask = maskX(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   auto mask = maskY(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   auto mask = maskZ(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection
+edm4hep::CalorimeterHitCollection
 selType(LogicalOperators::ComparisonOperator op, int val,
-        const edm4hep::ClusterCollection &collection) {
+        const edm4hep::CalorimeterHitCollection &collection) {
   auto mask = maskType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection
+edm4hep::CalorimeterHitCollection
+selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
+          const edm4hep::CalorimeterHitCollection &collection) {
+  auto mask = maskCellID(op, val, collection);
+  return LogicalOperators::filter(mask, collection);
+}
+edm4hep::CalorimeterHitCollection
 selEnergy(LogicalOperators::ComparisonOperator op, float val,
-          const edm4hep::ClusterCollection &collection) {
+          const edm4hep::CalorimeterHitCollection &collection) {
   auto mask = maskEnergy(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection
-selITheta(LogicalOperators::ComparisonOperator op, float val,
-          const edm4hep::ClusterCollection &collection) {
-  auto mask = maskITheta(op, val, collection);
+edm4hep::CalorimeterHitCollection
+selTime(LogicalOperators::ComparisonOperator op, float val,
+        const edm4hep::CalorimeterHitCollection &collection) {
+  auto mask = maskTime(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection
-selPhi(LogicalOperators::ComparisonOperator op, float val,
-       const edm4hep::ClusterCollection &collection) {
-  auto mask = maskPhi(op, val, collection);
-  return LogicalOperators::filter(mask, collection);
-}
-edm4hep::ClusterCollection selR(LogicalOperators::ComparisonOperator op,
-                                float val,
-                                const edm4hep::ClusterCollection &collection) {
+edm4hep::CalorimeterHitCollection
+selR(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::CalorimeterHitCollection &collection) {
   auto mask = maskR(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection selX(LogicalOperators::ComparisonOperator op,
-                                float val,
-                                const edm4hep::ClusterCollection &collection) {
+edm4hep::CalorimeterHitCollection
+selX(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::CalorimeterHitCollection &collection) {
   auto mask = maskX(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection selY(LogicalOperators::ComparisonOperator op,
-                                float val,
-                                const edm4hep::ClusterCollection &collection) {
+edm4hep::CalorimeterHitCollection
+selY(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::CalorimeterHitCollection &collection) {
   auto mask = maskY(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-edm4hep::ClusterCollection selZ(LogicalOperators::ComparisonOperator op,
-                                float val,
-                                const edm4hep::ClusterCollection &collection) {
+edm4hep::CalorimeterHitCollection
+selZ(LogicalOperators::ComparisonOperator op, float val,
+     const edm4hep::CalorimeterHitCollection &collection) {
   auto mask = maskZ(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+         bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     int a, b;
     a = (x.type);
     b = (y.type);
@@ -870,9 +878,24 @@ sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+           bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
+    unsigned long long a, b;
+    a = (x.cellID);
+    b = (y.cellID);
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  return ROOT::VecOps::Sort(collection, lambda);
+}
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+           bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     float a, b;
     a = (x.energy);
     b = (y.energy);
@@ -881,31 +904,24 @@ sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+         bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     float a, b;
-    a = (x.iTheta);
-    b = (y.iTheta);
+    a = (x.time);
+    b = (y.time);
     bool result = a < b;
     return reverse ? !result : result;
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
-    float a, b;
-    a = (x.phi);
-    b = (y.phi);
-    bool result = a < b;
-    return reverse ? !result : result;
-  };
-  return ROOT::VecOps::Sort(collection, lambda);
-}
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+      bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
     a = ra.r();
@@ -916,9 +932,11 @@ sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+      bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
     a = ra.x();
@@ -929,9 +947,11 @@ sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+      bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
     a = ra.y();
@@ -942,9 +962,11 @@ sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
-  auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
+ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
+sortZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+      bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHitData x,
+                          edm4hep::CalorimeterHitData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
     a = ra.z();
@@ -955,93 +977,98 @@ sortZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   };
   return ROOT::VecOps::Sort(collection, lambda);
 }
-edm4hep::ClusterCollection sortType(edm4hep::ClusterCollection &collection,
-                                    bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortType(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     int a, b;
     a = (x.getType());
     b = (y.getType());
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-edm4hep::ClusterCollection sortEnergy(edm4hep::ClusterCollection &collection,
-                                      bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortCellID(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
+    unsigned long long a, b;
+    a = (x.getCellID());
+    b = (y.getCellID());
+    bool result = a < b;
+    return reverse ? !result : result;
+  };
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
+    vec.emplace_back(item);
+  };
+  std::sort(vec.begin(), vec.end(), lambda);
+  edm4hep::CalorimeterHitCollection newCollection;
+  newCollection.setSubsetCollection();
+  for (const edm4hep::CalorimeterHit &item : vec) {
+    newCollection.push_back(item);
+  };
+  return newCollection;
+}
+edm4hep::CalorimeterHitCollection
+sortEnergy(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     float a, b;
     a = (x.getEnergy());
     b = (y.getEnergy());
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-edm4hep::ClusterCollection sortITheta(edm4hep::ClusterCollection &collection,
-                                      bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortTime(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     float a, b;
-    a = (x.getITheta());
-    b = (y.getITheta());
+    a = (x.getTime());
+    b = (y.getTime());
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-edm4hep::ClusterCollection sortPhi(edm4hep::ClusterCollection &collection,
-                                   bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
-    float a, b;
-    a = (x.getPhi());
-    b = (y.getPhi());
-    bool result = a < b;
-    return reverse ? !result : result;
-  };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
-    vec.emplace_back(item);
-  };
-  std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
-  newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
-    newCollection.push_back(item);
-  };
-  return newCollection;
-}
-edm4hep::ClusterCollection sortR(edm4hep::ClusterCollection &collection,
-                                 bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortR(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
                              x.getPosition().z);
@@ -1052,21 +1079,22 @@ edm4hep::ClusterCollection sortR(edm4hep::ClusterCollection &collection,
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-edm4hep::ClusterCollection sortX(edm4hep::ClusterCollection &collection,
-                                 bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortX(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
                              x.getPosition().z);
@@ -1077,21 +1105,22 @@ edm4hep::ClusterCollection sortX(edm4hep::ClusterCollection &collection,
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-edm4hep::ClusterCollection sortY(edm4hep::ClusterCollection &collection,
-                                 bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortY(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
                              x.getPosition().z);
@@ -1102,21 +1131,22 @@ edm4hep::ClusterCollection sortY(edm4hep::ClusterCollection &collection,
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-edm4hep::ClusterCollection sortZ(edm4hep::ClusterCollection &collection,
-                                 bool reverse) {
-  auto lambda = [reverse](edm4hep::Cluster x, edm4hep::Cluster y) {
+edm4hep::CalorimeterHitCollection
+sortZ(edm4hep::CalorimeterHitCollection &collection, bool reverse) {
+  auto lambda = [reverse](edm4hep::CalorimeterHit x,
+                          edm4hep::CalorimeterHit y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
                              x.getPosition().z);
@@ -1127,55 +1157,17 @@ edm4hep::ClusterCollection sortZ(edm4hep::ClusterCollection &collection,
     bool result = a < b;
     return reverse ? !result : result;
   };
-  std::vector<edm4hep::Cluster> vec;
-  for (const edm4hep::Cluster &item : collection) {
+  std::vector<edm4hep::CalorimeterHit> vec;
+  for (const edm4hep::CalorimeterHit &item : collection) {
     vec.emplace_back(item);
   };
   std::sort(vec.begin(), vec.end(), lambda);
-  edm4hep::ClusterCollection newCollection;
+  edm4hep::CalorimeterHitCollection newCollection;
   newCollection.setSubsetCollection();
-  for (const edm4hep::Cluster &item : vec) {
+  for (const edm4hep::CalorimeterHit &item : vec) {
     newCollection.push_back(item);
   };
   return newCollection;
 }
-ROOT::VecOps::RVec<edm4hep::ClusterData>
-getClusters(edm4hep::ClusterData item,
-            ROOT::VecOps::RVec<edm4hep::ClusterData> relatedCollection) {
-  ROOT::VecOps::RVec<edm4hep::ClusterData> vec;
-  size_t len = item.clusters_end - item.clusters_begin;
-  vec.reserve(len);
-  for (int i = item.clusters_begin; i < item.clusters_end; i++) {
-    vec.emplace_back(relatedCollection[i]);
-  }
-  return vec;
-}
-ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-getHits(edm4hep::ClusterData item,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> relatedCollection) {
-  ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> vec;
-  size_t len = item.hits_end - item.hits_begin;
-  vec.reserve(len);
-  for (int i = item.hits_begin; i < item.hits_end; i++) {
-    vec.emplace_back(relatedCollection[i]);
-  }
-  return vec;
-}
-edm4hep::ClusterCollection getClusters(const edm4hep::Cluster &item) {
-  edm4hep::ClusterCollection vec;
-  vec.setSubsetCollection();
-  for (auto it = item.clusters_begin(); it != item.clusters_end(); it++) {
-    vec.push_back(*it);
-  }
-  return vec;
-}
-edm4hep::CalorimeterHitCollection getHits(const edm4hep::Cluster &item) {
-  edm4hep::CalorimeterHitCollection vec;
-  vec.setSubsetCollection();
-  for (auto it = item.hits_begin(); it != item.hits_end(); it++) {
-    vec.push_back(*it);
-  }
-  return vec;
-}
-} // namespace Cluster
+} // namespace CalorimeterHit
 } // namespace k4::ral

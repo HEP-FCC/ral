@@ -9,7 +9,9 @@ def write_vertex_code(header_dir: str, src_dir: str):
 
     writer.add_include("cmath")
     writer.add_include("iostream")
+    writer.add_include("Math/Vector3D.h")
     writer.add_include("edm4hep/VertexCollection.h")
+    writer.add_include("edm4hep/ReconstructedParticleCollection.h")
     writer.add_include("ral/LogicalOperators.h")
 
     writer.add_namespace("k4::ral")
@@ -40,13 +42,13 @@ def write_vertex_code(header_dir: str, src_dir: str):
     writer.add_getter("AlgorithmType", "int", Edm4hepCollection.COLLECTION, "algorithm type",
                       obj_member("item", "getAlgorithmType()", "result"))
     writer.add_getter("R", "float", Edm4hepCollection.COLLECTION, "distance to origin",
-                      vertex_property_from_edm4hepClass("item", "position",  "r", "result"))
+                      vertex_property_from_edm4hepClass("item", "getPosition",  "r", "result"))
     writer.add_getter("X", "float", Edm4hepCollection.COLLECTION, "x coordinate",
-                      vertex_property_from_edm4hepClass("item", "position",  "x", "result"))
+                      vertex_property_from_edm4hepClass("item", "getPosition",  "x", "result"))
     writer.add_getter("Y", "float", Edm4hepCollection.COLLECTION, "y coordinate",
-                      vertex_property_from_edm4hepClass("item", "position",  "y", "result"))
+                      vertex_property_from_edm4hepClass("item", "getPosition",  "y", "result"))
     writer.add_getter("Z", "float", Edm4hepCollection.COLLECTION, "z coordinate",
-                      vertex_property_from_edm4hepClass("item", "position",  "z", "result"))
+                      vertex_property_from_edm4hepClass("item", "getPosition",  "z", "result"))
 
     writer.add_printer("Type", "int", Edm4hepCollection.RVEC, "type")
     writer.add_printer("Chi2", "float", Edm4hepCollection.RVEC, "chi^2")
@@ -136,17 +138,17 @@ def write_vertex_code(header_dir: str, src_dir: str):
                       obj_member("x", "getAlgorithmType()", "a") +
                       obj_member("y", "getAlgorithmType()", "b"))
     writer.add_sorter("R", "float", Edm4hepCollection.COLLECTION, "distance to origin",
-                      vertex_property_from_edm4hepClass("x", "position",  "r", "a") +
-                      vertex_property_from_edm4hepClass("y", "position",  "r", "b"))
+                      vertex_property_from_edm4hepClass("x", "getPosition",  "r", "a") +
+                      vertex_property_from_edm4hepClass("y", "getPosition",  "r", "b"))
     writer.add_sorter("X", "float", Edm4hepCollection.COLLECTION, "x coordinate",
-                      vertex_property_from_edm4hepClass("x", "position",  "x", "a") +
-                      vertex_property_from_edm4hepClass("y", "position",  "x", "b"))
+                      vertex_property_from_edm4hepClass("x", "getPosition",  "x", "a") +
+                      vertex_property_from_edm4hepClass("y", "getPosition",  "x", "b"))
     writer.add_sorter("Y", "float", Edm4hepCollection.COLLECTION, "y coordinate",
-                      vertex_property_from_edm4hepClass("x", "position",  "y", "a") +
-                      vertex_property_from_edm4hepClass("y", "position",  "y", "b"))
+                      vertex_property_from_edm4hepClass("x", "getPosition",  "y", "a") +
+                      vertex_property_from_edm4hepClass("y", "getPosition",  "y", "b"))
     writer.add_sorter("Z", "float", Edm4hepCollection.COLLECTION, "z coordinate",
-                      vertex_property_from_edm4hepClass("x", "position",  "z", "a") +
-                      vertex_property_from_edm4hepClass("y", "position",  "z", "b"))
+                      vertex_property_from_edm4hepClass("x", "getPosition",  "z", "a") +
+                      vertex_property_from_edm4hepClass("y", "getPosition",  "z", "b"))
 
     writer.add_collection_request("Particles", "ReconstructedParticle", Edm4hepCollection.RVEC, "particles")
     writer.add_collection_request("Particles", "ReconstructedParticle", Edm4hepCollection.COLLECTION, "particles")

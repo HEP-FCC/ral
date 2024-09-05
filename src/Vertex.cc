@@ -143,8 +143,8 @@ ROOT::VecOps::RVec<float> getR(const edm4hep::VertexCollection &collection) {
   vec.reserve(collection.size());
   for (const edm4hep::Vertex &item : collection) {
     float result;
-    ROOT::Math::XYZVector rresult(item.position().x, item.position().y,
-                                  item.position().z);
+    ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
+                                  item.getPosition().z);
     result = rresult.r();
     vec.emplace_back(result);
   }
@@ -155,8 +155,8 @@ ROOT::VecOps::RVec<float> getX(const edm4hep::VertexCollection &collection) {
   vec.reserve(collection.size());
   for (const edm4hep::Vertex &item : collection) {
     float result;
-    ROOT::Math::XYZVector rresult(item.position().x, item.position().y,
-                                  item.position().z);
+    ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
+                                  item.getPosition().z);
     result = rresult.x();
     vec.emplace_back(result);
   }
@@ -167,8 +167,8 @@ ROOT::VecOps::RVec<float> getY(const edm4hep::VertexCollection &collection) {
   vec.reserve(collection.size());
   for (const edm4hep::Vertex &item : collection) {
     float result;
-    ROOT::Math::XYZVector rresult(item.position().x, item.position().y,
-                                  item.position().z);
+    ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
+                                  item.getPosition().z);
     result = rresult.y();
     vec.emplace_back(result);
   }
@@ -179,8 +179,8 @@ ROOT::VecOps::RVec<float> getZ(const edm4hep::VertexCollection &collection) {
   vec.reserve(collection.size());
   for (const edm4hep::Vertex &item : collection) {
     float result;
-    ROOT::Math::XYZVector rresult(item.position().x, item.position().y,
-                                  item.position().z);
+    ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
+                                  item.getPosition().z);
     result = rresult.z();
     vec.emplace_back(result);
   }
@@ -1043,9 +1043,11 @@ edm4hep::VertexCollection sortR(edm4hep::VertexCollection &collection,
                                 bool reverse) {
   auto lambda = [reverse](edm4hep::Vertex x, edm4hep::Vertex y) {
     float a, b;
-    ROOT::Math::XYZVector ra(x.position().x, x.position().y, x.position().z);
+    ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
+                             x.getPosition().z);
     a = ra.r();
-    ROOT::Math::XYZVector rb(y.position().x, y.position().y, y.position().z);
+    ROOT::Math::XYZVector rb(y.getPosition().x, y.getPosition().y,
+                             y.getPosition().z);
     b = rb.r();
     bool result = a < b;
     return reverse ? !result : result;
@@ -1066,9 +1068,11 @@ edm4hep::VertexCollection sortX(edm4hep::VertexCollection &collection,
                                 bool reverse) {
   auto lambda = [reverse](edm4hep::Vertex x, edm4hep::Vertex y) {
     float a, b;
-    ROOT::Math::XYZVector ra(x.position().x, x.position().y, x.position().z);
+    ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
+                             x.getPosition().z);
     a = ra.x();
-    ROOT::Math::XYZVector rb(y.position().x, y.position().y, y.position().z);
+    ROOT::Math::XYZVector rb(y.getPosition().x, y.getPosition().y,
+                             y.getPosition().z);
     b = rb.x();
     bool result = a < b;
     return reverse ? !result : result;
@@ -1089,9 +1093,11 @@ edm4hep::VertexCollection sortY(edm4hep::VertexCollection &collection,
                                 bool reverse) {
   auto lambda = [reverse](edm4hep::Vertex x, edm4hep::Vertex y) {
     float a, b;
-    ROOT::Math::XYZVector ra(x.position().x, x.position().y, x.position().z);
+    ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
+                             x.getPosition().z);
     a = ra.y();
-    ROOT::Math::XYZVector rb(y.position().x, y.position().y, y.position().z);
+    ROOT::Math::XYZVector rb(y.getPosition().x, y.getPosition().y,
+                             y.getPosition().z);
     b = rb.y();
     bool result = a < b;
     return reverse ? !result : result;
@@ -1112,9 +1118,11 @@ edm4hep::VertexCollection sortZ(edm4hep::VertexCollection &collection,
                                 bool reverse) {
   auto lambda = [reverse](edm4hep::Vertex x, edm4hep::Vertex y) {
     float a, b;
-    ROOT::Math::XYZVector ra(x.position().x, x.position().y, x.position().z);
+    ROOT::Math::XYZVector ra(x.getPosition().x, x.getPosition().y,
+                             x.getPosition().z);
     a = ra.z();
-    ROOT::Math::XYZVector rb(y.position().x, y.position().y, y.position().z);
+    ROOT::Math::XYZVector rb(y.getPosition().x, y.getPosition().y,
+                             y.getPosition().z);
     b = rb.z();
     bool result = a < b;
     return reverse ? !result : result;

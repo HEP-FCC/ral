@@ -1,4 +1,6 @@
+#include <Math/Vector3D.h>
 #include <cmath>
+#include <edm4hep/ReconstructedParticleCollection.h>
 #include <edm4hep/VertexCollection.h>
 #include <iostream>
 #include <ral/LogicalOperators.h>
