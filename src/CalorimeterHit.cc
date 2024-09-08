@@ -2,7 +2,7 @@
 namespace k4::ral {
 namespace CalorimeterHit {
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -13,7 +13,7 @@ getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<unsigned long long>
-getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<unsigned long long> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -24,7 +24,7 @@ getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -35,7 +35,7 @@ getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -46,7 +46,7 @@ getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -59,7 +59,7 @@ getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -72,7 +72,7 @@ getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -85,7 +85,7 @@ getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+getZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::CalorimeterHitData &item : collection) {
@@ -104,7 +104,7 @@ getType(const edm4hep::CalorimeterHitCollection &collection) {
   for (const edm4hep::CalorimeterHit &item : collection) {
     int result;
     result = (item.getType());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -115,7 +115,7 @@ getCellID(const edm4hep::CalorimeterHitCollection &collection) {
   for (const edm4hep::CalorimeterHit &item : collection) {
     unsigned long long result;
     result = (item.getCellID());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -126,7 +126,7 @@ getEnergy(const edm4hep::CalorimeterHitCollection &collection) {
   for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     result = (item.getEnergy());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -137,7 +137,7 @@ getTime(const edm4hep::CalorimeterHitCollection &collection) {
   for (const edm4hep::CalorimeterHit &item : collection) {
     float result;
     result = (item.getTime());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -150,7 +150,7 @@ getR(const edm4hep::CalorimeterHitCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.r();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -163,7 +163,7 @@ getX(const edm4hep::CalorimeterHitCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.x();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -176,7 +176,7 @@ getY(const edm4hep::CalorimeterHitCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.y();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -189,11 +189,11 @@ getZ(const edm4hep::CalorimeterHitCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.z();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
-int printType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<int> vec = getType(collection);
   std::cout << "Type: ";
   for (const int &item : vec) {
@@ -202,7 +202,7 @@ int printType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<unsigned long long> vec = getCellID(collection);
   std::cout << "Detector cell id: ";
   for (const unsigned long long &item : vec) {
@@ -211,7 +211,7 @@ int printCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec = getEnergy(collection);
   std::cout << "Energy: ";
   for (const float &item : vec) {
@@ -220,7 +220,7 @@ int printEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec = getTime(collection);
   std::cout << "Time of the hit: ";
   for (const float &item : vec) {
@@ -229,7 +229,7 @@ int printTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec = getR(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
@@ -238,7 +238,7 @@ int printR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec = getX(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
@@ -247,7 +247,7 @@ int printX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec = getY(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
@@ -256,7 +256,7 @@ int printY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+int printZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<float> vec = getZ(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
@@ -339,7 +339,7 @@ int printZ(const edm4hep::CalorimeterHitCollection &collection) {
 }
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getType(collection);
@@ -366,7 +366,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
-           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<unsigned long long> vals = getCellID(collection);
@@ -393,7 +393,7 @@ maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
 }
 ROOT::VecOps::RVec<bool>
 maskEnergy(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getEnergy(collection);
@@ -420,7 +420,7 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskTime(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getTime(collection);
@@ -447,7 +447,7 @@ maskTime(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getR(collection);
@@ -474,7 +474,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getX(collection);
@@ -501,7 +501,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getY(collection);
@@ -528,7 +528,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getZ(collection);
@@ -771,49 +771,49 @@ maskZ(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
-          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskCellID(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selEnergy(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskEnergy(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selTime(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskTime(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskR(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskX(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskY(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection) {
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection) {
   auto mask = maskZ(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
@@ -866,7 +866,7 @@ selZ(LogicalOperators::ComparisonOperator op, float val,
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
          bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -879,7 +879,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
            bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -892,7 +892,7 @@ sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
            bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -905,7 +905,7 @@ sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
          bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -918,7 +918,7 @@ sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -933,7 +933,7 @@ sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -948,7 +948,7 @@ sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {
@@ -963,7 +963,7 @@ sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse) {
   auto lambda = [reverse](edm4hep::CalorimeterHitData x,
                           edm4hep::CalorimeterHitData y) {

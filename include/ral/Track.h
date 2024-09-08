@@ -11,7 +11,7 @@ namespace Track {
  *
  */
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+getType(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Get chi^2 from each item in a collection of Track.
  *
@@ -19,7 +19,7 @@ getType(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+getChi2(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Get degrees of freedom from each item in a collection of Track.
  *
@@ -27,7 +27,7 @@ getChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+getndf(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Get number of holes from each item in a collection of Track.
  *
@@ -35,7 +35,7 @@ getndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getNholes(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+getNholes(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Get type from each item in a collection of Track.
  *
@@ -70,28 +70,28 @@ ROOT::VecOps::RVec<int> getNholes(const edm4hep::TrackCollection &collection);
  * @param collection Collection of Track to look in
  *
  */
-int printType(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+int printType(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Print chi^2 from each item in a collection of Track.
  *
  * @param collection Collection of Track to look in
  *
  */
-int printChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+int printChi2(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Print degrees of freedom from each item in a collection of Track.
  *
  * @param collection Collection of Track to look in
  *
  */
-int printndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+int printndf(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Print number of holes from each item in a collection of Track.
  *
  * @param collection Collection of Track to look in
  *
  */
-int printNholes(ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+int printNholes(ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Print type from each item in a collection of Track.
  *
@@ -131,7 +131,7 @@ int printNholes(const edm4hep::TrackCollection &collection);
  */
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+         ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Create boolean mask based on the value of chi^2 from each item in a
  * collection of Track.
@@ -143,7 +143,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskChi2(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+         ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Create boolean mask based on the value of degrees of freedom from each item
  * in a collection of Track.
@@ -155,7 +155,7 @@ maskChi2(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskndf(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+        ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Create boolean mask based on the value of number of holes from each item in a
  * collection of Track.
@@ -167,7 +167,7 @@ maskndf(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskNholes(LogicalOperators::ComparisonOperator op, int val,
-           ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+           ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Create boolean mask based on the value of type from each item in a collection
  * of Track.
@@ -226,7 +226,7 @@ ROOT::VecOps::RVec<bool> maskNholes(LogicalOperators::ComparisonOperator op,
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+        ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Select a subgroup of Track based on the value of chi^2.
  *
@@ -237,7 +237,7 @@ selType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selChi2(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+        ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Select a subgroup of Track based on the value of degrees of freedom.
  *
@@ -248,7 +248,7 @@ selChi2(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selndf(LogicalOperators::ComparisonOperator op, int val,
-       ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+       ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Select a subgroup of Track based on the value of number of holes.
  *
@@ -259,7 +259,7 @@ selndf(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selNholes(LogicalOperators::ComparisonOperator op, int val,
-          ROOT::VecOps::RVec<edm4hep::TrackData> collection);
+          ROOT::VecOps::RVec<edm4hep::TrackData> &collection);
 /**
  * Select a subgroup of Track based on the value of type.
  *
@@ -312,7 +312,7 @@ edm4hep::TrackCollection selNholes(LogicalOperators::ComparisonOperator op,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortType(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
+sortType(ROOT::VecOps::RVec<edm4hep::TrackData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of Track based on the value of chi^2.
@@ -322,7 +322,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
+sortChi2(ROOT::VecOps::RVec<edm4hep::TrackData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of Track based on the value of degrees of freedom.
@@ -332,7 +332,7 @@ sortChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
+sortndf(ROOT::VecOps::RVec<edm4hep::TrackData> &collection,
         bool reverse = false);
 /**
  * Sort a collection of Track based on the value of number of holes.
@@ -342,7 +342,7 @@ sortndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortNholes(ROOT::VecOps::RVec<edm4hep::TrackData> collection,
+sortNholes(ROOT::VecOps::RVec<edm4hep::TrackData> &collection,
            bool reverse = false);
 /**
  * Sort a collection of Track based on the value of type.

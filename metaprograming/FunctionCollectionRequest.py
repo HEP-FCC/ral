@@ -16,9 +16,9 @@ class FunctionCollectionRequest(FunctionSignature):
             case Edm4hepCollection.RVEC:
                 vec_t = rvec(f"edm4hep::{out_edm_t}Data")
                 params = [ 
-                    FunctionParameter("item", f"edm4hep::{in_edm_t}Data",
+                    FunctionParameter("item", f"edm4hep::{in_edm_t}Data &",
                                       f"{in_edm_t} from which to look for the related collection."),
-                    FunctionParameter("relatedCollection", rvec(f"edm4hep::{out_edm_t}Data"),
+                    FunctionParameter("relatedCollection", rvec(f"edm4hep::{out_edm_t}Data") + "&",
                                       f"Complete collection of {out_edm_t} to filter")
                 ]
                 code = (

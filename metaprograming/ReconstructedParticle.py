@@ -46,7 +46,7 @@ def write_recoparticle_code(header_dir: str, src_dir: str):
     writer.add_getter("Z", "float", Edm4hepCollection.RVEC, "z coordinate",
                       vertex_property_from_DataClass("item", "referencePoint",  "z", "result"))
     writer.add_getter("E", "float", Edm4hepCollection.RVEC, "energy",
-                      momentum_property_from_DataClass("item", "momentum",  "e", "result"))
+                      obj_member("item", "energy", "result"))
     writer.add_getter("M", "float", Edm4hepCollection.RVEC, "mass",
                       obj_member("item", "mass", "result"))
     writer.add_getter("Q", "float", Edm4hepCollection.RVEC, "charge",

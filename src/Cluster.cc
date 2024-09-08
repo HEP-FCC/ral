@@ -2,7 +2,7 @@
 namespace k4::ral {
 namespace Cluster {
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getType(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -13,7 +13,7 @@ getType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -24,7 +24,7 @@ getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -35,7 +35,7 @@ getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -46,7 +46,7 @@ getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getR(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -59,7 +59,7 @@ getR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getX(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -72,7 +72,7 @@ getX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getY(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -85,7 +85,7 @@ getY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+getZ(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::ClusterData &item : collection) {
@@ -103,7 +103,7 @@ ROOT::VecOps::RVec<int> getType(const edm4hep::ClusterCollection &collection) {
   for (const edm4hep::Cluster &item : collection) {
     int result;
     result = (item.getType());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -114,7 +114,7 @@ getEnergy(const edm4hep::ClusterCollection &collection) {
   for (const edm4hep::Cluster &item : collection) {
     float result;
     result = (item.getEnergy());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -125,7 +125,7 @@ getITheta(const edm4hep::ClusterCollection &collection) {
   for (const edm4hep::Cluster &item : collection) {
     float result;
     result = (item.getITheta());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -135,7 +135,7 @@ ROOT::VecOps::RVec<float> getPhi(const edm4hep::ClusterCollection &collection) {
   for (const edm4hep::Cluster &item : collection) {
     float result;
     result = (item.getPhi());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -147,7 +147,7 @@ ROOT::VecOps::RVec<float> getR(const edm4hep::ClusterCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.r();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -159,7 +159,7 @@ ROOT::VecOps::RVec<float> getX(const edm4hep::ClusterCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.x();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -171,7 +171,7 @@ ROOT::VecOps::RVec<float> getY(const edm4hep::ClusterCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.y();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -183,11 +183,11 @@ ROOT::VecOps::RVec<float> getZ(const edm4hep::ClusterCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.z();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
-int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<int> vec = getType(collection);
   std::cout << "Type: ";
   for (const int &item : vec) {
@@ -196,7 +196,7 @@ int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getEnergy(collection);
   std::cout << "Energy: ";
   for (const float &item : vec) {
@@ -205,7 +205,7 @@ int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getITheta(collection);
   std::cout << "Intrinsic theta angle: ";
   for (const float &item : vec) {
@@ -214,7 +214,7 @@ int printITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getPhi(collection);
   std::cout << "Intrinsic phi angle: ";
   for (const float &item : vec) {
@@ -223,7 +223,7 @@ int printPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getR(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
@@ -232,7 +232,7 @@ int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getX(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
@@ -241,7 +241,7 @@ int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getY(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
@@ -250,7 +250,7 @@ int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+int printZ(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<float> vec = getZ(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
@@ -333,7 +333,7 @@ int printZ(const edm4hep::ClusterCollection &collection) {
 }
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+         ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getType(collection);
@@ -360,7 +360,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskEnergy(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+           ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getEnergy(collection);
@@ -387,7 +387,7 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskITheta(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+           ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getITheta(collection);
@@ -414,7 +414,7 @@ maskITheta(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskPhi(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+        ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getPhi(collection);
@@ -441,7 +441,7 @@ maskPhi(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getR(collection);
@@ -468,7 +468,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getX(collection);
@@ -495,7 +495,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getY(collection);
@@ -522,7 +522,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getZ(collection);
@@ -765,49 +765,49 @@ ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+        ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selEnergy(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+          ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskEnergy(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selITheta(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+          ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskITheta(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selPhi(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+       ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskPhi(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskR(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskX(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskY(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection) {
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection) {
   auto mask = maskZ(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
@@ -860,7 +860,7 @@ edm4hep::ClusterCollection selZ(LogicalOperators::ComparisonOperator op,
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     int a, b;
     a = (x.type);
@@ -871,7 +871,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     a = (x.energy);
@@ -882,7 +882,7 @@ sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     a = (x.iTheta);
@@ -893,7 +893,7 @@ sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     a = (x.phi);
@@ -904,7 +904,7 @@ sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -917,7 +917,7 @@ sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -930,7 +930,7 @@ sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -943,7 +943,7 @@ sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection, bool reverse) {
+sortZ(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::ClusterData x, edm4hep::ClusterData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -1140,8 +1140,8 @@ edm4hep::ClusterCollection sortZ(edm4hep::ClusterCollection &collection,
   return newCollection;
 }
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-getClusters(edm4hep::ClusterData item,
-            ROOT::VecOps::RVec<edm4hep::ClusterData> relatedCollection) {
+getClusters(edm4hep::ClusterData &item,
+            ROOT::VecOps::RVec<edm4hep::ClusterData> &relatedCollection) {
   ROOT::VecOps::RVec<edm4hep::ClusterData> vec;
   size_t len = item.clusters_end - item.clusters_begin;
   vec.reserve(len);
@@ -1151,8 +1151,8 @@ getClusters(edm4hep::ClusterData item,
   return vec;
 }
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-getHits(edm4hep::ClusterData item,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> relatedCollection) {
+getHits(edm4hep::ClusterData &item,
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &relatedCollection) {
   ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> vec;
   size_t len = item.hits_end - item.hits_begin;
   vec.reserve(len);

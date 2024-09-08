@@ -13,7 +13,7 @@ namespace Cluster {
  *
  */
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getType(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get energy from each item in a collection of Cluster.
  *
@@ -21,7 +21,7 @@ getType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get intrinsic theta angle from each item in a collection of Cluster.
  *
@@ -29,7 +29,7 @@ getEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get intrinsic phi angle from each item in a collection of Cluster.
  *
@@ -37,7 +37,7 @@ getITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get distance to origin from each item in a collection of Cluster.
  *
@@ -45,7 +45,7 @@ getPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getR(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get x coordinate from each item in a collection of Cluster.
  *
@@ -53,7 +53,7 @@ getR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getX(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get y coordinate from each item in a collection of Cluster.
  *
@@ -61,7 +61,7 @@ getX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getY(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get z coordinate from each item in a collection of Cluster.
  *
@@ -69,7 +69,7 @@ getY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+getZ(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Get type from each item in a collection of Cluster.
  *
@@ -134,56 +134,56 @@ ROOT::VecOps::RVec<float> getZ(const edm4hep::ClusterCollection &collection);
  * @param collection Collection of Cluster to look in
  *
  */
-int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printType(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print energy from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print intrinsic theta angle from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print intrinsic phi angle from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print distance to origin from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printR(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print x coordinate from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printX(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print y coordinate from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printY(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print z coordinate from each item in a collection of Cluster.
  *
  * @param collection Collection of Cluster to look in
  *
  */
-int printZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+int printZ(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Print type from each item in a collection of Cluster.
  *
@@ -251,7 +251,7 @@ int printZ(const edm4hep::ClusterCollection &collection);
  */
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+         ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of energy from each item in a
  * collection of Cluster.
@@ -263,7 +263,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskEnergy(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+           ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of intrinsic theta angle from each
  * item in a collection of Cluster.
@@ -275,7 +275,7 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskITheta(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+           ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of intrinsic phi angle from each item
  * in a collection of Cluster.
@@ -287,7 +287,7 @@ maskITheta(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPhi(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+        ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
  * in a collection of Cluster.
@@ -299,7 +299,7 @@ maskPhi(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of x coordinate from each item in a
  * collection of Cluster.
@@ -311,7 +311,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of y coordinate from each item in a
  * collection of Cluster.
@@ -323,7 +323,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of z coordinate from each item in a
  * collection of Cluster.
@@ -335,7 +335,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+      ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Create boolean mask based on the value of type from each item in a collection
  * of Cluster.
@@ -442,7 +442,7 @@ ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+        ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of energy.
  *
@@ -453,7 +453,7 @@ selType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selEnergy(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+          ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of intrinsic theta angle.
  *
@@ -464,7 +464,7 @@ selEnergy(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selITheta(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+          ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of intrinsic phi angle.
  *
@@ -475,7 +475,7 @@ selITheta(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selPhi(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+       ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of distance to origin.
  *
@@ -486,7 +486,7 @@ selPhi(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of x coordinate.
  *
@@ -497,7 +497,7 @@ selR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of y coordinate.
  *
@@ -508,7 +508,7 @@ selX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of z coordinate.
  *
@@ -519,7 +519,7 @@ selY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ClusterData> collection);
+     ROOT::VecOps::RVec<edm4hep::ClusterData> &collection);
 /**
  * Select a subgroup of Cluster based on the value of type.
  *
@@ -616,7 +616,7 @@ edm4hep::ClusterCollection selZ(LogicalOperators::ComparisonOperator op,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of energy.
@@ -626,7 +626,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
            bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of intrinsic theta angle.
@@ -636,7 +636,7 @@ sortEnergy(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
            bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of intrinsic phi angle.
@@ -646,7 +646,7 @@ sortITheta(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
         bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of distance to origin.
@@ -656,7 +656,7 @@ sortPhi(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of x coordinate.
@@ -666,7 +666,7 @@ sortR(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of y coordinate.
@@ -676,7 +676,7 @@ sortX(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of z coordinate.
@@ -686,7 +686,7 @@ sortY(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-sortZ(ROOT::VecOps::RVec<edm4hep::ClusterData> collection,
+sortZ(ROOT::VecOps::RVec<edm4hep::ClusterData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of Cluster based on the value of type.
@@ -768,8 +768,8 @@ edm4hep::ClusterCollection sortZ(edm4hep::ClusterCollection &collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-getClusters(edm4hep::ClusterData item,
-            ROOT::VecOps::RVec<edm4hep::ClusterData> relatedCollection);
+getClusters(edm4hep::ClusterData &item,
+            ROOT::VecOps::RVec<edm4hep::ClusterData> &relatedCollection);
 /**
  * Get the collection of CalorimeterHit related to a Cluster.
  *
@@ -778,8 +778,8 @@ getClusters(edm4hep::ClusterData item,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-getHits(edm4hep::ClusterData item,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> relatedCollection);
+getHits(edm4hep::ClusterData &item,
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &relatedCollection);
 /**
  * Get the collection of Cluster related to a Cluster.
  *

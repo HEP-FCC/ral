@@ -13,7 +13,7 @@ namespace Vertex {
  *
  */
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get chi^2 from each item in a collection of Vertex.
  *
@@ -21,7 +21,7 @@ getType(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getChi2(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get degrees of freedom from each item in a collection of Vertex.
  *
@@ -29,7 +29,7 @@ getChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getNdf(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get algorithm type from each item in a collection of Vertex.
  *
@@ -37,7 +37,7 @@ getNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get distance to origin from each item in a collection of Vertex.
  *
@@ -45,7 +45,7 @@ getAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getR(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get x coordinate from each item in a collection of Vertex.
  *
@@ -53,7 +53,7 @@ getR(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getX(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get y coordinate from each item in a collection of Vertex.
  *
@@ -61,7 +61,7 @@ getX(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getY(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get z coordinate from each item in a collection of Vertex.
  *
@@ -69,7 +69,7 @@ getY(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+getZ(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Get type from each item in a collection of Vertex.
  *
@@ -133,56 +133,56 @@ ROOT::VecOps::RVec<float> getZ(const edm4hep::VertexCollection &collection);
  * @param collection Collection of Vertex to look in
  *
  */
-int printType(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print chi^2 from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printChi2(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print degrees of freedom from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printNdf(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print algorithm type from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print distance to origin from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printR(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printR(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print x coordinate from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printX(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printX(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print y coordinate from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printY(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printY(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print z coordinate from each item in a collection of Vertex.
  *
  * @param collection Collection of Vertex to look in
  *
  */
-int printZ(ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+int printZ(ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Print type from each item in a collection of Vertex.
  *
@@ -250,7 +250,7 @@ int printZ(const edm4hep::VertexCollection &collection);
  */
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+         ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of chi^2 from each item in a
  * collection of Vertex.
@@ -262,7 +262,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskChi2(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+         ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of degrees of freedom from each item
  * in a collection of Vertex.
@@ -274,7 +274,7 @@ maskChi2(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskNdf(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+        ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of algorithm type from each item in a
  * collection of Vertex.
@@ -286,7 +286,7 @@ maskNdf(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
-                  ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+                  ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
  * in a collection of Vertex.
@@ -298,7 +298,7 @@ maskAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of x coordinate from each item in a
  * collection of Vertex.
@@ -310,7 +310,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of y coordinate from each item in a
  * collection of Vertex.
@@ -322,7 +322,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of z coordinate from each item in a
  * collection of Vertex.
@@ -334,7 +334,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Create boolean mask based on the value of type from each item in a collection
  * of Vertex.
@@ -441,7 +441,7 @@ ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+        ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of chi^2.
  *
@@ -452,7 +452,7 @@ selType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selChi2(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+        ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of degrees of freedom.
  *
@@ -463,7 +463,7 @@ selChi2(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selNdf(LogicalOperators::ComparisonOperator op, int val,
-       ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+       ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of algorithm type.
  *
@@ -474,7 +474,7 @@ selNdf(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
-                 ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+                 ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of distance to origin.
  *
@@ -485,7 +485,7 @@ selAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of x coordinate.
  *
@@ -496,7 +496,7 @@ selR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of y coordinate.
  *
@@ -507,7 +507,7 @@ selX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of z coordinate.
  *
@@ -518,7 +518,7 @@ selY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection);
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection);
 /**
  * Select a subgroup of Vertex based on the value of type.
  *
@@ -615,7 +615,7 @@ edm4hep::VertexCollection selZ(LogicalOperators::ComparisonOperator op,
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortType(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
+sortType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of chi^2.
@@ -625,7 +625,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
+sortChi2(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of degrees of freedom.
@@ -635,7 +635,7 @@ sortChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
+sortNdf(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
         bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of algorithm type.
@@ -645,7 +645,7 @@ sortNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
+sortAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
                   bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of distance to origin.
@@ -655,7 +655,8 @@ sortAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortR(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
+sortR(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
+      bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of b.
  *
@@ -664,7 +665,8 @@ sortR(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortX(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
+sortX(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
+      bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of b.
  *
@@ -673,7 +675,8 @@ sortX(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortY(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
+sortY(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
+      bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of z coordinate.
  *
@@ -682,7 +685,8 @@ sortY(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
  *
  */
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortZ(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse = false);
+sortZ(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
+      bool reverse = false);
 /**
  * Sort a collection of Vertex based on the value of type.
  *
@@ -764,8 +768,8 @@ edm4hep::VertexCollection sortZ(edm4hep::VertexCollection &collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> getParticles(
-    edm4hep::VertexData item,
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> relatedCollection);
+    edm4hep::VertexData &item,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &relatedCollection);
 /**
  * Get the collection of ReconstructedParticle related to a Vertex.
  *

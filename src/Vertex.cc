@@ -2,7 +2,7 @@
 namespace k4::ral {
 namespace Vertex {
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -13,7 +13,7 @@ getType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getChi2(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -24,7 +24,7 @@ getChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-getNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getNdf(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -35,7 +35,7 @@ getNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-getAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -46,7 +46,7 @@ getAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getR(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -59,7 +59,7 @@ getR(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getX(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -72,7 +72,7 @@ getX(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getY(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -85,7 +85,7 @@ getY(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+getZ(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::VertexData &item : collection) {
@@ -103,7 +103,7 @@ ROOT::VecOps::RVec<int> getType(const edm4hep::VertexCollection &collection) {
   for (const edm4hep::Vertex &item : collection) {
     int result;
     result = (item.getType());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -113,7 +113,7 @@ ROOT::VecOps::RVec<float> getChi2(const edm4hep::VertexCollection &collection) {
   for (const edm4hep::Vertex &item : collection) {
     float result;
     result = (item.getChi2());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -123,7 +123,7 @@ ROOT::VecOps::RVec<int> getNdf(const edm4hep::VertexCollection &collection) {
   for (const edm4hep::Vertex &item : collection) {
     int result;
     result = (item.getNdf());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -134,7 +134,7 @@ getAlgorithmType(const edm4hep::VertexCollection &collection) {
   for (const edm4hep::Vertex &item : collection) {
     int result;
     result = (item.getAlgorithmType());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -146,7 +146,7 @@ ROOT::VecOps::RVec<float> getR(const edm4hep::VertexCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.r();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -158,7 +158,7 @@ ROOT::VecOps::RVec<float> getX(const edm4hep::VertexCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.x();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -170,7 +170,7 @@ ROOT::VecOps::RVec<float> getY(const edm4hep::VertexCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.y();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -182,11 +182,11 @@ ROOT::VecOps::RVec<float> getZ(const edm4hep::VertexCollection &collection) {
     ROOT::Math::XYZVector rresult(item.getPosition().x, item.getPosition().y,
                                   item.getPosition().z);
     result = rresult.z();
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
-int printType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<int> vec = getType(collection);
   std::cout << "Type: ";
   for (const int &item : vec) {
@@ -195,7 +195,7 @@ int printType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printChi2(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec = getChi2(collection);
   std::cout << "Chi^2: ";
   for (const float &item : vec) {
@@ -204,7 +204,7 @@ int printChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printNdf(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<int> vec = getNdf(collection);
   std::cout << "Degrees of freedom: ";
   for (const int &item : vec) {
@@ -213,7 +213,7 @@ int printNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<int> vec = getAlgorithmType(collection);
   std::cout << "Algorithm type: ";
   for (const int &item : vec) {
@@ -222,7 +222,7 @@ int printAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printR(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printR(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec = getR(collection);
   std::cout << "Distance to origin: ";
   for (const float &item : vec) {
@@ -231,7 +231,7 @@ int printR(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printX(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printX(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec = getX(collection);
   std::cout << "X coordinate: ";
   for (const float &item : vec) {
@@ -240,7 +240,7 @@ int printX(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printY(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printY(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec = getY(collection);
   std::cout << "Y coordinate: ";
   for (const float &item : vec) {
@@ -249,7 +249,7 @@ int printY(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printZ(ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+int printZ(ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<float> vec = getZ(collection);
   std::cout << "Z coordinate: ";
   for (const float &item : vec) {
@@ -332,7 +332,7 @@ int printZ(const edm4hep::VertexCollection &collection) {
 }
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+         ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getType(collection);
@@ -359,7 +359,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskChi2(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+         ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getChi2(collection);
@@ -386,7 +386,7 @@ maskChi2(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskNdf(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+        ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getNdf(collection);
@@ -413,7 +413,7 @@ maskNdf(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
-                  ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+                  ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getAlgorithmType(collection);
@@ -440,7 +440,7 @@ maskAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getR(collection);
@@ -467,7 +467,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getX(collection);
@@ -494,7 +494,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getY(collection);
@@ -521,7 +521,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+      ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getZ(collection);
@@ -764,49 +764,49 @@ ROOT::VecOps::RVec<bool> maskZ(LogicalOperators::ComparisonOperator op,
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+        ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selChi2(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+        ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskChi2(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selNdf(LogicalOperators::ComparisonOperator op, int val,
-       ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+       ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskNdf(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selAlgorithmType(LogicalOperators::ComparisonOperator op, int val,
-                 ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+                 ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskAlgorithmType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskR(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskX(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskY(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::VertexData> collection) {
+     ROOT::VecOps::RVec<edm4hep::VertexData> &collection) {
   auto mask = maskZ(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
@@ -859,7 +859,7 @@ edm4hep::VertexCollection selZ(LogicalOperators::ComparisonOperator op,
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortType(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     int a, b;
     a = (x.type);
@@ -870,7 +870,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortChi2(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     float a, b;
     a = (x.chi2);
@@ -881,7 +881,7 @@ sortChi2(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortNdf(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     int a, b;
     a = (x.ndf);
@@ -892,7 +892,7 @@ sortNdf(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
+sortAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> &collection,
                   bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     int a, b;
@@ -904,7 +904,7 @@ sortAlgorithmType(ROOT::VecOps::RVec<edm4hep::VertexData> collection,
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortR(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortR(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -917,7 +917,7 @@ sortR(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortX(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortX(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -930,7 +930,7 @@ sortX(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortY(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortY(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -943,7 +943,7 @@ sortY(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::VertexData>
-sortZ(ROOT::VecOps::RVec<edm4hep::VertexData> collection, bool reverse) {
+sortZ(ROOT::VecOps::RVec<edm4hep::VertexData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::VertexData x, edm4hep::VertexData y) {
     float a, b;
     ROOT::Math::XYZVector ra(x.position.x, x.position.y, x.position.z);
@@ -1140,8 +1140,8 @@ edm4hep::VertexCollection sortZ(edm4hep::VertexCollection &collection,
   return newCollection;
 }
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> getParticles(
-    edm4hep::VertexData item,
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> relatedCollection) {
+    edm4hep::VertexData &item,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &relatedCollection) {
   ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> vec;
   size_t len = item.particles_end - item.particles_begin;
   vec.reserve(len);

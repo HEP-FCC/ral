@@ -21,7 +21,7 @@ class FunctionPrinter(FunctionSignature):
         match col_t:
             case Edm4hepCollection.RVEC:
                 params = [ 
-                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data"),
+                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data") + "&",
                                       f"Collection of {edm_t} to look in")
                 ]
             case Edm4hepCollection.COLLECTION:

@@ -67,7 +67,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
                         generateRandomParticle);
 
   SECTION("Getting momentum modulus") {
-    auto vec = ReconstructedParticle::get_pmod(particles);
+    auto vec = ReconstructedParticle::getP(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       float px = particles[i].momentum.x;
@@ -79,7 +79,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting transverse momentum") {
-    auto vec = ReconstructedParticle::get_pt(particles);
+    auto vec = ReconstructedParticle::getPt(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -90,7 +90,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting x momentum") {
-    auto vec = ReconstructedParticle::get_px(particles);
+    auto vec = ReconstructedParticle::getPx(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -101,7 +101,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting y momentum") {
-    auto vec = ReconstructedParticle::get_py(particles);
+    auto vec = ReconstructedParticle::getPy(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -112,7 +112,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting z momentum") {
-    auto vec = ReconstructedParticle::get_pz(particles);
+    auto vec = ReconstructedParticle::getPz(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -123,7 +123,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting Pseudorapidity") {
-    auto vec = ReconstructedParticle::get_eta(particles);
+    auto vec = ReconstructedParticle::getEta(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -134,7 +134,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting rapidity") {
-    auto vec = ReconstructedParticle::get_rapidity(particles);
+    auto vec = ReconstructedParticle::getRapidity(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -146,7 +146,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting polar angle") {
-    auto vec = ReconstructedParticle::get_theta(particles);
+    auto vec = ReconstructedParticle::getTheta(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -158,7 +158,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting azimutal angle") {
-    auto vec = ReconstructedParticle::get_phi(particles);
+    auto vec = ReconstructedParticle::getPhi(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
@@ -169,7 +169,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting distance to origin") {
-    auto vec = ReconstructedParticle::get_r(particles);
+    auto vec = ReconstructedParticle::getR(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       float x = particles[i].referencePoint.x;
@@ -181,7 +181,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting x distance to origin") {
-    auto vec = ReconstructedParticle::get_x(particles);
+    auto vec = ReconstructedParticle::getX(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       float x = particles[i].referencePoint.x;
@@ -190,7 +190,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting y distance to origin") {
-    auto vec = ReconstructedParticle::get_y(particles);
+    auto vec = ReconstructedParticle::getY(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       float y = particles[i].referencePoint.y;
@@ -199,7 +199,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting z distance to origin") {
-    auto vec = ReconstructedParticle::get_z(particles);
+    auto vec = ReconstructedParticle::getZ(particles);
     REQUIRE(vec.size() == particles.size());
     for (size_t i = 0; i < vec.size(); i++) {
       float z = particles[i].referencePoint.z;
@@ -208,7 +208,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting mass") {
-    ROOT::VecOps::RVec<float> mass = ReconstructedParticle::get_m(particles);
+    ROOT::VecOps::RVec<float> mass = ReconstructedParticle::getM(particles);
     REQUIRE(mass.size() == particles.size());
     for (size_t i = 0; i < mass.size(); i++) {
       REQUIRE(mass.at(i) == particles.at(i).mass);
@@ -216,7 +216,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting energy") {
-    ROOT::VecOps::RVec<float> energy = ReconstructedParticle::get_e(particles);
+    ROOT::VecOps::RVec<float> energy = ReconstructedParticle::getE(particles);
     REQUIRE(energy.size() == particles.size());
     for (size_t i = 0; i < energy.size(); i++) {
       REQUIRE(energy.at(i) == particles.at(i).energy);
@@ -224,7 +224,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting charge") {
-    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::get_q(particles);
+    ROOT::VecOps::RVec<float> charges = ReconstructedParticle::getQ(particles);
     REQUIRE(charges.size() == particles.size());
     for (size_t i = 0; i < charges.size(); i++) {
       REQUIRE(charges.at(i) == particles.at(i).charge);
@@ -233,7 +233,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
 
   SECTION("Getting absolute charge") {
     ROOT::VecOps::RVec<float> charges =
-        ReconstructedParticle::get_absq(particles);
+        ReconstructedParticle::getAbsq(particles);
     REQUIRE(charges.size() == particles.size());
     for (size_t i = 0; i < charges.size(); i++) {
       REQUIRE(charges.at(i) == std::abs(particles.at(i).charge));
@@ -241,7 +241,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting PDG") {
-    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::get_pdg(particles);
+    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::getPdg(particles);
     REQUIRE(PDG.size() == particles.size());
     for (size_t i = 0; i < PDG.size(); i++) {
       REQUIRE(PDG.at(i) == particles.at(i).PDG);
@@ -249,7 +249,7 @@ TEST_CASE("Getter analyzers from ReconstructedParticle",
   }
 
   SECTION("Getting absPDG") {
-    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::get_abspdg(particles);
+    ROOT::VecOps::RVec<int> PDG = ReconstructedParticle::getAbspdg(particles);
     REQUIRE(PDG.size() == particles.size());
     for (size_t i = 0; i < PDG.size(); i++) {
       REQUIRE(PDG.at(i) == std::abs(particles.at(i).PDG));
@@ -270,7 +270,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking energy") {
     float n = GENERATE(0., 50.);
-    auto mask = ReconstructedParticle::mask_e(op, n, particles);
+    auto mask = ReconstructedParticle::maskE(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       test_masking(op, n, (float)particles[i].energy, mask[i]);
     }
@@ -282,7 +282,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking momentum modulus") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_pmod(op, n, particles);
+    auto mask = ReconstructedParticle::maskP(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -297,7 +297,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking transverse momentum") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_pt(op, n, particles);
+    auto mask = ReconstructedParticle::maskPt(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -312,7 +312,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking x momentum") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_px(op, n, particles);
+    auto mask = ReconstructedParticle::maskPx(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -327,7 +327,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking y momentum") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_py(op, n, particles);
+    auto mask = ReconstructedParticle::maskPy(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -342,7 +342,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking z momentum") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_pz(op, n, particles);
+    auto mask = ReconstructedParticle::maskPz(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -357,7 +357,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking pseudorapidity") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_eta(op, n, particles);
+    auto mask = ReconstructedParticle::maskEta(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -372,7 +372,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking rapidity") {
     float n = GENERATE(0., 100, 500);
-    auto mask = ReconstructedParticle::mask_rapidity(op, n, particles);
+    auto mask = ReconstructedParticle::maskRapidity(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -387,7 +387,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking polar angle") {
     float n = GENERATE(0., 3.14, 6.28);
-    auto mask = ReconstructedParticle::mask_theta(op, n, particles);
+    auto mask = ReconstructedParticle::maskTheta(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -402,7 +402,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking azimutal angle") {
     float n = GENERATE(0., 3.14, 6.28);
-    auto mask = ReconstructedParticle::mask_phi(op, n, particles);
+    auto mask = ReconstructedParticle::maskPhi(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       ROOT::Math::PxPyPzMVector momentum(
           particles[i].momentum.x, particles[i].momentum.y,
@@ -417,7 +417,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking distance to origin") {
     float n = GENERATE(0., 100., 500.);
-    auto mask = ReconstructedParticle::mask_r(op, n, particles);
+    auto mask = ReconstructedParticle::maskR(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       float x = particles[i].referencePoint.x;
       float y = particles[i].referencePoint.y;
@@ -433,7 +433,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking x distance to origin") {
     float n = GENERATE(0., 100., 500.);
-    auto mask = ReconstructedParticle::mask_x(op, n, particles);
+    auto mask = ReconstructedParticle::maskX(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       float x = particles[i].referencePoint.x;
       test_masking(op, n, x, mask[i]);
@@ -446,7 +446,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking y distance to origin") {
     float n = GENERATE(0., 100., 500.);
-    auto mask = ReconstructedParticle::mask_y(op, n, particles);
+    auto mask = ReconstructedParticle::maskY(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       float y = particles[i].referencePoint.y;
       test_masking(op, n, y, mask[i]);
@@ -459,7 +459,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking z distance to origin") {
     float n = GENERATE(0., 100., 500.);
-    auto mask = ReconstructedParticle::mask_z(op, n, particles);
+    auto mask = ReconstructedParticle::maskZ(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       float z = particles[i].referencePoint.z;
       test_masking(op, n, z, mask[i]);
@@ -472,7 +472,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking particle mass") {
     float n = GENERATE(0., 100., 500.);
-    auto mask = ReconstructedParticle::mask_m(op, n, particles);
+    auto mask = ReconstructedParticle::maskM(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       test_masking(op, n, particles[i].mass, mask[i]);
     }
@@ -484,7 +484,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking particle charge") {
     float n = GENERATE(0., 100., 500.);
-    auto mask = ReconstructedParticle::mask_q(op, n, particles);
+    auto mask = ReconstructedParticle::maskQ(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       test_masking(op, n, particles[i].charge, mask[i]);
     }
@@ -496,7 +496,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking particle absolute charge") {
     float n = GENERATE(-100., 100., 500.);
-    auto mask = ReconstructedParticle::mask_absq(op, std::abs(n), particles);
+    auto mask = ReconstructedParticle::maskAbsq(op, std::abs(n), particles);
     for (int i = 0; i < particles.size(); i++) {
       test_masking(op, std::abs(n), std::abs(particles[i].charge), mask[i]);
     }
@@ -508,7 +508,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking particle pdg") {
     int n = GENERATE(-5, 0, 5);
-    auto mask = ReconstructedParticle::mask_pdg(op, n, particles);
+    auto mask = ReconstructedParticle::maskPdg(op, n, particles);
     for (int i = 0; i < particles.size(); i++) {
       test_masking(op, n, particles[i].PDG, mask[i]);
     }
@@ -520,7 +520,7 @@ TEST_CASE("Boolean masking analyzers from ReconstructedParticle",
 
   SECTION("Masking particle abspdg") {
     int n = GENERATE(-5, 0, 5);
-    auto mask = ReconstructedParticle::mask_abspdg(op, std::abs(n), particles);
+    auto mask = ReconstructedParticle::maskAbspdg(op, std::abs(n), particles);
     for (int i = 0; i < particles.size(); i++) {
       test_masking(op, std::abs(n), std::abs(particles[i].PDG), mask[i]);
     }

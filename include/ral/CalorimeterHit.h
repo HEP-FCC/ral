@@ -12,7 +12,7 @@ namespace CalorimeterHit {
  *
  */
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get detector cell ID from each item in a collection of CalorimeterHit.
  *
@@ -20,7 +20,7 @@ getType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<unsigned long long>
-getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get energy from each item in a collection of CalorimeterHit.
  *
@@ -28,7 +28,7 @@ getCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get time of the hit from each item in a collection of CalorimeterHit.
  *
@@ -36,7 +36,7 @@ getEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get distance to origin from each item in a collection of CalorimeterHit.
  *
@@ -44,7 +44,7 @@ getTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get x coordinate from each item in a collection of CalorimeterHit.
  *
@@ -52,7 +52,7 @@ getR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get y coordinate from each item in a collection of CalorimeterHit.
  *
@@ -60,7 +60,7 @@ getX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get z coordinate from each item in a collection of CalorimeterHit.
  *
@@ -68,7 +68,7 @@ getY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+getZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Get type from each item in a collection of CalorimeterHit.
  *
@@ -139,56 +139,56 @@ getZ(const edm4hep::CalorimeterHitCollection &collection);
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print detector cell ID from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print energy from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print time of the hit from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print distance to origin from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print x coordinate from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print y coordinate from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print z coordinate from each item in a collection of CalorimeterHit.
  *
  * @param collection Collection of CalorimeterHit to look in
  *
  */
-int printZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+int printZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Print type from each item in a collection of CalorimeterHit.
  *
@@ -256,7 +256,7 @@ int printZ(const edm4hep::CalorimeterHitCollection &collection);
  */
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of detector cell ID from each item in
  * a collection of CalorimeterHit.
@@ -268,7 +268,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
-           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of energy from each item in a
  * collection of CalorimeterHit.
@@ -280,7 +280,7 @@ maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
  */
 ROOT::VecOps::RVec<bool>
 maskEnergy(LogicalOperators::ComparisonOperator op, float val,
-           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+           ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of time of the hit from each item in a
  * collection of CalorimeterHit.
@@ -292,7 +292,7 @@ maskEnergy(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskTime(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+         ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
  * in a collection of CalorimeterHit.
@@ -304,7 +304,7 @@ maskTime(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of x coordinate from each item in a
  * collection of CalorimeterHit.
@@ -316,7 +316,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of y coordinate from each item in a
  * collection of CalorimeterHit.
@@ -328,7 +328,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of z coordinate from each item in a
  * collection of CalorimeterHit.
@@ -340,7 +340,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+      ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Create boolean mask based on the value of type from each item in a collection
  * of CalorimeterHit.
@@ -447,7 +447,7 @@ maskZ(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of detector cell ID.
  *
@@ -458,7 +458,7 @@ selType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
-          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of energy.
  *
@@ -469,7 +469,7 @@ selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selEnergy(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+          ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of time of the hit.
  *
@@ -480,7 +480,7 @@ selEnergy(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selTime(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+        ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of distance to origin.
  *
@@ -491,7 +491,7 @@ selTime(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of x coordinate.
  *
@@ -502,7 +502,7 @@ selR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of y coordinate.
  *
@@ -513,7 +513,7 @@ selX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of z coordinate.
  *
@@ -524,7 +524,7 @@ selY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection);
+     ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection);
 /**
  * Select a subgroup of CalorimeterHit based on the value of type.
  *
@@ -621,7 +621,7 @@ selZ(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of detector cell ID.
@@ -631,7 +631,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
            bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of energy.
@@ -641,7 +641,7 @@ sortCellID(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
            bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of time of the hit.
@@ -651,7 +651,7 @@ sortEnergy(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of distance to origin.
@@ -661,7 +661,7 @@ sortTime(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of x coordinate.
@@ -671,7 +671,7 @@ sortR(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of y coordinate.
@@ -681,7 +681,7 @@ sortX(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of z coordinate.
@@ -691,7 +691,7 @@ sortY(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::CalorimeterHitData>
-sortZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> collection,
+sortZ(ROOT::VecOps::RVec<edm4hep::CalorimeterHitData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of CalorimeterHit based on the value of type.

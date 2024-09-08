@@ -2,7 +2,7 @@
 namespace k4::ral {
 namespace Track {
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+getType(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::TrackData &item : collection) {
@@ -13,7 +13,7 @@ getType(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<float>
-getChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+getChi2(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<float> vec;
   vec.reserve(collection.size());
   for (const edm4hep::TrackData &item : collection) {
@@ -24,7 +24,7 @@ getChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-getndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+getndf(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::TrackData &item : collection) {
@@ -35,7 +35,7 @@ getndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
   return vec;
 }
 ROOT::VecOps::RVec<int>
-getNholes(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+getNholes(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<int> vec;
   vec.reserve(collection.size());
   for (const edm4hep::TrackData &item : collection) {
@@ -51,7 +51,7 @@ ROOT::VecOps::RVec<int> getType(const edm4hep::TrackCollection &collection) {
   for (const edm4hep::Track &item : collection) {
     int result;
     result = (item.getType());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -61,7 +61,7 @@ ROOT::VecOps::RVec<float> getChi2(const edm4hep::TrackCollection &collection) {
   for (const edm4hep::Track &item : collection) {
     float result;
     result = (item.getChi2());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -71,7 +71,7 @@ ROOT::VecOps::RVec<int> getndf(const edm4hep::TrackCollection &collection) {
   for (const edm4hep::Track &item : collection) {
     int result;
     result = (item.getNdf());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
@@ -81,11 +81,11 @@ ROOT::VecOps::RVec<int> getNholes(const edm4hep::TrackCollection &collection) {
   for (const edm4hep::Track &item : collection) {
     int result;
     result = (item.getNholes());
-    vec.emplace_back(result);
+    vec.push_back(result);
   }
   return vec;
 }
-int printType(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+int printType(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<int> vec = getType(collection);
   std::cout << "Type: ";
   for (const int &item : vec) {
@@ -94,7 +94,7 @@ int printType(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+int printChi2(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<float> vec = getChi2(collection);
   std::cout << "Chi^2: ";
   for (const float &item : vec) {
@@ -103,7 +103,7 @@ int printChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+int printndf(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<int> vec = getndf(collection);
   std::cout << "Degrees of freedom: ";
   for (const int &item : vec) {
@@ -112,7 +112,7 @@ int printndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
   std::cout << std::endl;
   return 0;
 }
-int printNholes(ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+int printNholes(ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<int> vec = getNholes(collection);
   std::cout << "Number of holes: ";
   for (const int &item : vec) {
@@ -159,7 +159,7 @@ int printNholes(const edm4hep::TrackCollection &collection) {
 }
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+         ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getType(collection);
@@ -186,7 +186,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskChi2(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+         ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<float> vals = getChi2(collection);
@@ -213,7 +213,7 @@ maskChi2(LogicalOperators::ComparisonOperator op, float val,
 }
 ROOT::VecOps::RVec<bool>
 maskndf(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+        ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getndf(collection);
@@ -240,7 +240,7 @@ maskndf(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<bool>
 maskNholes(LogicalOperators::ComparisonOperator op, int val,
-           ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+           ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   ROOT::VecOps::RVec<bool> vec;
   vec.reserve(collection.size());
   ROOT::VecOps::RVec<int> vals = getNholes(collection);
@@ -375,25 +375,25 @@ maskNholes(LogicalOperators::ComparisonOperator op, int val,
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+        ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   auto mask = maskType(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selChi2(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+        ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   auto mask = maskChi2(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selndf(LogicalOperators::ComparisonOperator op, int val,
-       ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+       ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   auto mask = maskndf(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
 selNholes(LogicalOperators::ComparisonOperator op, int val,
-          ROOT::VecOps::RVec<edm4hep::TrackData> collection) {
+          ROOT::VecOps::RVec<edm4hep::TrackData> &collection) {
   auto mask = maskNholes(op, val, collection);
   return LogicalOperators::filter(mask, collection);
 }
@@ -422,7 +422,7 @@ edm4hep::TrackCollection selNholes(LogicalOperators::ComparisonOperator op,
   return LogicalOperators::filter(mask, collection);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortType(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
+sortType(ROOT::VecOps::RVec<edm4hep::TrackData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::TrackData x, edm4hep::TrackData y) {
     int a, b;
     a = (x.type);
@@ -433,7 +433,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
+sortChi2(ROOT::VecOps::RVec<edm4hep::TrackData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::TrackData x, edm4hep::TrackData y) {
     float a, b;
     a = (x.chi2);
@@ -444,7 +444,7 @@ sortChi2(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
+sortndf(ROOT::VecOps::RVec<edm4hep::TrackData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::TrackData x, edm4hep::TrackData y) {
     int a, b;
     a = (x.ndf);
@@ -455,7 +455,7 @@ sortndf(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
   return ROOT::VecOps::Sort(collection, lambda);
 }
 ROOT::VecOps::RVec<edm4hep::TrackData>
-sortNholes(ROOT::VecOps::RVec<edm4hep::TrackData> collection, bool reverse) {
+sortNholes(ROOT::VecOps::RVec<edm4hep::TrackData> &collection, bool reverse) {
   auto lambda = [reverse](edm4hep::TrackData x, edm4hep::TrackData y) {
     int a, b;
     a = (x.Nholes);

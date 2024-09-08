@@ -16,7 +16,7 @@ class FunctionGetter(FunctionSignature):
         match col_t:
             case Edm4hepCollection.RVEC:
                 params = [ 
-                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data"),
+                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data") + "&",
                                       f"Collection of {edm_t} to look in")
                 ]
                 code = (
@@ -37,7 +37,7 @@ class FunctionGetter(FunctionSignature):
                     f"vec.reserve(collection.size());\n"
                     f"for(const edm4hep::{edm_t} &item : collection)\u007b\n"
                     f"{out_t} result;\n") + get_code + (
-                    f"vec.emplace_back(result);\n"
+                    f"vec.push_back(result);\n"
                     f"\u007d\n"
                     f"return vec;\n")
 

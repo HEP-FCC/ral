@@ -15,7 +15,7 @@ namespace ReconstructedParticle {
  *
  */
 ROOT::VecOps::RVec<float>
-getP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get transverse momentum from each item in a collection of
  * ReconstructedParticle.
@@ -24,7 +24,7 @@ getP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get x momentum from each item in a collection of ReconstructedParticle.
  *
@@ -32,7 +32,7 @@ getPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get y momentum from each item in a collection of ReconstructedParticle.
  *
@@ -40,7 +40,7 @@ getPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get z momentum from each item in a collection of ReconstructedParticle.
  *
@@ -48,7 +48,7 @@ getPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get pseudorapidity from each item in a collection of ReconstructedParticle.
  *
@@ -56,7 +56,7 @@ getPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get rapidity from each item in a collection of ReconstructedParticle.
  *
@@ -64,7 +64,7 @@ getEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get polar angle from each item in a collection of ReconstructedParticle.
  *
@@ -72,7 +72,7 @@ getRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get azimutal angle from each item in a collection of ReconstructedParticle.
  *
@@ -80,7 +80,7 @@ getTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get distance to origin from each item in a collection of
  * ReconstructedParticle.
@@ -89,7 +89,7 @@ getPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get x coordinate from each item in a collection of ReconstructedParticle.
  *
@@ -97,7 +97,7 @@ getR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get y coordinate from each item in a collection of ReconstructedParticle.
  *
@@ -105,7 +105,7 @@ getX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get z coordinate from each item in a collection of ReconstructedParticle.
  *
@@ -113,7 +113,7 @@ getY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get energy from each item in a collection of ReconstructedParticle.
  *
@@ -121,7 +121,7 @@ getZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get mass from each item in a collection of ReconstructedParticle.
  *
@@ -129,7 +129,7 @@ getE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get charge from each item in a collection of ReconstructedParticle.
  *
@@ -137,7 +137,7 @@ getM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get absolute charge from each item in a collection of ReconstructedParticle.
  *
@@ -145,7 +145,7 @@ getQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get pdg from each item in a collection of ReconstructedParticle.
  *
@@ -153,7 +153,7 @@ getAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get absolute pdg from each item in a collection of ReconstructedParticle.
  *
@@ -161,7 +161,7 @@ getPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getAbspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+getAbspdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Get momentum from each item in a collection of ReconstructedParticle.
  *
@@ -322,7 +322,7 @@ getAbspdg(const edm4hep::ReconstructedParticleCollection &collection);
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print transverse momentum from each item in a collection of
  * ReconstructedParticle.
@@ -330,35 +330,36 @@ int printP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print x momentum from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print y momentum from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print z momentum from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print pseudorapidity from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printEta(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print rapidity from each item in a collection of ReconstructedParticle.
  *
@@ -366,7 +367,7 @@ int printEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 int printRapidity(
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print polar angle from each item in a collection of ReconstructedParticle.
  *
@@ -374,14 +375,15 @@ int printRapidity(
  *
  */
 int printTheta(
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print azimutal angle from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printPhi(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print distance to origin from each item in a collection of
  * ReconstructedParticle.
@@ -389,49 +391,49 @@ int printPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print x coordinate from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print y coordinate from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print z coordinate from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print energy from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print mass from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print charge from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print absolute charge from each item in a collection of
  * ReconstructedParticle.
@@ -440,14 +442,15 @@ int printQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 int printAbsq(
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print pdg from each item in a collection of ReconstructedParticle.
  *
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-int printPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+int printPdg(
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print absolute pdg from each item in a collection of ReconstructedParticle.
  *
@@ -455,7 +458,7 @@ int printPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
  *
  */
 int printAbspdg(
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Print momentum from each item in a collection of ReconstructedParticle.
  *
@@ -603,7 +606,7 @@ int printAbspdg(const edm4hep::ReconstructedParticleCollection &collection);
  */
 ROOT::VecOps::RVec<bool>
 maskP(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of transverse momentum from each item
  * in a collection of ReconstructedParticle.
@@ -615,7 +618,7 @@ maskP(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPt(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of x momentum from each item in a
  * collection of ReconstructedParticle.
@@ -627,7 +630,7 @@ maskPt(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPx(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of y momentum from each item in a
  * collection of ReconstructedParticle.
@@ -639,7 +642,7 @@ maskPx(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPy(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of z momentum from each item in a
  * collection of ReconstructedParticle.
@@ -651,7 +654,7 @@ maskPy(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPz(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of pseudorapidity from each item in a
  * collection of ReconstructedParticle.
@@ -663,7 +666,7 @@ maskPz(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskEta(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of rapidity from each item in a
  * collection of ReconstructedParticle.
@@ -673,9 +676,9 @@ maskEta(LogicalOperators::ComparisonOperator op, float val,
  * @param collection Collection of ReconstructedParticle to look in
  *
  */
-ROOT::VecOps::RVec<bool>
-maskRapidity(LogicalOperators::ComparisonOperator op, float val,
-             ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+ROOT::VecOps::RVec<bool> maskRapidity(
+    LogicalOperators::ComparisonOperator op, float val,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of polar angle from each item in a
  * collection of ReconstructedParticle.
@@ -687,7 +690,7 @@ maskRapidity(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskTheta(LogicalOperators::ComparisonOperator op, float val,
-          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of azimutal angle from each item in a
  * collection of ReconstructedParticle.
@@ -699,7 +702,7 @@ maskTheta(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPhi(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of distance to origin from each item
  * in a collection of ReconstructedParticle.
@@ -711,7 +714,7 @@ maskPhi(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskR(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of x coordinate from each item in a
  * collection of ReconstructedParticle.
@@ -723,7 +726,7 @@ maskR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskX(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of y coordinate from each item in a
  * collection of ReconstructedParticle.
@@ -735,7 +738,7 @@ maskX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskY(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of z coordinate from each item in a
  * collection of ReconstructedParticle.
@@ -747,7 +750,7 @@ maskY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskZ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of energy from each item in a
  * collection of ReconstructedParticle.
@@ -759,7 +762,7 @@ maskZ(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskE(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of mass from each item in a collection
  * of ReconstructedParticle.
@@ -771,7 +774,7 @@ maskE(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskM(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of charge from each item in a
  * collection of ReconstructedParticle.
@@ -783,7 +786,7 @@ maskM(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskQ(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of absolute charge from each item in a
  * collection of ReconstructedParticle.
@@ -795,7 +798,7 @@ maskQ(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskAbsq(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of pdg from each item in a collection
  * of ReconstructedParticle.
@@ -807,7 +810,7 @@ maskAbsq(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskPdg(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of absolute pdg from each item in a
  * collection of ReconstructedParticle.
@@ -819,7 +822,7 @@ maskPdg(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
-           ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+           ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Create boolean mask based on the value of momentum from each item in a
  * collection of ReconstructedParticle.
@@ -1058,7 +1061,7 @@ maskAbspdg(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selP(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of transverse
  * momentum.
@@ -1070,7 +1073,7 @@ selP(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selPt(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of x momentum.
  *
@@ -1081,7 +1084,7 @@ selPt(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selPx(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of y momentum.
  *
@@ -1092,7 +1095,7 @@ selPx(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selPy(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of z momentum.
  *
@@ -1103,7 +1106,7 @@ selPy(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selPz(LogicalOperators::ComparisonOperator op, float val,
-      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+      ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of
  * pseudorapidity.
@@ -1115,7 +1118,7 @@ selPz(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selEta(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of rapidity.
  *
@@ -1126,7 +1129,7 @@ selEta(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selRapidity(LogicalOperators::ComparisonOperator op, float val,
-            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+            ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of polar angle.
  *
@@ -1137,7 +1140,7 @@ selRapidity(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selTheta(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+         ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of azimutal
  * angle.
@@ -1149,7 +1152,7 @@ selTheta(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selPhi(LogicalOperators::ComparisonOperator op, float val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of distance to
  * origin.
@@ -1161,7 +1164,7 @@ selPhi(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selR(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of x
  * coordinate.
@@ -1173,7 +1176,7 @@ selR(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selX(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of y
  * coordinate.
@@ -1185,7 +1188,7 @@ selX(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selY(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of z
  * coordinate.
@@ -1197,7 +1200,7 @@ selY(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selZ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of energy.
  *
@@ -1208,7 +1211,7 @@ selZ(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selE(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of mass.
  *
@@ -1219,7 +1222,7 @@ selE(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selM(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of charge.
  *
@@ -1230,7 +1233,7 @@ selM(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selQ(LogicalOperators::ComparisonOperator op, float val,
-     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+     ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of absolute
  * charge.
@@ -1242,7 +1245,7 @@ selQ(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selAbsq(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+        ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of pdg.
  *
@@ -1253,7 +1256,7 @@ selAbsq(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selPdg(LogicalOperators::ComparisonOperator op, int val,
-       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+       ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of absolute
  * pdg.
@@ -1265,7 +1268,7 @@ selPdg(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
 selAbspdg(LogicalOperators::ComparisonOperator op, int val,
-          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection);
+          ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection);
 /**
  * Select a subgroup of ReconstructedParticle based on the value of momentum.
  *
@@ -1492,7 +1495,7 @@ selAbspdg(LogicalOperators::ComparisonOperator op, int val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of transverse
@@ -1503,7 +1506,7 @@ sortP(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
        bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of x momentum.
@@ -1513,7 +1516,7 @@ sortPt(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
        bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of y momentum.
@@ -1523,7 +1526,7 @@ sortPx(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
        bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of z momentum.
@@ -1533,7 +1536,7 @@ sortPy(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
        bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of
@@ -1544,7 +1547,7 @@ sortPz(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
         bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of rapidity.
@@ -1554,7 +1557,7 @@ sortEta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
              bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of polar angle.
@@ -1564,7 +1567,7 @@ sortRapidity(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
           bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of azimutal
@@ -1575,7 +1578,7 @@ sortTheta(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
         bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of distance to
@@ -1586,7 +1589,7 @@ sortPhi(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of x
@@ -1597,7 +1600,7 @@ sortR(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of y
@@ -1608,7 +1611,7 @@ sortX(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of z
@@ -1619,7 +1622,7 @@ sortY(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of energy.
@@ -1629,7 +1632,7 @@ sortZ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of mass.
@@ -1639,7 +1642,7 @@ sortE(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of charge.
@@ -1649,7 +1652,7 @@ sortM(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
       bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of absolute
@@ -1660,7 +1663,7 @@ sortQ(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of pdg.
@@ -1670,7 +1673,7 @@ sortAbsq(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData>
-sortPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> collection,
+sortPdg(ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &collection,
         bool reverse = false);
 /**
  * Sort a collection of ReconstructedParticle based on the value of momentum.
@@ -1871,8 +1874,8 @@ sortPdg(edm4hep::ReconstructedParticleCollection &collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> getParticles(
-    edm4hep::ReconstructedParticleData item,
-    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> relatedCollection);
+    edm4hep::ReconstructedParticleData &item,
+    ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> &relatedCollection);
 /**
  * Get the collection of Track related to a ReconstructedParticle.
  *
@@ -1882,8 +1885,8 @@ ROOT::VecOps::RVec<edm4hep::ReconstructedParticleData> getParticles(
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackData>
-getTracks(edm4hep::ReconstructedParticleData item,
-          ROOT::VecOps::RVec<edm4hep::TrackData> relatedCollection);
+getTracks(edm4hep::ReconstructedParticleData &item,
+          ROOT::VecOps::RVec<edm4hep::TrackData> &relatedCollection);
 /**
  * Get the collection of Cluster related to a ReconstructedParticle.
  *
@@ -1893,8 +1896,8 @@ getTracks(edm4hep::ReconstructedParticleData item,
  *
  */
 ROOT::VecOps::RVec<edm4hep::ClusterData>
-getClusters(edm4hep::ReconstructedParticleData item,
-            ROOT::VecOps::RVec<edm4hep::ClusterData> relatedCollection);
+getClusters(edm4hep::ReconstructedParticleData &item,
+            ROOT::VecOps::RVec<edm4hep::ClusterData> &relatedCollection);
 /**
  * Get the collection of ReconstructedParticle related to a
  * ReconstructedParticle.

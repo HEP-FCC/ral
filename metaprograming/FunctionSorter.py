@@ -15,7 +15,7 @@ class FunctionSorter(FunctionSignature):
             case Edm4hepCollection.RVEC:
                 vec_t = rvec(f"edm4hep::{edm_t}Data")
                 params = [ 
-                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data"),
+                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data") + "&",
                                       f"Collection of {edm_t} to be sorted"),
                     FunctionParameter("reverse", "bool",
                                       f"Change the order of sorting.", "false")

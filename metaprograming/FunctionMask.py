@@ -41,7 +41,7 @@ class FunctionMask(FunctionSignature):
                                       f"Logical operation applied to create the mask."),
                     FunctionParameter("val", val_t,
                                       f"Value to compare with."),
-                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data"),
+                    FunctionParameter("collection", rvec(f"edm4hep::{edm_t}Data") + "&",
                                       f"Collection of {edm_t} to look in")
                 ]
             case Edm4hepCollection.COLLECTION:

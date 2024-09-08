@@ -11,7 +11,7 @@ namespace TrackerHit3D {
  *
  */
 ROOT::VecOps::RVec<int>
-getType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+getType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Get quality from each item in a collection of TrackerHit3D.
  *
@@ -19,7 +19,7 @@ getType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
  *
  */
 ROOT::VecOps::RVec<int>
-getQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+getQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Get detector cell ID from each item in a collection of TrackerHit3D.
  *
@@ -27,7 +27,7 @@ getQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
  *
  */
 ROOT::VecOps::RVec<unsigned long long>
-getCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+getCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Get eDep from each item in a collection of TrackerHit3D.
  *
@@ -35,7 +35,7 @@ getCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+getEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Get time of the hit from each item in a collection of TrackerHit3D.
  *
@@ -43,7 +43,7 @@ getEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
  *
  */
 ROOT::VecOps::RVec<float>
-getTime(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+getTime(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Get type from each item in a collection of TrackerHit3D.
  *
@@ -90,35 +90,35 @@ getTime(const edm4hep::TrackerHit3DCollection &collection);
  * @param collection Collection of TrackerHit3D to look in
  *
  */
-int printType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+int printType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Print type from each item in a collection of TrackerHit3D.
  *
  * @param collection Collection of TrackerHit3D to look in
  *
  */
-int printQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+int printQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Print detector cell ID from each item in a collection of TrackerHit3D.
  *
  * @param collection Collection of TrackerHit3D to look in
  *
  */
-int printCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+int printCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Print eDep from each item in a collection of TrackerHit3D.
  *
  * @param collection Collection of TrackerHit3D to look in
  *
  */
-int printEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+int printEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Print time of the hit from each item in a collection of TrackerHit3D.
  *
  * @param collection Collection of TrackerHit3D to look in
  *
  */
-int printTime(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+int printTime(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Print type from each item in a collection of TrackerHit3D.
  *
@@ -165,7 +165,7 @@ int printTime(const edm4hep::TrackerHit3DCollection &collection);
  */
 ROOT::VecOps::RVec<bool>
 maskType(LogicalOperators::ComparisonOperator op, int val,
-         ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+         ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Create boolean mask based on the value of type from each item in a collection
  * of TrackerHit3D.
@@ -177,7 +177,7 @@ maskType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskQuality(LogicalOperators::ComparisonOperator op, int val,
-            ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+            ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Create boolean mask based on the value of detector cell ID from each item in
  * a collection of TrackerHit3D.
@@ -189,7 +189,7 @@ maskQuality(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<bool>
 maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
-           ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+           ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Create boolean mask based on the value of eDep from each item in a collection
  * of TrackerHit3D.
@@ -201,7 +201,7 @@ maskCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
  */
 ROOT::VecOps::RVec<bool>
 maskEDep(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+         ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Create boolean mask based on the value of time of the hit from each item in a
  * collection of TrackerHit3D.
@@ -213,7 +213,7 @@ maskEDep(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<bool>
 maskTime(LogicalOperators::ComparisonOperator op, float val,
-         ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+         ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Create boolean mask based on the value of type from each item in a collection
  * of TrackerHit3D.
@@ -284,7 +284,7 @@ maskTime(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
 selType(LogicalOperators::ComparisonOperator op, int val,
-        ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+        ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Select a subgroup of TrackerHit3D based on the value of type.
  *
@@ -295,7 +295,7 @@ selType(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
 selQuality(LogicalOperators::ComparisonOperator op, int val,
-           ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+           ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Select a subgroup of TrackerHit3D based on the value of detector cell ID.
  *
@@ -306,7 +306,7 @@ selQuality(LogicalOperators::ComparisonOperator op, int val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
 selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
-          ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+          ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Select a subgroup of TrackerHit3D based on the value of eDep.
  *
@@ -317,7 +317,7 @@ selCellID(LogicalOperators::ComparisonOperator op, unsigned long long val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
 selEDep(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+        ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Select a subgroup of TrackerHit3D based on the value of time of the hit.
  *
@@ -328,7 +328,7 @@ selEDep(LogicalOperators::ComparisonOperator op, float val,
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
 selTime(LogicalOperators::ComparisonOperator op, float val,
-        ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection);
+        ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection);
 /**
  * Select a subgroup of TrackerHit3D based on the value of type.
  *
@@ -392,7 +392,7 @@ selTime(LogicalOperators::ComparisonOperator op, float val,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
-sortType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
+sortType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of TrackerHit3D based on the value of quality.
@@ -402,7 +402,7 @@ sortType(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
-sortQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
+sortQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection,
             bool reverse = false);
 /**
  * Sort a collection of TrackerHit3D based on the value of detector cell ID.
@@ -412,7 +412,7 @@ sortQuality(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
-sortCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
+sortCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection,
            bool reverse = false);
 /**
  * Sort a collection of TrackerHit3D based on the value of eDep.
@@ -422,7 +422,7 @@ sortCellID(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
-sortEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
+sortEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of TrackerHit3D based on the value of time of the hit.
@@ -432,7 +432,7 @@ sortEDep(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
  *
  */
 ROOT::VecOps::RVec<edm4hep::TrackerHit3DData>
-sortTime(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> collection,
+sortTime(ROOT::VecOps::RVec<edm4hep::TrackerHit3DData> &collection,
          bool reverse = false);
 /**
  * Sort a collection of TrackerHit3D based on the value of type.
