@@ -2,6 +2,31 @@
 
 Key4hep library for use in ROOT RDataFrame based analysis.
 
+## Build instructions
+
+First, you should source the Key4hep nigthlies stack from CVMFS.
+```
+source /cvmfs/sw-nightlies.hsf.org/key4hep/setup.sh
+```
+Then you just need to clone the repository and use cmake for
+making the build. In this case, it is also shown how to setup an 
+install directory.
+```
+git clone https://github.com/HEP-FCC/ral.git
+cd ral
+mkdir build
+mkdir install
+cd build
+cmake ..
+cmake --build --target install .
+```
+Library installation folder should be added to the ROOT PATH in order
+to be used. In this cases, there is a script in the Key4hep satack that can
+be used:
+```
+k4_local_repo
+```
+
 ## Interactive use
 
 In order to use this library inside ROOT REPL one can open a root file with
@@ -40,3 +65,45 @@ root [5] hist->Draw();
 Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
 root [6]
 ```
+
+## Library tutorial
+
+Ral library is composed by a series of basic analyzers that acts on EDM4hep 
+objects to obtain and transform information about them. In this short tutorial
+you can see how this library can be used for different purposes.
+
+This tutorial has been designed for analizing simulation results from the 
+FCC. Everything is explained as if you would be analyzing a ROOT dataframe (df)
+with the events from the simulation. 
+
+### Getters
+
+These kind of methods allow the user to get information about some quantity
+for every object in a collection. In this case, if you want to know the 
+momentum of a reconstructed particle you could use:
+
+```
+auto newDf = df.Define("p", "k4::ral::ReconstructedParticle::getP(ReconstructedParticles));
+```
+
+This operation extracts a RVEC with all the momentums in every ReconstructedParticle
+collection for each event.
+
+### Printers
+
+Sometimes you will need to see some numbers on the screen to be sure that 
+everything is fine. For that reason a series of print methods where develop
+next to the getters so they can be use for debugging. 
+
+```
+auto newDf = df.Define("p", "k4::ral::ReconstructedParticle::printP(ReconstructedParticles));
+newDf.Snapshot("events", "final.root", { "p" });
+```
+
+Since Define is lazily evaluated on RDataFrames, it is necessary to do an 
+Snapshot in order to see the information printed on the screen
+
+### Maskers
+
+
+
