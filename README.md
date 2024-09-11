@@ -105,5 +105,52 @@ Snapshot in order to see the information printed on the screen
 
 ### Maskers
 
+This methods allow to create boolean masks that can be used later to filter
+a collection selecting items that meet the condition. For example, if we
+want to create a filter for selecting particles with energies greater than 5
+GeV and a transverse momentum lower than 3 GeV/c:
 
+```
+auto newDf = df.Define("maskE", "k4::ral::ReconstructedParticle::maskE(LogicalOperators::ComparisonOperator::GREATER, 5., ReconstructedParticles))
+               .Define("maskPt", "k4::ral::ReconstructedParticle::maskPt(LogicalOperators::ComparisonOperator::LESS, 3., ReconstructedParticles))
+               .Define("filteredParticles", "k4::ral::LogicalOperators::filter((maskE && maskPt), ReconstructedParticles));
+```
+
+### Selectors
+
+This methods are simple masks that have been used to filter a collection. The 
+inputs are the same as in a mask method. Let's select the particles which 
+polar angle is greater than 0:
+
+
+```
+auto newDf = df.Define("polarSel", "k4::ral::ReconstructedParticle::selTheta(LogicalOperators::ComparisonOperator::GREATER, 0., ReconstructedParticles));
+```
+
+### Sorters
+
+In ral library there are also sorter methods to sort collections based on
+a property. For example, we can order particles depending on the value of the 
+energy.
+
+
+```
+auto newDf = df.Define("sortByE", "k4::ral::ReconstructedParticle::sortE(ReconstructedParticles));
+```
+
+It is also possible to sort in reverse order:
+
+```
+auto newDf = df.Define("sortByE", "k4::ral::ReconstructedParticle::sortE(ReconstructedParticles, true));
+```
+
+### Reducers
+
+It is possible to combine getters with some VecOps methods in order to reduce
+the vectors:
+
+```
+auto newDf = df.Define("e", "k4::ral::ReconstructedParticle::getE(ReconstructedParticles))
+               .Define("totalE", "ROOT::VecOps::Sum(e));
+```
 
