@@ -27,6 +27,22 @@ be used:
 k4_local_repo
 ```
 
+## How to contribute
+
+In order to make contributions to the project, you should work on your own fork of the project. It
+is important that you keep yout fork updated with the originial repo. An easy way to do it is configure
+a remote with the original repo and rebase often to keep you updated:
+
+```
+git remote add official https://github.com/HEP-FCC/ral.git
+git fetch official
+git rebase -i offcial/main
+```
+
+Once your changes are ready and your fork is synced with the original repo, you can 
+open a pull request on github to ask for a merge. Don't forget to pass the tests
+and format your code with clang-format.
+
 ## Interactive use
 
 In order to use this library inside ROOT REPL one can open a root file with
